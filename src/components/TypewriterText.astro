@@ -1,0 +1,214 @@
+---
+export interface Props {
+	text: string | string[];
+	speed?: number;
+	deleteSpeed?: number;
+	pauseTime?: number;
+	class?: string;
+	isHitokoto?: boolean; // 是否使用一言模式
+	hitokotoApi?: string; // 一言API地址
+}
+
+const {
+	text,
+	speed = 100,
+	deleteSpeed = 50,
+	pauseTime = 2000,
+	class: className = "",
+	isHitokoto = false,
+	hitokotoApi = "https://v1.hitokoto.cn/?c=a&c=c&c=d&c=h&c=i&c=k&c=l&c=m&c=j&c=e&c=f", // 默认一言API，包含多种类型
+} = Astro.props;
+const textData = Array.isArray(text) ? JSON.stringify(text) : text;
+---
+
+<span class={`typewriter ${className}`} data-text={textData} data-speed={speed} data-delete-speed={deleteSpeed} data-pause-time={pauseTime} data-is-hitokoto={isHitokoto} data-hitokoto-api={hitokotoApi}></span>
+
+<script>
+class TypewriterEffect {
+    private element: HTMLElement;
+    private texts: string[];
+    private currentTextIndex: number = 0;
+    private speed: number;
+    private deleteSpeed: number;
+    private pauseTime: number;
+    private currentIndex: number = 0;
+    private isDeleting: boolean = false;
+    private timeoutId: number | null = null;
+    private isHitokoto: boolean;
+    private hitokotoApi: string;
+    private hitokotoTexts: string[] = [];
+
+    constructor(element: HTMLElement) {
+        this.element = element;
+        const textData = element.dataset.text || '';
+        
+        // 尝试解析为JSON数组，如果失败则作为单个字符串处理
+        try {
+            const parsed = JSON.parse(textData);
+            this.texts = Array.isArray(parsed) ? parsed : [textData];
+        } catch {
+            this.texts = [textData];
+        }
+        
+        this.speed = parseInt(element.dataset.speed || '100');
+        this.deleteSpeed = parseInt(element.dataset.deleteSpeed || '50');
+        this.pauseTime = parseInt(element.dataset.pauseTime || '2000');
+        this.isHitokoto = element.dataset.isHitokoto === 'true';
+        this.hitokotoApi = element.dataset.hitokotoApi || 'https://v1.hitokoto.cn/?c=a&c=c&c=d&c=h&c=i&c=k&c=l&c=m&c=j&c=e&c=f';
+        
+        if (this.isHitokoto) {
+            this.initHitokoto();
+        } else if (this.texts.length > 1 && !this.isTypewriterEnabled()) {
+            this.showRandomText();
+        } else {
+            this.start();
+        }
+    }
+
+    private isTypewriterEnabled(): boolean {
+        // 检查是否有打字机相关的数据属性
+        return this.element.dataset.speed !== undefined || 
+               this.element.dataset.deleteSpeed !== undefined || 
+               this.element.dataset.pauseTime !== undefined;
+    }
+
+    private showRandomText() {
+        const randomIndex = Math.floor(Math.random() * this.texts.length);
+        this.element.textContent = this.texts[randomIndex];
+    }
+
+    private async initHitokoto() {
+        try {
+            // 初始获取几条一言
+            for (let i = 0; i < 5; i++) {
+                const hitokoto = await this.fetchHitokoto();
+                if (hitokoto && !this.hitokotoTexts.includes(hitokoto)) {
+                    this.hitokotoTexts.push(hitokoto);
+                }
+            }
+            
+            // 如果获取到了一言，使用一言文本，否则使用默认文本
+            if (this.hitokotoTexts.length > 0) {
+                this.texts = this.hitokotoTexts;
+            }
+            
+            this.start();
+        } catch (error) {
+            console.error('Failed to fetch hitokoto:', error);
+            this.start(); // 即使获取失败，也继续使用默认文本
+        }
+    }
+
+    private async fetchHitokoto(): Promise<string | null> {
+        try {
+            const response = await fetch(this.hitokotoApi);
+            const data = await response.json();
+            return data.hitokoto || null;
+        } catch (error) {
+            console.error('Error fetching hitokoto:', error);
+            return null;
+        }
+    }
+
+    private async getNextHitokoto(): Promise<string> {
+        // 尝试获取新的一言
+        const newHitokoto = await this.fetchHitokoto();
+        if (newHitokoto && !this.hitokotoTexts.includes(newHitokoto)) {
+            this.hitokotoTexts.push(newHitokoto);
+            // 保持数组大小不超过10
+            if (this.hitokotoTexts.length > 10) {
+                this.hitokotoTexts.shift();
+            }
+            return newHitokoto;
+        }
+        
+        // 如果获取失败或重复，随机返回已有的一言
+        const randomIndex = Math.floor(Math.random() * this.hitokotoTexts.length);
+        return this.hitokotoTexts[randomIndex];
+    }
+
+    private start() {
+        if (this.texts.length === 0) return;
+        this.type();
+    }
+
+    private async getCurrentText(): Promise<string> {
+        // 如果是一言模式且需要切换文本，获取新的一言
+        if (this.isHitokoto && this.isDeleting === false && this.currentIndex === this.texts[this.currentTextIndex].length) {
+            return await this.getNextHitokoto();
+        }
+        return this.texts[this.currentTextIndex] || '';
+    }
+
+    private async type() {
+        let currentText = this.getCurrentText();
+        
+        // 如果是Promise，等待结果
+        if (currentText instanceof Promise) {
+            currentText = await currentText;
+        }
+        
+        if (this.isDeleting) {
+            // 删除字符
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+                this.element.textContent = currentText.substring(0, this.currentIndex);
+                this.timeoutId = window.setTimeout(() => this.type(), this.deleteSpeed);
+            } else {
+                // 删除完成，切换到下一条文本
+                this.isDeleting = false;
+                this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+                this.timeoutId = window.setTimeout(() => this.type(), this.speed);
+            }
+        } else {
+            // 添加字符
+            if (this.currentIndex < currentText.length) {
+                this.currentIndex++;
+                this.element.textContent = currentText.substring(0, this.currentIndex);
+                this.timeoutId = window.setTimeout(() => this.type(), this.speed);
+            } else {
+                // 打字完成，暂停后开始删除
+                this.isDeleting = true;
+                this.timeoutId = window.setTimeout(() => this.type(), this.pauseTime);
+            }
+        }
+    }
+
+    public destroy() {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+        }
+    }
+}
+
+// 初始化所有打字机效果
+document.addEventListener('DOMContentLoaded', () => {
+    const typewriterElements = document.querySelectorAll('.typewriter');
+    typewriterElements.forEach((element) => {
+        new TypewriterEffect(element as HTMLElement);
+    });
+});
+
+// 支持页面切换时重新初始化
+document.addEventListener('swup:contentReplaced', () => {
+    const typewriterElements = document.querySelectorAll('.typewriter');
+    typewriterElements.forEach((element) => {
+        new TypewriterEffect(element as HTMLElement);
+    });
+});
+</script>
+
+<style>
+.typewriter {
+    position: relative;
+    min-height: 1.5em; /* 确保即使没有文字也保持最小高度 */
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/* 确保打字机效果不会导致布局抖动 */
+.typewriter:empty::before {
+    content: '\00A0'; /* 使用不间断空格保持高度 */
+    visibility: hidden;
+}
+</style>
