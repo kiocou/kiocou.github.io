@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       
       - name: Build site
-        run: pnpm run build
+        run: astro build
         env:
           # 如果需要启用内容分离,取消以下注释并配置
           # ENABLE_CONTENT_SYNC: true
