@@ -9,19 +9,17 @@ const postsCollection = defineCollection({
 		description: z.string().optional().default(""),
 		image: z.string().optional().default(""),
 		tags: z.array(z.string()).optional().default([]),
-		category: z.string().optional().nullable().default(""),
-		lang: z.string().optional().default(""),
+		category: z.union([z.string(), z.null()]).optional().default(""),
+		lang: z.union([z.string(), z.null()]).optional().default(""),
 		pinned: z.boolean().optional().default(false),
-		author: z.string().optional().default(""),
-		sourceLink: z.string().optional().default(""),
-		licenseName: z.string().optional().default(""),
-		licenseUrl: z.string().optional().default(""),
+		author: z.union([z.string(), z.null()]).optional().default(""),
+		sourceLink: z.union([z.string(), z.null()]).optional().default(""),
+		licenseName: z.union([z.string(), z.null()]).optional().default(""),
+		licenseUrl: z.union([z.string(), z.null()]).optional().default(""),
 
 		/* Page encryption fields */
 		encrypted: z.boolean().optional().default(false),
-		password: z.string().optional().default(""),
-
-		
+		password: z.union([z.string(), z.null()]).optional().default(""),
 
 		/* For internal use */
 		prevTitle: z.string().default(""),
