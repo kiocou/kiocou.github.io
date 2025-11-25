@@ -6,6 +6,10 @@ import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedPostsList } from "../utils/content-utils";
 
 const sortedPostsList = await getSortedPostsList();
+
+// 限制归档页显示的文章数量
+const MAX_ARCHIVE_POSTS = 50;
+const limitedPostsList = sortedPostsList.slice(0, MAX_ARCHIVE_POSTS);
 ---
 
 <MainGridLayout title={i18n(I18nKey.archive)}>
@@ -13,6 +17,12 @@ const sortedPostsList = await getSortedPostsList();
   <script>
     import('/src/scripts/right-sidebar-layout.js');
   </script>
-    <ArchivePanel sortedPosts={sortedPostsList} client:only="svelte"></ArchivePanel>
+    <ArchivePanel sortedPosts={limitedPostsList} client:only="svelte"></ArchivePanel>
+    
+    {sortedPostsList.length > MAX_ARCHIVE_POSTS && (
+    <div class="text-center text-sm text-gray-500 mt-8">
+      显示了最新的 {MAX_ARCHIVE_POSTS} 篇文章，共 {sortedPostsList.length} 篇
+    </div>
+    )}
 </MainGridLayout>
 

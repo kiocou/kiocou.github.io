@@ -179,17 +179,32 @@ const yearSuffix = isChinese ? '年' : ' ';
     setupClickHandlers(currentMonthPosts);
   }
   
-  // 显示当月所有文章
+  // 显示当月所有文章（最多显示10篇）
   function showMonthlyPosts(currentMonthPosts) {
     const postsList = document.getElementById('calendar-posts-list');
     const divider = document.getElementById('calendar-posts-divider');
     
+    // 限制显示的文章数量
+    const MAX_POSTS = 10;
+    const displayPosts = currentMonthPosts.slice(0, MAX_POSTS);
+    
     if (postsList) {
-      postsList.innerHTML = currentMonthPosts.map(post => `
+      let postsHtml = displayPosts.map(post => `
         <a href="/posts/${post.id}/" class="block text-sm text-neutral-700 dark:text-neutral-300 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] transition-colors truncate px-2 py-1 rounded hover:bg-[var(--btn-plain-bg-hover)]">
           ${post.title}
         </a>
       `).join('');
+      
+      // 如果有更多文章，添加提示
+      if (currentMonthPosts.length > MAX_POSTS) {
+        postsHtml += `
+          <div class="text-xs text-neutral-500 dark:text-neutral-400 text-center px-2 py-1 italic">
+            ... 共 ${currentMonthPosts.length} 篇文章
+          </div>
+        `;
+      }
+      
+      postsList.innerHTML = postsHtml;
       
       // 显示/隐藏分割线
       if (divider) {
