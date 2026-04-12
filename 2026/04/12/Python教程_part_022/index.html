@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 22 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 22
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:21:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python的 <code>class</code> 允许定义许多定制方法，可以让我们非常方便地生成特定的类。 </p>
+<p>本节介绍的是最常用的几个定制方法，还有很多可定制的方法，请参考Python的官方文档。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>special_str.py special_iter.py special_getitem.py special_getattr.py special_call.py </p>
+<p>评论 </p>
+<h2 id="使用枚举类"><a href="#使用枚举类" class="headerlink" title="使用枚举类"></a><strong>使用枚举类</strong></h2><p>原文链接 </p>
+<p>当我们需要定义常量时，一个办法是用大写变量通过整数来定义，例如月份： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JAN = 1</span><br><span class="line">FEB = 2</span><br><span class="line">MAR = 3</span><br><span class="line">...</span><br><span class="line">NOV = 11</span><br><span class="line">DEC = 12</span><br></pre></td></tr></table></figure>
+
+<p>好处是简单，缺点是类型是 <code>int</code> ，并且仍然是变量。 </p>
+<p>更好的方法是为这样的枚举类型定义一个class类型，然后，每个常量都是class的一个唯一实例。 Python提供了 <code>Enum</code> 类来实现这个功能： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from enum import Enum</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Month = Enum(&#x27;Month&#x27;, (&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;Mar&#x27;, &#x27;Apr&#x27;, &#x27;May&#x27;, &#x27;Jun&#x27;, &#x27;Jul&#x27;,</span><br><span class="line">&#x27;Aug&#x27;, &#x27;Sep&#x27;, &#x27;Oct&#x27;, &#x27;Nov&#x27;, &#x27;Dec&#x27;))</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就获得了 <code>Month</code> 类型的枚举类，可以直接使用 <code>Month.Jan</code> 来引用一个常量，或者枚 举它的所有成员： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for name, member in Month.__members__.items():</span><br><span class="line">print(name, &#x27;=&gt;&#x27;, member, &#x27;,&#x27;, member.value)</span><br></pre></td></tr></table></figure>
+
+<p><code>value</code> 属性则是自动赋给成员的 <code>int</code> 常量，默认从 <code>1</code> 开始计数。 </p>
+<p>如果需要更精确地控制枚举类型，可以从 <code>Enum</code> 派生出自定义类： </p>
+<p><code>from enum import Enum, unique @unique class Weekday(Enum): Sun = 0 # Sun</code> 的 <code>value</code> 被设定为 <code>0 Mon = 1</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Tue = 2</span><br><span class="line">Wed = 3</span><br><span class="line">Thu = 4</span><br><span class="line">Fri = 5</span><br><span class="line">Sat = 6</span><br></pre></td></tr></table></figure>
+
+<h2 id="unique-装饰器可以帮助我们检查保证没有重复值。"><a href="#unique-装饰器可以帮助我们检查保证没有重复值。" class="headerlink" title="@unique 装饰器可以帮助我们检查保证没有重复值。"></a><code>@unique</code> 装饰器可以帮助我们检查保证没有重复值。</h2><h2 id="访问这些枚举类型可以有若干种方法："><a href="#访问这些枚举类型可以有若干种方法：" class="headerlink" title="访问这些枚举类型可以有若干种方法："></a>访问这些枚举类型可以有若干种方法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; day1 = Weekday.Mon</span><br><span class="line">&gt;&gt;&gt; print(day1)</span><br><span class="line">Weekday.Mon</span><br><span class="line">&gt;&gt;&gt; print(Weekday.Tue)</span><br><span class="line">Weekday.Tue</span><br><span class="line">&gt;&gt;&gt; print(Weekday[&#x27;Tue&#x27;])</span><br><span class="line">Weekday.Tue</span><br><span class="line">&gt;&gt;&gt; print(Weekday.Tue.value)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; print(day1 == Weekday.Mon)</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; print(day1 == Weekday.Tue)</span><br><span class="line">False</span><br><span class="line">&gt;&gt;&gt; print(Weekday(1))</span><br><span class="line">Weekday.Mon</span><br><span class="line">&gt;&gt;&gt; print(day1 == Weekday(1))</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; Weekday(7)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">ValueError: 7 is not a valid Weekday</span><br><span class="line">&gt;&gt;&gt; for name, member in Weekday.__members__.items():</span><br><span class="line">...     print(name, &#x27;=&gt;&#x27;, member)</span><br><span class="line">...</span><br><span class="line">Sun =&gt; Weekday.Sun</span><br><span class="line">Mon =&gt; Weekday.Mon</span><br><span class="line">Tue =&gt; Weekday.Tue</span><br><span class="line">Wed =&gt; Weekday.Wed</span><br><span class="line">Thu =&gt; Weekday.Thu</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fri =&gt; Weekday.Fri</span><br><span class="line">Sat =&gt; Weekday.Sat</span><br></pre></td></tr></table></figure>
+
+<p>可见，既可以用成员名称引用枚举常量，又可以直接根据value的值获得枚举常量。 </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h2 id="把-Student-的-gender-属性改造为枚举类型，可以避免使用字符串："><a href="#把-Student-的-gender-属性改造为枚举类型，可以避免使用字符串：" class="headerlink" title="把 Student 的 gender 属性改造为枚举类型，可以避免使用字符串："></a>把 <code>Student</code> 的 <code>gender</code> 属性改造为枚举类型，可以避免使用字符串：</h2><p><code>from enum import Enum, unique class Gender(Enum): Male = 0 Female = 1 class Student(object): def __init__(self, name, gender): self.name = name self.gender = gender #</code> 测试 <code>: bart = Student(&#39;Bart&#39;, Gender.Male) if bart.gender == Gender.Male: print(&#39;</code> 测试通过 <code>!&#39;) else: print(&#39;</code> 测试失败 <code>!&#39;)</code> </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p><code>Enum</code> 可以把一组相关常量定义在一个class中，且class不可变，而且成员可以直接比较。 </p>
+<h2 id="参考源码-1"><a href="#参考源码-1" class="headerlink" title="参考源码"></a>参考源码</h2><p>use_enum.py 评论 </p>
+<h2 id="使用元类"><a href="#使用元类" class="headerlink" title="使用元类"></a><strong>使用元类</strong></h2><p>原文链接 </p>
+<h2 id="type"><a href="#type" class="headerlink" title="type()"></a>type()</h2><p>动态语言和静态语言最大的不同，就是函数和类的定义，不是编译时定义的，而是运行时动态创 建的。 </p>
+<p>比方说我们要定义一个 <code>Hello</code> 的class，就写一个 <code>hello.py</code> 模块： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">classHello(object):</span><br><span class="line">defhello(self, name=&#x27;world&#x27;):</span><br><span class="line">print(&#x27;Hello, %s.&#x27; % name)</span><br></pre></td></tr></table></figure>
+
+<p>当Python解释器载入 <code>hello</code> 模块时，就会依次执行该模块的所有语句，执行结果就是动态创建 出一个 <code>Hello</code> 的class对象，测试如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from hello import Hello</span><br><span class="line">&gt;&gt;&gt; h = Hello()</span><br><span class="line">&gt;&gt;&gt; h.hello()</span><br><span class="line">Hello, world.</span><br><span class="line">&gt;&gt;&gt; print(type(Hello))</span><br><span class="line">&lt;class &#x27;type&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; print(type(h))</span><br><span class="line">&lt;class &#x27;hello.Hello&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>type()</code> 函数可以查看一个类型或变量的类型， <code>Hello</code> 是一个class，它的类型就是 <code>type</code> ， 而 <code>h</code> 是一个实例，它的类型就是class <code>Hello</code> 。 </p>
+<p>我们说class的定义是运行时动态创建的，而创建class的方法就是使用 <code>type()</code> 函数。 </p>
+<p><code>type()</code> 函数既可以返回一个对象的类型，又可以创建出新的类型，比如，我们可以通过 <code>type()</code> 函数创建出 <code>Hello</code> 类，而无需通过 <code>class Hello(object)...</code> 的定义： </p>
+<p><code>&gt;&gt;&gt; def fn(self, name=&#39;world&#39;): #</code> 先定义函数 <code>...     print(&#39;Hello, %s.&#39; % name) ... &gt;&gt;&gt; Hello = type(&#39;Hello&#39;, (object,), dict(hello=fn)) #</code> 创建 <code>Hello class</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; h = Hello()</span><br><span class="line">&gt;&gt;&gt; h.hello()</span><br><span class="line">Hello, world.</span><br><span class="line">&gt;&gt;&gt; print(type(Hello))</span><br><span class="line">&lt;class &#x27;type&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; print(type(h))</span><br><span class="line">&lt;class &#x27;__main__.Hello&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>要创建一个class对象， <code>type()</code> 函数依次传入3个参数： </p>
+<ol>
+<li><p>class的名称； </p>
+</li>
+<li><p>继承的父类集合，注意Python支持多重继承，如果只有一个父类，别忘了tuple的单元素写 法； </p>
+</li>
+<li><p>class的方法名称与函数绑定，这里我们把函数 <code>fn</code> 绑定到方法名 <code>hello</code> 上。</p>
+</li>
+</ol>
+<p>通过 <code>type()</code> 函数创建的类和直接写class是完全一样的，因为Python解释器遇到class定义时， 仅仅是扫描一下class定义的语法，然后调用 <code>type()</code> 函数创建出class。 </p>
+<p>正常情况下，我们都用 <code>class Xxx...</code> 来定义类，但是， <code>type()</code> 函数也允许我们动态创建出 类来，也就是说，动态语言本身支持运行期动态创建类，这和静态语言有非常大的不同，要在静 态语言运行期创建类，必须构造源代码字符串再调用编译器，或者借助一些工具生成字节码实 现，本质上都是动态编译，会非常复杂。 </p>
+<h2 id="metaclass"><a href="#metaclass" class="headerlink" title="metaclass"></a>metaclass</h2><p>除了使用 <code>type()</code> 动态创建类以外，要控制类的创建行为，还可以使用metaclass。 </p>
+<p>metaclass，直译为元类，简单的解释就是： </p>
+<p>当我们定义了类以后，就可以根据这个类创建出实例，所以：先定义类，然后创建实例。 </p>
+<p>但是如果我们想创建出类呢？那就必须根据metaclass创建出类，所以：先定义metaclass，然后 创建类。 </p>
+<p>连接起来就是：先定义metaclass，就可以创建类，最后创建实例。 </p>
+<p>所以，metaclass允许你创建类或者修改类。换句话说，你可以把类看成是metaclass创建出来的 “实例”。 </p>
+<p>metaclass是Python面向对象里最难理解，也是最难使用的魔术代码。正常情况下，你不会碰到 需要使用metaclass的情况，所以，以下内容看不懂也没关系，因为基本上你不会用到。 </p>
+<p>我们先看一个简单的例子，这个metaclass可以给我们自定义的MyList增加一个 <code>add</code> 方法： </p>
+<p>定义 <code>ListMetaclass</code> ，按照默认习惯，metaclass的类名总是以Metaclass结尾，以便清楚地表 示这是一个metaclass： </p>
+<p><code># metaclass</code> 是类的模板，所以必须从 <code>type</code> 类型派生： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classListMetaclass(type):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def__new__(cls, name, bases, attrs):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">        attrs[&#x27;add&#x27;] = lambdaself, value: self.append(value)</span><br><span class="line">returntype.__new__(cls, name, bases, attrs)</span><br></pre></td></tr></table></figure>
+
+<p>有了 <code>ListMetaclass</code> ，我们在定义类的时候还要指示使用 <code>ListMetaclass</code> 来定制类，传入关键 字参数 <code>metaclass</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">classMyList(list, metaclass=ListMetaclass):</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+
+<p>当我们传入关键字参数 <code>metaclass</code> 时，魔术就生效了，它指示Python解释器在创建 <code>MyList</code> 时，要通过 <code>ListMetaclass.__new__()</code> 来创建，在此，我们可以修改类的定义，比如，加上新 的方法，然后，返回修改后的定义。 </p>
+<p><code>__new__()</code> 方法接收到的参数依次是： </p>
+<ol>
+<li><p>当前准备创建的类的对象； </p>
+</li>
+<li><p>类的名字； </p>
+</li>
+<li><p>类继承的父类集合； </p>
+</li>
+<li><p>类的方法集合。</p>
+</li>
+</ol>
+<p>测试一下 <code>MyList</code> 是否可以调用 <code>add()</code> 方法： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; L = MyList()</span><br><span class="line">&gt;&gt;&gt; L.add(1)</span><br><span class="line">&gt;&gt; L</span><br><span class="line">[1]</span><br></pre></td></tr></table></figure>
+
+<p>而普通的 <code>list</code> 没有 <code>add()</code> 方法： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; L2 = list()</span><br><span class="line">&gt;&gt;&gt; L2.add(1)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">AttributeError: &#x27;list&#x27; object has no attribute &#x27;add&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>动态修改有什么意义？直接在 <code>MyList</code> 定义中写上 <code>add()</code> 方法不是更简单吗？正常情况下，确 实应该直接写，通过metaclass修改纯属变态。 </p>
+<p>但是，总会遇到需要通过metaclass修改类定义的。ORM就是一个典型的例子。 </p>
+<p>ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一 个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。 </p>
+<p>要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应 的类来。 </p>
+<p>让我们来尝试编写一个ORM框架。 </p>
+<p>编写底层模块的第一步，就是先把调用接口写出来。比如，使用者如果使用这个ORM框架，想定 义一个 <code>User</code> 类来操作对应的数据库表 <code>User</code> ，我们期待他写出这样的代码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classUser(Model):</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>#</code> 定义类的属性到列的映射：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id = IntegerField(&#x27;id&#x27;)</span><br><span class="line">    name = StringField(&#x27;username&#x27;)</span><br><span class="line">    email = StringField(&#x27;email&#x27;)</span><br><span class="line">    password = StringField(&#x27;password&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建一个实例："><a href="#创建一个实例：" class="headerlink" title="# 创建一个实例："></a><code>#</code> 创建一个实例：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u = User(id=12345, name=&#x27;Michael&#x27;, email=&#x27;test@orm.org&#x27;, password=&#x27;my-pwd&#x27;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>#</code> 保存到数据库：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u.save()</span><br></pre></td></tr></table></figure>
+
+<p>其中，父类 <code>Model</code> 和属性类型 <code>StringField</code> 、 <code>IntegerField</code> 是由ORM框架提供的，剩下的 魔术方法比如 <code>save()</code> 全部由父类 <code>Model</code> 自动完成。虽然metaclass的编写会比较复杂，但 ORM的使用者用起来却异常简单。 </p>
+<p>现在，我们就按上面的接口来实现该ORM。 </p>
+<h2 id="首先来定义-Field-类，它负责保存数据库表的字段名和字段类型："><a href="#首先来定义-Field-类，它负责保存数据库表的字段名和字段类型：" class="headerlink" title="首先来定义 Field 类，它负责保存数据库表的字段名和字段类型："></a>首先来定义 <code>Field</code> 类，它负责保存数据库表的字段名和字段类型：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">classField(object):</span><br><span class="line">def__init__(self, name, column_type):</span><br><span class="line">self.name = name</span><br><span class="line">self.column_type = column_type</span><br><span class="line">def__str__(self):</span><br><span class="line">return&#x27;&lt;%s:%s&gt;&#x27; % (self.__class__.__name__, self.name)</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>Field</code> 的基础上，进一步定义各种类型的 <code>Field</code> ，比如 <code>StringField</code> ， <code>IntegerField</code> 等等： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">classStringField(Field):</span><br><span class="line">def__init__(self, name):</span><br><span class="line">super(StringField, self).__init__(name, &#x27;varchar(100)&#x27;)</span><br><span class="line">classIntegerField(Field):</span><br><span class="line">def__init__(self, name):</span><br><span class="line">super(IntegerField, self).__init__(name, &#x27;bigint&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>下一步，就是编写最复杂的 <code>ModelMetaclass</code> 了： </p>
+<p><code>class ModelMetaclass(type): def __new__(cls, name, bases, attrs): if name==&#39;Model&#39;: return type.__new__(cls, name, bases, attrs) print(&#39;Found model: %s&#39; % name) mappings = dict() for k, v in attrs.items(): if isinstance(v, Field): print(&#39;Found mapping: %s ==&gt; %s&#39; % (k, v)) mappings[k] = v for k in mappings.keys(): attrs.pop(k) attrs[&#39;__mappings__&#39;] = mappings #</code> 保存属性和列的映射关系 <code>attrs[&#39;__table__&#39;] = name #</code> 假设表名和类名一致 <code>return type.__new__(cls, name, bases, attrs)</code> </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_023/"
+                                   title="Python基础 - 部分 23"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 23</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_021/"
+                                   title="Python基础 - 部分 21"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 21</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-text">使用枚举类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unique-%E8%A3%85%E9%A5%B0%E5%99%A8%E5%8F%AF%E4%BB%A5%E5%B8%AE%E5%8A%A9%E6%88%91%E4%BB%AC%E6%A3%80%E6%9F%A5%E4%BF%9D%E8%AF%81%E6%B2%A1%E6%9C%89%E9%87%8D%E5%A4%8D%E5%80%BC%E3%80%82"><span class="nav-text">@unique 装饰器可以帮助我们检查保证没有重复值。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E8%BF%99%E4%BA%9B%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%E5%8F%AF%E4%BB%A5%E6%9C%89%E8%8B%A5%E5%B9%B2%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">访问这些枚举类型可以有若干种方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A-Student-%E7%9A%84-gender-%E5%B1%9E%E6%80%A7%E6%94%B9%E9%80%A0%E4%B8%BA%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9A"><span class="nav-text">把 Student 的 gender 属性改造为枚举类型，可以避免使用字符串：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%85%83%E7%B1%BB"><span class="nav-text">使用元类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type"><span class="nav-text">type()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metaclass"><span class="nav-text">metaclass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="nav-text"># 创建一个实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%9D%A5%E5%AE%9A%E4%B9%89-Field-%E7%B1%BB%EF%BC%8C%E5%AE%83%E8%B4%9F%E8%B4%A3%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D%E5%92%8C%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-text">首先来定义 Field 类，它负责保存数据库表的字段名和字段类型：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-text">使用枚举类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unique-%E8%A3%85%E9%A5%B0%E5%99%A8%E5%8F%AF%E4%BB%A5%E5%B8%AE%E5%8A%A9%E6%88%91%E4%BB%AC%E6%A3%80%E6%9F%A5%E4%BF%9D%E8%AF%81%E6%B2%A1%E6%9C%89%E9%87%8D%E5%A4%8D%E5%80%BC%E3%80%82"><span class="nav-text">@unique 装饰器可以帮助我们检查保证没有重复值。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E8%BF%99%E4%BA%9B%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%E5%8F%AF%E4%BB%A5%E6%9C%89%E8%8B%A5%E5%B9%B2%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">访问这些枚举类型可以有若干种方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A-Student-%E7%9A%84-gender-%E5%B1%9E%E6%80%A7%E6%94%B9%E9%80%A0%E4%B8%BA%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9A"><span class="nav-text">把 Student 的 gender 属性改造为枚举类型，可以避免使用字符串：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%85%83%E7%B1%BB"><span class="nav-text">使用元类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type"><span class="nav-text">type()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metaclass"><span class="nav-text">metaclass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="nav-text"># 创建一个实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%9D%A5%E5%AE%9A%E4%B9%89-Field-%E7%B1%BB%EF%BC%8C%E5%AE%83%E8%B4%9F%E8%B4%A3%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D%E5%92%8C%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-text">首先来定义 Field 类，它负责保存数据库表的字段名和字段类型：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

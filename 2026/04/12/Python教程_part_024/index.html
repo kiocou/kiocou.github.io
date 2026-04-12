@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 24 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 24
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:23:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="记录错误"><a href="#记录错误" class="headerlink" title="记录错误"></a>记录错误</h2><p>如果不捕获错误，自然可以让Python解释器来打印出错误堆栈，但程序也被结束了。既然我们能 捕获错误，就可以把错误堆栈打印出来，然后分析错误原因，同时，让程序继续执行下去。 </p>
+<p>Python内置的 <code>logging</code> 模块可以非常容易地记录错误信息： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">deffoo(s):</span><br><span class="line">return10 / int(s)</span><br><span class="line">defbar(s):</span><br><span class="line">return foo(s) * 2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">defmain():</span><br><span class="line">try:</span><br><span class="line">        bar(&#x27;0&#x27;)</span><br><span class="line">except Exception as e:</span><br><span class="line">        logging.exception(e)</span><br><span class="line">main()</span><br><span class="line">print(&#x27;END&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="同样是出错，但程序打印完错误信息后会继续执行，并正常退出："><a href="#同样是出错，但程序打印完错误信息后会继续执行，并正常退出：" class="headerlink" title="同样是出错，但程序打印完错误信息后会继续执行，并正常退出："></a>同样是出错，但程序打印完错误信息后会继续执行，并正常退出：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ python3 err_logging.py</span><br><span class="line">ERROR:root:division by zero</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;err_logging.py&quot;, line 13, in main</span><br><span class="line">    bar(&#x27;0&#x27;)</span><br><span class="line">  File &quot;err_logging.py&quot;, line 9, in bar</span><br><span class="line">    return foo(s) * 2</span><br><span class="line">  File &quot;err_logging.py&quot;, line 6, in foo</span><br><span class="line">    return 10 / int(s)</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>通过配置， <code>logging</code> 还可以把错误记录到日志文件里，方便事后排查。 </p>
+<h2 id="抛出错误"><a href="#抛出错误" class="headerlink" title="抛出错误"></a>抛出错误</h2><p>因为错误是class，捕获一个错误就是捕获到该class的一个实例。因此，错误并不是凭空产生的， 而是有意创建并抛出的。Python的内置函数会抛出很多类型的错误，我们自己编写的函数也可以 抛出错误。 </p>
+<p>如果要抛出错误，首先根据需要，可以定义一个错误的class，选择好继承关系，然后，用 <code>raise</code> 语句抛出一个错误的实例： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">classFooError(ValueError):</span><br><span class="line">pass</span><br><span class="line">deffoo(s):</span><br><span class="line">    n = int(s)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if n==0:</span><br><span class="line">raise FooError(&#x27;invalid value: %s&#x27; % s)</span><br><span class="line">return10 / n</span><br><span class="line">foo(&#x27;0&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行，可以最后跟踪到我们自己定义的错误："><a href="#执行，可以最后跟踪到我们自己定义的错误：" class="headerlink" title="执行，可以最后跟踪到我们自己定义的错误："></a>执行，可以最后跟踪到我们自己定义的错误：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ python3 err_raise.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;err_throw.py&quot;, line 11, in &lt;module&gt;</span><br><span class="line">    foo(&#x27;0&#x27;)</span><br><span class="line">  File &quot;err_throw.py&quot;, line 8, in foo</span><br><span class="line">    raise FooError(&#x27;invalid value: %s&#x27; % s)</span><br><span class="line">__main__.FooError: invalid value: 0</span><br></pre></td></tr></table></figure>
+
+<p>只有在必要的时候才定义我们自己的错误类型。如果可以选择Python已有的内置的错误类型（比 如 <code>ValueError</code> ， <code>TypeError</code> ），尽量使用Python内置的错误类型。 </p>
+<h2 id="最后，我们来看另一种错误处理的方式："><a href="#最后，我们来看另一种错误处理的方式：" class="headerlink" title="最后，我们来看另一种错误处理的方式："></a>最后，我们来看另一种错误处理的方式：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">deffoo(s):</span><br><span class="line">    n = int(s)</span><br><span class="line">if n==0:</span><br><span class="line">raise ValueError(&#x27;invalid value: %s&#x27; % s)</span><br><span class="line">return10 / n</span><br><span class="line">defbar():</span><br><span class="line">try:</span><br><span class="line">        foo(&#x27;0&#x27;)</span><br><span class="line">except ValueError as e:</span><br><span class="line">print(&#x27;ValueError!&#x27;)</span><br><span class="line">raise</span><br><span class="line">bar()</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>bar()</code> 函数中，我们明明已经捕获了错误，但是，打印一个 <code>ValueError!</code> 后，又把错误通 过 <code>raise</code> 语句抛出去了，这不有病么？ </p>
+<p>其实这种错误处理方式不但没病，而且相当常见。捕获错误目的只是记录一下，便于后续追踪。 但是，由于当前函数不知道应该怎么处理该错误，所以，最恰当的方式是继续往上抛，让顶层调 用者去处理。好比一个员工处理不了一个问题时，就把问题抛给他的老板，如果他的老板也处理 不了，就一直往上抛，最终会抛给CEO去处理。 </p>
+<p><code>raise</code> 语句如果不带参数，就会把当前错误原样抛出。此外，在 <code>except</code> 中 <code>raise</code> 一个 Error，还可以把一种类型的错误转化成另一种类型： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">10 / 0</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">raise ValueError(&#x27;input error!&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>只要是合理的转换逻辑就可以，但是，决不应该把一个 <code>IOError</code> 转换成毫不相干的 <code>ValueError</code> 。 </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>运行下面的代码，根据异常信息进行分析，定位出错误源头，并修复： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">defstr2num(s):</span><br><span class="line">returnint(s)</span><br><span class="line">defcalc(exp):</span><br><span class="line">    ss = exp.split(&#x27;+&#x27;)</span><br><span class="line">    ns = map(str2num, ss)</span><br><span class="line">return reduce(lambda acc, x: acc + x, ns)</span><br><span class="line">defmain():</span><br><span class="line">    r = calc(&#x27;100 + 200 + 345&#x27;)</span><br><span class="line">print(&#x27;100 + 200 + 345 =&#x27;, r)</span><br><span class="line">    r = calc(&#x27;99 + 88 + 7.6&#x27;)</span><br><span class="line">print(&#x27;99 + 88 + 7.6 =&#x27;, r)</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python内置的 <code>try...except...finally</code> 用来处理错误十分方便。出错时，会分析错误信息并定 位错误发生的代码位置才是最关键的。 </p>
+<p>程序也可以主动抛出错误，让调用者来处理相应的错误。但是，应该在文档中写清楚可能会抛出 哪些错误，以及错误产生的原因。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>do_try.py </p>
+<p>err.py </p>
+<p>err_logging.py err_raise.py err_reraise.py </p>
+<p>评论 </p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a><strong>调试</strong></h2><p>原文链接 </p>
+<p>程序能一次写完并正常运行的概率很小，基本不超过1%。总会有各种各样的bug需要修正。有的 bug很简单，看看错误信息就知道，有的bug很复杂，我们需要知道出错时，哪些变量的值是正 确的，哪些变量的值是错误的，因此，需要一整套调试程序的手段来修复bug。 </p>
+<p>第一种方法简单直接粗暴有效，就是用 <code>print()</code> 把可能有问题的变量打印出来看看： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deffoo(s):</span><br><span class="line">    n = int(s)</span><br><span class="line">print(&#x27;&gt;&gt;&gt; n = %d&#x27; % n)</span><br><span class="line">return10 / n</span><br><span class="line">defmain():</span><br><span class="line">    foo(&#x27;0&#x27;)</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行后在输出中查找打印的变量值："><a href="#执行后在输出中查找打印的变量值：" class="headerlink" title="执行后在输出中查找打印的变量值："></a>执行后在输出中查找打印的变量值：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python err.py</span><br><span class="line">&gt;&gt;&gt; n = 0</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">ZeroDivisionError: integer division or modulo by zero</span><br></pre></td></tr></table></figure>
+
+<p>用 <code>print()</code> 最大的坏处是将来还得删掉它，想想程序里到处都是 <code>print()</code> ，运行结果也会包 含很多垃圾信息。所以，我们又有第二种方法。 </p>
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><p>凡是用 <code>print()</code> 来辅助查看的地方，都可以用断言（assert）来替代： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deffoo(s):</span><br><span class="line">    n = int(s)</span><br><span class="line">assert n != 0, &#x27;n is zero!&#x27;</span><br><span class="line">return10 / n</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defmain():</span><br><span class="line">    foo(&#x27;0&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><code>assert</code> 的意思是，表达式 <code>n != 0</code> 应该是 <code>True</code> ，否则，根据程序运行的逻辑，后面的代码 肯定会出错。 </p>
+<h2 id="如果断言失败，-assert-语句本身就会抛出-AssertionError-："><a href="#如果断言失败，-assert-语句本身就会抛出-AssertionError-：" class="headerlink" title="如果断言失败， assert 语句本身就会抛出 AssertionError ："></a>如果断言失败， <code>assert</code> 语句本身就会抛出 <code>AssertionError</code> ：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python err.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AssertionError: n is zero!</span><br></pre></td></tr></table></figure>
+
+<p>程序中如果到处充斥着 <code>assert</code> ，和 <code>print()</code> 相比也好不到哪去。不过，启动Python解释器 时可以用 <code>-O</code> 参数来关闭 <code>assert</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python -O err.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZeroDivisionError: division by zero</span><br></pre></td></tr></table></figure>
+
+<p>注意 </p>
+<p>断言的开关“-O”是英文大写字母O，不是数字0。 </p>
+<p>关闭后，你可以把所有的 <code>assert</code> 语句当成 <code>pass</code> 来看。 </p>
+<h2 id="logging"><a href="#logging" class="headerlink" title="logging"></a>logging</h2><p>把 <code>print()</code> 替换为 <code>logging</code> 是第3种方式，和 <code>assert</code> 比， <code>logging</code> 不会抛出错误，而且 可以输出到文件： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">s = &#x27;0&#x27;</span><br><span class="line">n = int(s)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">logging.info(&#x27;n = %d&#x27; % n)</span><br><span class="line">print(10 / n)</span><br></pre></td></tr></table></figure>
+
+<p><code>logging.info()</code> 就可以输出一段文本。运行，发现除了 <code>ZeroDivisionError</code> ，没有任何信 息。怎么回事？ </p>
+<p>别急，在 <code>import logging</code> 之后添加一行配置再试试： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(level=logging.INFO)</span><br></pre></td></tr></table></figure>
+
+<h2 id="看到输出了："><a href="#看到输出了：" class="headerlink" title="看到输出了："></a>看到输出了：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ python err.py</span><br><span class="line">INFO:root:n = 0</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;err.py&quot;, line 8, in &lt;module&gt;</span><br><span class="line">    print(10 / n)</span><br><span class="line">ZeroDivisionError: division by zero</span><br></pre></td></tr></table></figure>
+
+<p>这就是 <code>logging</code> 的好处，它允许你指定记录信息的级别，有 <code>debug</code> ， <code>info</code> ， <code>warning</code> ， <code>error</code> 等几个级别，当我们指定 <code>level=INFO</code> 时， <code>logging.debug</code> 就不起作用了。同理，指 定 <code>level=WARNING</code> 后， <code>debug</code> 和 <code>info</code> 就不起作用了。这样一来，你可以放心地输出不同级 别的信息，也不用删除，最后统一控制输出哪个级别的信息。 </p>
+<p><code>logging</code> 的另一个好处是通过简单的配置，一条语句可以同时输出到不同的地方，比如console 和文件。 </p>
+<h2 id="pdb"><a href="#pdb" class="headerlink" title="pdb"></a>pdb</h2><p>第4种方式是启动Python的调试器pdb，让程序以单步方式运行，可以随时查看运行状态。我们 先准备好程序： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># err.py</span><br><span class="line">s = &#x27;0&#x27;</span><br><span class="line">n = int(s)</span><br><span class="line">print(10 / n)</span><br></pre></td></tr></table></figure>
+
+<h2 id="然后启动："><a href="#然后启动：" class="headerlink" title="然后启动："></a>然后启动：</h2><ul>
+<li><code>$ python -m pdb err.py</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; /Users/michael/Github/learn-python3/samples/debug/err.py(2)&lt;module&gt;()</span><br><span class="line">-&gt; s = &#x27;0&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>以参数 <code>-m pdb</code> 启动后，pdb定位到下一步要执行的代码 <code>-&gt; s = &#39;0&#39;</code> 。输入命令 <code>l</code> 来查看 代码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(Pdb) l</span><br><span class="line">  1     # err.py</span><br><span class="line">  2  -&gt; s = &#x27;0&#x27;</span><br><span class="line">  3     n = int(s)</span><br><span class="line">  4     print(10 / n)</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入命令-n-可以单步执行代码："><a href="#输入命令-n-可以单步执行代码：" class="headerlink" title="输入命令 n 可以单步执行代码："></a>输入命令 <code>n</code> 可以单步执行代码：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Pdb) n</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; /Users/michael/Github/learn-python3/samples/debug/err.py(3)&lt;module&gt;()</span><br><span class="line">-&gt; n = int(s)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Pdb) n</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>/Users/michael/Github/learn-python3/samples/debug/err.py(4)&lt;module&gt;() -&gt; print(10 / n)</code></li>
+</ul>
+<p>任何时候都可以输入命令 <code>p</code> 变量名 来查看变量： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(Pdb) p s</span><br><span class="line">&#x27;0&#x27;</span><br><span class="line">(Pdb) p n</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p>输入命令 <code>q</code> 结束调试，退出程序： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Pdb) q</span><br></pre></td></tr></table></figure>
+
+<p>这种通过pdb在命令行调试的方法理论上是万能的，但实在是太麻烦了，如果有一千行代码，要 运行到第999行得敲多少命令啊。还好，我们还有另一种调试方法。 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_025/"
+                                   title="Python基础 - 部分 25"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 25</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_023/"
+                                   title="Python基础 - 部分 23"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 23</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E9%94%99%E8%AF%AF"><span class="nav-text">记录错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%E6%98%AF%E5%87%BA%E9%94%99%EF%BC%8C%E4%BD%86%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8D%B0%E5%AE%8C%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF%E5%90%8E%E4%BC%9A%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%EF%BC%8C%E5%B9%B6%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%EF%BC%9A"><span class="nav-text">同样是出错，但程序打印完错误信息后会继续执行，并正常退出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF"><span class="nav-text">抛出错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%9C%80%E5%90%8E%E8%B7%9F%E8%B8%AA%E5%88%B0%E6%88%91%E4%BB%AC%E8%87%AA%E5%B7%B1%E5%AE%9A%E4%B9%89%E7%9A%84%E9%94%99%E8%AF%AF%EF%BC%9A"><span class="nav-text">执行，可以最后跟踪到我们自己定义的错误：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%EF%BC%8C%E6%88%91%E4%BB%AC%E6%9D%A5%E7%9C%8B%E5%8F%A6%E4%B8%80%E7%A7%8D%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-text">最后，我们来看另一种错误处理的方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95"><span class="nav-text">调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E5%90%8E%E5%9C%A8%E8%BE%93%E5%87%BA%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%89%93%E5%8D%B0%E7%9A%84%E5%8F%98%E9%87%8F%E5%80%BC%EF%BC%9A"><span class="nav-text">执行后在输出中查找打印的变量值：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-text">断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%96%AD%E8%A8%80%E5%A4%B1%E8%B4%A5%EF%BC%8C-assert-%E8%AF%AD%E5%8F%A5%E6%9C%AC%E8%BA%AB%E5%B0%B1%E4%BC%9A%E6%8A%9B%E5%87%BA-AssertionError-%EF%BC%9A"><span class="nav-text">如果断言失败， assert 语句本身就会抛出 AssertionError ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logging"><span class="nav-text">logging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%8B%E5%88%B0%E8%BE%93%E5%87%BA%E4%BA%86%EF%BC%9A"><span class="nav-text">看到输出了：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pdb"><span class="nav-text">pdb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%90%AF%E5%8A%A8%EF%BC%9A"><span class="nav-text">然后启动：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4-n-%E5%8F%AF%E4%BB%A5%E5%8D%95%E6%AD%A5%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-text">输入命令 n 可以单步执行代码：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E9%94%99%E8%AF%AF"><span class="nav-text">记录错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%E6%98%AF%E5%87%BA%E9%94%99%EF%BC%8C%E4%BD%86%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8D%B0%E5%AE%8C%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF%E5%90%8E%E4%BC%9A%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%EF%BC%8C%E5%B9%B6%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%EF%BC%9A"><span class="nav-text">同样是出错，但程序打印完错误信息后会继续执行，并正常退出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF"><span class="nav-text">抛出错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%9C%80%E5%90%8E%E8%B7%9F%E8%B8%AA%E5%88%B0%E6%88%91%E4%BB%AC%E8%87%AA%E5%B7%B1%E5%AE%9A%E4%B9%89%E7%9A%84%E9%94%99%E8%AF%AF%EF%BC%9A"><span class="nav-text">执行，可以最后跟踪到我们自己定义的错误：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%EF%BC%8C%E6%88%91%E4%BB%AC%E6%9D%A5%E7%9C%8B%E5%8F%A6%E4%B8%80%E7%A7%8D%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-text">最后，我们来看另一种错误处理的方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95"><span class="nav-text">调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E5%90%8E%E5%9C%A8%E8%BE%93%E5%87%BA%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%89%93%E5%8D%B0%E7%9A%84%E5%8F%98%E9%87%8F%E5%80%BC%EF%BC%9A"><span class="nav-text">执行后在输出中查找打印的变量值：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-text">断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%96%AD%E8%A8%80%E5%A4%B1%E8%B4%A5%EF%BC%8C-assert-%E8%AF%AD%E5%8F%A5%E6%9C%AC%E8%BA%AB%E5%B0%B1%E4%BC%9A%E6%8A%9B%E5%87%BA-AssertionError-%EF%BC%9A"><span class="nav-text">如果断言失败， assert 语句本身就会抛出 AssertionError ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logging"><span class="nav-text">logging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%8B%E5%88%B0%E8%BE%93%E5%87%BA%E4%BA%86%EF%BC%9A"><span class="nav-text">看到输出了：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pdb"><span class="nav-text">pdb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%90%AF%E5%8A%A8%EF%BC%9A"><span class="nav-text">然后启动：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4-n-%E5%8F%AF%E4%BB%A5%E5%8D%95%E6%AD%A5%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-text">输入命令 n 可以单步执行代码：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 43 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 43
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:42:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a><code>200 OK</code></h2><p><code>200</code> 表示一个成功的响应，后面的 <code>OK</code> 是说明。失败的响应有 <code>404 Not Found</code> ：网页不存 在， <code>500 Internal Server Error</code> ：服务器内部出错，等等。 </p>
+<h2 id="Content-Type-text-html"><a href="#Content-Type-text-html" class="headerlink" title="Content-Type: text/html"></a><code>Content-Type: text/html</code></h2><p><code>Content-Type</code> 指示响应的内容，这里是 <code>text/html</code> 表示HTML网页。请注意，浏览器就是依 靠 <code>Content-Type</code> 来判断响应的内容是网页还是图片，是视频还是音乐。浏览器并不靠URL来判 断响应的内容，所以，即使URL是 <code>http://example.com/abc.jpg</code> ，它也不一定就是图片。 </p>
+<p>HTTP响应的Body就是HTML源码，我们在菜单栏选择“视图”，“开发者”，“查看网页源码”就可以 在浏览器中直接查看HTML源码： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [460 x 479] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>当浏览器读取到新浪首页的HTML源码后，它会解析HTML，显示页面，然后，根据HTML里面的 各种链接，再发送HTTP请求给新浪服务器，拿到相应的图片、视频、Flash、JavaScript脚本、 CSS等各种资源，最终显示出一个完整的页面。所以我们在 <code>Network</code> 下面能看到很多额外的 HTTP请求。 </p>
+<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><p>跟踪了新浪的首页，我们来总结一下HTTP请求的流程： </p>
+<p>步骤1：浏览器首先向服务器发送HTTP请求，请求包括： </p>
+<p>方法： <code>GET</code> 还是 <code>POST</code> ， <code>GET</code> 仅请求资源， <code>POST</code> 会附带用户数据； </p>
+<p>路径： <code>/full/url/path</code> ； </p>
+<p>域名：由Host头指定： <code>Host: www.sina.com.cn</code> </p>
+<p>以及其他相关的Header； </p>
+<p>如果是POST，那么请求还包括一个Body，包含用户数据。 </p>
+<p>步骤2：服务器向浏览器返回HTTP响应，响应包括： </p>
+<p>响应代码： <code>200</code> 表示成功， <code>3xx</code> 表示重定向， <code>4xx</code> 表示客户端发送的请求有错误， <code>5xx</code> 表示服务器端处理时发生了错误； </p>
+<p>响应类型：由 <code>Content-Type</code> 指定，例如： <code>Content-Type: text/html;charset=utf-8</code> 表示响 应类型是HTML文本，并且编码是 <code>UTF-8</code> ， <code>Content-Type: image/jpeg</code> 表示响应类型是JPEG 格式的图片； </p>
+<p>以及其他相关的Header； </p>
+<p>通常服务器的HTTP响应会携带内容，也就是有一个Body，包含响应的内容，网页的HTML源码 就在Body中。 </p>
+<p>步骤3：如果浏览器还需要继续向服务器请求其他资源，比如图片，就再次发出HTTP请求，重复 步骤1、2。 </p>
+<p>Web采用的HTTP协议采用了非常简单的请求-响应模式，从而大大简化了开发。当我们编写一个 页面时，我们只需要在HTTP响应中把HTML发送出去，不需要考虑如何附带图片、视频等，浏览 器如果需要请求图片和视频，它会发送另一个HTTP请求，因此，一个HTTP请求只处理一个资 源。 </p>
+<p>HTTP协议同时具备极强的扩展性，虽然浏览器请求的是 <code>http://www.sina.com.cn/</code> 的首页，但 是新浪在HTML中可以链入其他服务器的资源，比如 <code>&lt;img   src=&quot;http://i1.sinaimg.cn/home/2013/1008/U8455P30DT20131008135420.png&quot; &gt;</code> ，从而将请求压 力分散到各个服务器上，并且，一个站点可以链接到其他站点，无数个站点互相链接起来，就形 成了World Wide Web，简称“三达不溜”（WWW）。 </p>
+<h2 id="HTTP格式"><a href="#HTTP格式" class="headerlink" title="HTTP格式"></a>HTTP格式</h2><p>每个HTTP请求和响应都遵循相同的格式，一个HTTP包含Header和Body两部分，其中Body是可 选的。 </p>
+<h2 id="HTTP协议是一种文本协议，所以，它的格式也非常简单。HTTP-GET请求的格式："><a href="#HTTP协议是一种文本协议，所以，它的格式也非常简单。HTTP-GET请求的格式：" class="headerlink" title="HTTP协议是一种文本协议，所以，它的格式也非常简单。HTTP GET请求的格式："></a>HTTP协议是一种文本协议，所以，它的格式也非常简单。HTTP GET请求的格式：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET /path HTTP/1.1</span><br><span class="line">Header1: Value1</span><br><span class="line">Header2: Value2</span><br><span class="line">Header3: Value3</span><br></pre></td></tr></table></figure>
+
+<p>每个Header一行一个，换行符是 <code>\r\n</code> 。 </p>
+<p>HTTP POST请求的格式： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST /path HTTP/1.1</span><br><span class="line">Header1: Value1</span><br><span class="line">Header2: Value2</span><br><span class="line">Header3: Value3</span><br><span class="line">body data goes here...</span><br></pre></td></tr></table></figure>
+
+<p>当遇到连续两个 <code>\r\n</code> 时，Header部分结束，后面的数据全部是Body。 </p>
+<h2 id="HTTP响应的格式："><a href="#HTTP响应的格式：" class="headerlink" title="HTTP响应的格式："></a>HTTP响应的格式：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">200 OK</span><br><span class="line">Header1: Value1</span><br><span class="line">Header2: Value2</span><br><span class="line">Header3: Value3</span><br><span class="line">body data goes here...</span><br></pre></td></tr></table></figure>
+
+<p>HTTP响应如果包含body，也是通过 <code>\r\n\r\n</code> 来分隔的。请再次注意，Body的数据类型由 <code>Content-Type</code> 头来确定，如果是网页，Body就是文本，如果是图片，Body就是图片的二进制 数据。 </p>
+<p>当存在 <code>Content-Encoding</code> 时，Body数据是被压缩的，最常见的压缩方式是gzip，所以，看到 <code>Content-Encoding: gzip</code> 时，需要将Body数据先解压缩，才能得到真正的数据。压缩的目的在 于减少Body的大小，加快网络传输。 </p>
+<p>要详细了解HTTP协议，推荐“HTTP: The Definitive Guide”一书，非常不错，有中文译本 《HTTP权威指南》。 </p>
+<h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><h2 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a><strong>HTML简介</strong></h2><p>原文链接 </p>
+<p>网页就是HTML？这么理解大概没错。因为网页中不但包含文字，还有图片、视频、HTML5小游 戏，有复杂的排版、动画效果，所以，HTML定义了一套语法规则，来告诉浏览器如何把一个丰 富多彩的页面显示出来。 </p>
+<p>HTML长什么样？上次我们看了新浪首页的HTML源码，如果仔细数数，竟然有6000多行！ </p>
+<p>所以，学HTML，就不要指望从新浪入手了。我们来看看最简单的HTML长什么样： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Hello&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以用文本编辑器编写HTML，然后保存为 <code>hello.html</code> ，双击或者把文件拖到浏览器中，就可 以看到效果： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [409 x 277] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>HTML文档就是一系列的Tag组成，最外层的Tag是 <code>&lt;html&gt;</code> 。规范的HTML也包含 <code>&lt;head&gt;... &lt;/head&gt;</code> 和 <code>&lt;body&gt;...&lt;/body&gt;</code> （注意不要和HTTP的Header、Body搞混了），由于HTML是 富文档模型，所以，还有一系列的Tag用来表示链接、图片、表格、表单等等。 </p>
+<h2 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h2><p>CSS是Cascading Style Sheets（层叠样式表）的简称，CSS用来控制HTML里的所有元素如何展 现，比如，给标题元素 <code>&lt;h1&gt;</code> 加一个样式，变成48号字体，灰色，带阴影： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Hello&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    h1 &#123;</span><br><span class="line">      color: #333333;</span><br><span class="line">      font-size: 48px;</span><br><span class="line">      text-shadow: 3px3px3px#666666;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="效果如下："><a href="#效果如下：" class="headerlink" title="效果如下："></a>效果如下：</h2><p><strong>&#x3D;&#x3D;&gt; picture [409 x 278] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<h2 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h2><p>JavaScript虽然名称有个Java，但它和Java真的一点关系没有。JavaScript是为了让HTML具有交 互性而作为脚本语言添加的，JavaScript既可以内嵌到HTML中，也可以从外部链接到HTML中。 如果我们希望当用户点击标题时把标题变成红色，就必须通过JavaScript来实现： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Hello&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    h1 &#123;</span><br><span class="line">      color: #333333;</span><br><span class="line">      font-size: 48px;</span><br><span class="line">      text-shadow: 3px3px3px#666666;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">functionchange() &#123;</span><br><span class="line">document.getElementsByTagName(&#x27;h1&#x27;)[0].style.color = &#x27;#ff0000&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1onclick=&quot;change()&quot;&gt;Hello, world!&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="点击标题后效果如下："><a href="#点击标题后效果如下：" class="headerlink" title="点击标题后效果如下："></a>点击标题后效果如下：</h2><p><strong>&#x3D;&#x3D;&gt; picture [409 x 277] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>如果要学习Web开发，首先要对HTML、CSS和JavaScript作一定的了解。HTML定义了页面的内 容，CSS来控制页面元素的样式，而JavaScript负责页面的交互逻辑。 </p>
+<p>讲解HTML、CSS和JavaScript就可以写3本书，对于优秀的Web开发人员来说，精通HTML、 CSS和JavaScript是必须的，这里推荐一个在线学习网站w3schools，以及一个对应的中文版本。 </p>
+<p>当我们用Python或者其他语言开发Web应用时，我们就是要在服务器端动态创建出HTML，这 样，浏览器就会向不同的用户显示出不同的Web页面。 </p>
+<p>评论 </p>
+<h2 id="WSGI接口"><a href="#WSGI接口" class="headerlink" title="WSGI接口"></a><strong>WSGI接口</strong></h2><p>原文链接 </p>
+<p>了解了HTTP协议和HTML文档，我们其实就明白了一个Web应用的本质就是： </p>
+<ol>
+<li><p>浏览器发送一个HTTP请求； </p>
+</li>
+<li><p>服务器收到请求，生成一个HTML文档； </p>
+</li>
+<li><p>服务器把HTML文档作为HTTP响应的Body发送给浏览器； </p>
+</li>
+<li><p>浏览器收到HTTP响应，从HTTP Body取出HTML文档并显示。</p>
+</li>
+</ol>
+<p>所以，最简单的Web应用就是先把HTML用文件保存好，用一个现成的HTTP服务器软件，接收 用户请求，从文件中读取HTML，返回。Apache、Nginx、Lighttpd等这些常见的静态服务器就 是干这件事情的。 </p>
+<p>如果要动态生成HTML，就需要把上述步骤自己来实现。不过，接受HTTP请求、解析HTTP请 </p>
+<p>求、发送HTTP响应都是苦力活，如果我们自己来写这些底层代码，还没开始写动态HTML呢，就 得花个把月去读HTTP规范。 </p>
+<p>正确的做法是底层代码由专门的服务器软件实现，我们用Python专注于生成HTML文档。因为我 们不希望接触到TCP连接、HTTP原始请求和响应格式，所以，需要一个统一的接口，让我们专心 用Python编写Web业务。 </p>
+<p>这个接口就是WSGI：Web Server Gateway Interface。 </p>
+<p>WSGI接口定义非常简单，它只要求Web开发者实现一个函数，就可以响应HTTP请求。我们来看 一个最简单的Web版本的“Hello, web!”： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defapplication(environ, start_response):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    start_response(&#x27;200 OK&#x27;, [(&#x27;Content-Type&#x27;, &#x27;text/html&#x27;)])</span><br><span class="line">return [b&#x27;&lt;h1&gt;Hello, web!&lt;/h1&gt;&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>上面的 <code>application()</code> 函数就是符合WSGI标准的一个HTTP处理函数，它接收两个参数： </p>
+<p><code>environ</code> ：一个包含所有HTTP请求信息的 <code>dict</code> 对象； </p>
+<p><code>start_response</code> ：一个发送HTTP响应的函数。 </p>
+<p>在 <code>application()</code> 函数中，调用： </p>
+<h2 id="start-response-200-OK-Content-Type-text-html"><a href="#start-response-200-OK-Content-Type-text-html" class="headerlink" title="start_response(&#39;200 OK&#39;, [(&#39;Content-Type&#39;, &#39;text/html&#39;)])"></a><code>start_response(&#39;200 OK&#39;, [(&#39;Content-Type&#39;, &#39;text/html&#39;)])</code></h2><p>就发送了HTTP响应的Header，注意Header只能发送一次，也就是只能调用一次 <code>start_response()</code> 函数。 <code>start_response()</code> 函数接收两个参数，一个是HTTP响应码，一个 是一组 <code>list</code> 表示的HTTP Header，每个Header用一个包含两个 <code>str</code> 的 <code>tuple</code> 表示。 </p>
+<p>通常情况下，都应该把 <code>Content-Type</code> 头发送给浏览器。其他很多常用的HTTP Header也应该 发送。 </p>
+<p>然后，函数的返回值 <code>b&#39;&lt;h1&gt;Hello, web!&lt;/h1&gt;&#39;</code> 将作为HTTP响应的Body发送给浏览器。 </p>
+<p>有了WSGI，我们关心的就是如何从 <code>environ</code> 这个 <code>dict</code> 对象拿到HTTP请求信息，然后构造 HTML，通过 <code>start_response()</code> 发送Header，最后返回Body。 </p>
+<p>整个 <code>application()</code> 函数本身没有涉及到任何解析HTTP的部分，也就是说，底层代码不需要我 们自己编写，我们只负责在更高层次上考虑如何响应请求就可以了。 </p>
+<p>不过，等等，这个 <code>application()</code> 函数怎么调用？如果我们自己调用，两个参数 <code>environ</code> 和 <code>start_response</code> 我们没法提供，返回的 <code>bytes</code> 也没法发给浏览器。 </p>
+<p>所以 <code>application()</code> 函数必须由WSGI服务器来调用。有很多符合WSGI规范的服务器，我们可 以挑选一个来用。但是现在，我们只想尽快测试一下我们编写的 <code>application()</code> 函数真的可以 把HTML输出到浏览器，所以，要赶紧找一个最简单的WSGI服务器，把我们的Web应用程序跑 起来。 </p>
+<p>好消息是Python内置了一个WSGI服务器，这个模块叫wsgiref，它是用纯Python编写的WSGI服 务器的参考实现。所谓“参考实现”是指该实现完全符合WSGI标准，但是不考虑任何运行效率，仅 供开发和测试使用。 </p>
+<h2 id="运行WSGI服务"><a href="#运行WSGI服务" class="headerlink" title="运行WSGI服务"></a>运行WSGI服务</h2><p>我们先编写 <code>hello.py</code> ，实现Web应用程序的WSGI处理函数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># hello.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defapplication(environ, start_response):</span><br><span class="line">    start_response(&#x27;200 OK&#x27;, [(&#x27;Content-Type&#x27;, &#x27;text/html&#x27;)])</span><br><span class="line">return [b&#x27;&lt;h1&gt;Hello, web!&lt;/h1&gt;&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="然后，再编写一个-server-py-，负责启动WSGI服务器，加载-application-函数："><a href="#然后，再编写一个-server-py-，负责启动WSGI服务器，加载-application-函数：" class="headerlink" title="然后，再编写一个 server.py ，负责启动WSGI服务器，加载 application() 函数："></a>然后，再编写一个 <code>server.py</code> ，负责启动WSGI服务器，加载 <code>application()</code> 函数：</h2><p><code># server.py #</code> 从 <code>wsgiref</code> 模块导入 <code>: from wsgiref.simple_server import make_server #</code> 导入我们自己编写的 <code>application</code> 函数 <code>: from hello import application</code> </p>
+<p><code>#</code> 创建一个服务器， <code>IP</code> 地址为空，端口是 <code>8000</code> ，处理函数是 <code>application: httpd = make_server(&#39;&#39;, 8000, application) print(&#39;Serving HTTP on port 8000...&#39;) #</code> 开始监听 <code>HTTP</code> 请求 <code>: httpd.serve_forever()</code> </p>
+<p>确保以上两个文件在同一个目录下，然后在命令行输入 <code>python server.py</code> 来启动WSGI服务 器： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [451 x 304] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>注意：如果 <code>8000</code> 端口已被其他程序占用，启动将失败，请修改成其他端口。 启动成功后，打开浏览器，输入 <code>http://localhost:8000/</code> ，就可以看到结果了： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [409 x 295] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<h2 id="在命令行可以看到wsgiref打印的log信息："><a href="#在命令行可以看到wsgiref打印的log信息：" class="headerlink" title="在命令行可以看到wsgiref打印的log信息："></a>在命令行可以看到wsgiref打印的log信息：</h2><p><strong>&#x3D;&#x3D;&gt; picture [451 x 304] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>按 <code>Ctrl+C</code> 终止服务器。 </p>
+<p>如果你觉得这个Web应用太简单了，可以稍微改造一下，从 <code>environ</code> 里读取 <code>PATH_INFO</code> ，这 样可以显示更加动态的内容： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># hello.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defapplication(environ, start_response):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    start_response(&#x27;200 OK&#x27;, [(&#x27;Content-Type&#x27;, &#x27;text/html&#x27;)])</span><br><span class="line">    body = &#x27;&lt;h1&gt;Hello, %s!&lt;/h1&gt;&#x27; % (environ[&#x27;PATH_INFO&#x27;][1:] or&#x27;web&#x27;)</span><br><span class="line">return [body.encode(&#x27;utf-8&#x27;)]</span><br></pre></td></tr></table></figure>
+
+<p>你可以在地址栏输入用户名作为URL的一部分，将返回 <code>Hello, xxx!</code> ： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [409 x 294] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_044/"
+                                   title="Python基础 - 部分 44"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 44</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_042/"
+                                   title="Python基础 - 部分 42"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 42</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#200-OK"><span class="nav-text">200 OK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-Type-text-html"><span class="nav-text">Content-Type: text&#x2F;html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82"><span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E6%A0%BC%E5%BC%8F"><span class="nav-text">HTTP格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%B8%80%E7%A7%8D%E6%96%87%E6%9C%AC%E5%8D%8F%E8%AE%AE%EF%BC%8C%E6%89%80%E4%BB%A5%EF%BC%8C%E5%AE%83%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B9%9F%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95%E3%80%82HTTP-GET%E8%AF%B7%E6%B1%82%E7%9A%84%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="nav-text">HTTP协议是一种文本协议，所以，它的格式也非常简单。HTTP GET请求的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E5%93%8D%E5%BA%94%E7%9A%84%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="nav-text">HTTP响应的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E7%AE%80%E4%BB%8B"><span class="nav-text">HTML简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E7%AE%80%E4%BB%8B"><span class="nav-text">CSS简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">效果如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E7%AE%80%E4%BB%8B"><span class="nav-text">JavaScript简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E6%A0%87%E9%A2%98%E5%90%8E%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">点击标题后效果如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSGI%E6%8E%A5%E5%8F%A3"><span class="nav-text">WSGI接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#start-response-200-OK-Content-Type-text-html"><span class="nav-text">start_response(&#39;200 OK&#39;, [(&#39;Content-Type&#39;, &#39;text&#x2F;html&#39;)])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8CWSGI%E6%9C%8D%E5%8A%A1"><span class="nav-text">运行WSGI服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E5%86%8D%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA-server-py-%EF%BC%8C%E8%B4%9F%E8%B4%A3%E5%90%AF%E5%8A%A8WSGI%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%8A%A0%E8%BD%BD-application-%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-text">然后，再编写一个 server.py ，负责启动WSGI服务器，加载 application() 函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0wsgiref%E6%89%93%E5%8D%B0%E7%9A%84log%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">在命令行可以看到wsgiref打印的log信息：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#200-OK"><span class="nav-text">200 OK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-Type-text-html"><span class="nav-text">Content-Type: text&#x2F;html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82"><span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E6%A0%BC%E5%BC%8F"><span class="nav-text">HTTP格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%B8%80%E7%A7%8D%E6%96%87%E6%9C%AC%E5%8D%8F%E8%AE%AE%EF%BC%8C%E6%89%80%E4%BB%A5%EF%BC%8C%E5%AE%83%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B9%9F%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95%E3%80%82HTTP-GET%E8%AF%B7%E6%B1%82%E7%9A%84%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="nav-text">HTTP协议是一种文本协议，所以，它的格式也非常简单。HTTP GET请求的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E5%93%8D%E5%BA%94%E7%9A%84%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="nav-text">HTTP响应的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E7%AE%80%E4%BB%8B"><span class="nav-text">HTML简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E7%AE%80%E4%BB%8B"><span class="nav-text">CSS简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">效果如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E7%AE%80%E4%BB%8B"><span class="nav-text">JavaScript简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E6%A0%87%E9%A2%98%E5%90%8E%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">点击标题后效果如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSGI%E6%8E%A5%E5%8F%A3"><span class="nav-text">WSGI接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#start-response-200-OK-Content-Type-text-html"><span class="nav-text">start_response(&#39;200 OK&#39;, [(&#39;Content-Type&#39;, &#39;text&#x2F;html&#39;)])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8CWSGI%E6%9C%8D%E5%8A%A1"><span class="nav-text">运行WSGI服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E5%86%8D%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA-server-py-%EF%BC%8C%E8%B4%9F%E8%B4%A3%E5%90%AF%E5%8A%A8WSGI%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%8A%A0%E8%BD%BD-application-%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-text">然后，再编写一个 server.py ，负责启动WSGI服务器，加载 application() 函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0wsgiref%E6%89%93%E5%8D%B0%E7%9A%84log%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">在命令行可以看到wsgiref打印的log信息：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

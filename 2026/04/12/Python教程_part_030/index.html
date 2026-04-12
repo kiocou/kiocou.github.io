@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 30 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 30
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:29:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="然后，在另一台机器上启动任务进程（本机上启动也可以）："><a href="#然后，在另一台机器上启动任务进程（本机上启动也可以）：" class="headerlink" title="然后，在另一台机器上启动任务进程（本机上启动也可以）："></a>然后，在另一台机器上启动任务进程（本机上启动也可以）：</h2><p><code># task_worker.py import time, sys, queue from multiprocessing.managers import BaseManager #</code> 创建类似的 <code>QueueManager: class QueueManager(BaseManager): pass #</code> 由于这个 <code>QueueManager</code> 只从网络上获取 <code>Queue</code> ，所以注册时只提供名字 <code>: QueueManager.register(&#39;get_task_queue&#39;) QueueManager.register(&#39;get_result_queue&#39;)</code> </p>
+<p><code>#</code> 连接到服务器，也就是运行 <code>task_master.py</code> 的机器 <code>: server_addr = &#39;127.0.0.1&#39; print(&#39;Connect to server %s...&#39; % server_addr) #</code> 端口和验证码注意保持与 <code>task_master.py</code> 设置的完全一致 <code>: m = QueueManager(address=(server_addr, 5000), authkey=b&#39;abc&#39;) #</code> 从网络连接 <code>: m.connect() #</code> 获取 <code>Queue</code> 的对象 <code>: task = m.get_task_queue() result = m.get_result_queue() #</code> 从 <code>task</code> 队列取任务 <code>,</code> 并把结果写入 <code>result</code> 队列 <code>: for i in range(10): try: n = task.get(timeout=1) print(&#39;run task %d * %d...&#39; % (n, n)) r = &#39;%d * %d = %d&#39; % (n, n, n*n) time.sleep(1) result.put(r) except Queue.Empty: print(&#39;task queue is empty.&#39;) #</code> 处理结束 <code>: print(&#39;worker exit.&#39;)</code> </p>
+<h2 id="任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。"><a href="#任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。" class="headerlink" title="任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。"></a>任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。</h2><p>现在，可以试试分布式进程的工作效果了。先启动 <code>task_master.py</code> 服务进程： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ python3 task_master.py</span><br><span class="line">Put task 3411...</span><br><span class="line">Put task 1605...</span><br><span class="line">Put task 1398...</span><br><span class="line">Put task 4729...</span><br><span class="line">Put task 5300...</span><br><span class="line">Put task 7471...</span><br><span class="line">Put task 68...</span><br><span class="line">Put task 4219...</span><br><span class="line">Put task 339...</span><br><span class="line">Put task 7866...</span><br><span class="line">Try get results...</span><br></pre></td></tr></table></figure>
+
+<p><code>task_master.py</code> 进程发送完任务后，开始等待 <code>result</code> 队列的结果。现在启动 <code>task_worker.py</code> 进程： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ python3 task_worker.py</span><br><span class="line">Connect to server 127.0.0.1...</span><br><span class="line">run task 3411 * 3411...</span><br><span class="line">run task 1605 * 1605...</span><br><span class="line">run task 1398 * 1398...</span><br><span class="line">run task 4729 * 4729...</span><br><span class="line">run task 5300 * 5300...</span><br><span class="line">run task 7471 * 7471...</span><br><span class="line">run task 68 * 68...</span><br><span class="line">run task 4219 * 4219...</span><br><span class="line">run task 339 * 339...</span><br><span class="line">run task 7866 * 7866...</span><br><span class="line">worker exit.</span><br></pre></td></tr></table></figure>
+
+<p><code>task_worker.py</code> 进程结束，在 <code>task_master.py</code> 进程中会继续打印出结果： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Result: 3411 * 3411 = 11634921</span><br><span class="line">Result: 1605 * 1605 = 2576025</span><br><span class="line">Result: 1398 * 1398 = 1954404</span><br><span class="line">Result: 4729 * 4729 = 22363441</span><br><span class="line">Result: 5300 * 5300 = 28090000</span><br><span class="line">Result: 7471 * 7471 = 55815841</span><br><span class="line">Result: 68 * 68 = 4624</span><br><span class="line">Result: 4219 * 4219 = 17799961</span><br><span class="line">Result: 339 * 339 = 114921</span><br><span class="line">Result: 7866 * 7866 = 61873956</span><br></pre></td></tr></table></figure>
+
+<p>这个简单的Master&#x2F;Worker模型有什么用？其实这就是一个简单但真正的分布式计算，把代码稍 加改造，启动多个worker，就可以把任务分布到几台甚至几十台机器上，比如把计算 <code>n*n</code> 的代 码换成发送邮件，就实现了邮件队列的异步发送。 </p>
+<p>Queue对象存储在哪？注意到 <code>task_worker.py</code> 中根本没有创建Queue的代码，所以，Queue 对象存储在 <code>task_master.py</code> 进程中： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [517 x 245] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p><strong>—– Start of picture text —–</strong><br><br>                                            │<br>┌─────────────────────────────────────────┐     ┌─────────────────────────────────<br>│task_master.py                           │  │  │task_worker.py<br>│                                         │     │<br>│  task &#x3D; manager.get_task_queue()        │  │  │  task &#x3D; manager.get_task_queue(<br>│  result &#x3D; manager.get_result_queue()    │     │  result &#x3D; manager.get_result_qu<br>│              │                          │  │  │              │<br>│              │                          │     │              │<br>│              ▼                          │  │  │              │<br>│  ┌─────────────────────────────────┐    │     │              │<br>│  │QueueManager                     │    │  │  │              │<br>│  │ ┌────────────┐ ┌──────────────┐ │    │     │              │<br>│  │ │ task_queue │ │ result_queue │ │◀───┼──┼──┼──────────────┘<br>│  │ └────────────┘ └──────────────┘ │    │     │<br>│  └─────────────────────────────────┘    │  │  │<br>└─────────────────────────────────────────┘     └─────────────────────────────────<br>                                            │<br><strong>—– End of picture text —–</strong><br></p>
+<p>而 <code>Queue</code> 之所以能通过网络访问，就是通过 <code>QueueManager</code> 实现的。由于 <code>QueueManager</code> 管理 的不止一个 <code>Queue</code> ，所以，要给每个 <code>Queue</code> 的网络调用接口起个名字，比如 <code>get_task_queue</code> 。 </p>
+<p><code>authkey</code> 有什么用？这是为了保证两台机器正常通信，不被其他机器恶意干扰。如果 <code>task_worker.py</code> 的 <code>authkey</code> 和 <code>task_master.py</code> 的 <code>authkey</code> 不一致，肯定连接不上。 </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python的分布式进程接口简单，封装良好，适合需要把繁重任务分布到多台机器的环境下。 </p>
+<p>注意Queue的作用是用来传递任务和接收结果，每个任务的描述数据量要尽量小。比如发送一个 处理日志文件的任务，就不要发送几百兆的日志文件本身，而是发送日志文件存放的完整路径， 由Worker进程再去共享的磁盘上读取文件。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>task_master.py task_worker.py </p>
+<p>评论 </p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><strong>正则表达式</strong></h2><p>原文链接 </p>
+<p>字符串是编程时涉及到的最多的一种数据结构，对字符串进行操作的需求几乎无处不在。比如判 断一个字符串是否是合法的Email地址，虽然可以编程提取 <code>@</code> 前后的子串，再分别判断是否是单 词和域名，但这样做不但麻烦，而且代码难以复用。 </p>
+<p>正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字 符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合 法的。 </p>
+<p>所以我们判断一个字符串是否是合法的Email的方法是： </p>
+<ol>
+<li><p>创建一个匹配Email的正则表达式； </p>
+</li>
+<li><p>用该正则表达式去匹配用户的输入来判断是否合法。</p>
+</li>
+</ol>
+<p>因为正则表达式也是用字符串表示的，所以，我们要首先了解如何用字符来描述字符。 </p>
+<p>在正则表达式中，如果直接给出字符，就是精确匹配。用 <code>\d</code> 可以匹配一个数字， <code>\w</code> 可以匹 配一个字母或数字，所以： </p>
+<ul>
+<li><p><code>&#39;00\d&#39;</code> 可以匹配 <code>&#39;007&#39;</code> ，但无法匹配 <code>&#39;00A&#39;</code> ； </p>
+</li>
+<li><p><code>&#39;\d\d\d&#39;</code> 可以匹配 <code>&#39;010&#39;</code> ； <code>&#39;\w\w\d&#39;</code> 可以匹配 <code>&#39;py3&#39;</code> ；</p>
+</li>
+</ul>
+<p><code>.</code> 可以匹配任意字符，所以： </p>
+<ul>
+<li><code>&#39;py.&#39;</code> 可以匹配 <code>&#39;pyc&#39;</code> 、 <code>&#39;pyo&#39;</code> 、 <code>&#39;py!&#39;</code> 等等。</li>
+</ul>
+<p>要匹配变长的字符，在正则表达式中，用 <code>*</code> 表示任意个字符（包括0个），用 <code>+</code> 表示至少一个 字符，用 <code>?</code> 表示0个或1个字符，用 <code>{n}</code> 表示n个字符，用 <code>{n,m}</code> 表示n-m个字符： </p>
+<p>来看一个复杂的例子： <code>\d{3}\s+\d{3,8}</code> 。 </p>
+<h2 id="我们来从左到右解读一下："><a href="#我们来从左到右解读一下：" class="headerlink" title="我们来从左到右解读一下："></a>我们来从左到右解读一下：</h2><ol>
+<li><p><code>\d{3}</code> 表示匹配3个数字，例如 <code>&#39;010&#39;</code> ； </p>
+</li>
+<li><p><code>\s</code> 可以匹配一个空格（也包括Tab等空白符），所以 <code>\s+</code> 表示至少有一个空格，例如匹 配 <code>&#39; &#39;</code> ， <code>&#39; &#39;</code> 等； </p>
+</li>
+<li><p><code>\d{3,8}</code> 表示3-8个数字，例如 <code>&#39;1234567&#39;</code> 。</p>
+</li>
+</ol>
+<p>综合起来，上面的正则表达式可以匹配以任意个空格隔开的带区号的电话号码。 </p>
+<p>如果要匹配 <code>&#39;010-12345&#39;</code> 这样的号码呢？由于 <code>&#39;-&#39;</code> 是特殊字符，在正则表达式中，要 用 <code>&#39;\&#39;</code> 转义，所以，上面的正则是 <code>\d{3}\-\d{3,8}</code> 。 </p>
+<p>但是，仍然无法匹配 <code>&#39;010 - 12345&#39;</code> ，因为带有空格。所以我们需要更复杂的匹配方式。 </p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h2 id="要做更精确地匹配，可以用-表示范围，比如："><a href="#要做更精确地匹配，可以用-表示范围，比如：" class="headerlink" title="要做更精确地匹配，可以用 [] 表示范围，比如："></a>要做更精确地匹配，可以用 <code>[]</code> 表示范围，比如：</h2><ul>
+<li><p><code>[0-9a-zA-Z\_]</code> 可以匹配一个数字、字母或者下划线； </p>
+</li>
+<li><p><code>[0-9a-zA-Z\_]+</code> 可以匹配至少由一个数字、字母或者下划线组成的字符串，比 </p>
+</li>
+<li><p>如 <code>&#39;a100&#39;</code> ， <code>&#39;0_Z&#39;</code> ， <code>&#39;Py3000&#39;</code> 等等； </p>
+</li>
+<li><p><code>[a-zA-Z\_][0-9a-zA-Z\_]*</code> 可以匹配由字母或下划线开头，后接任意个由一个数字、字母或 </p>
+</li>
+<li><p>者下划线组成的字符串，也就是Python合法的变量； </p>
+</li>
+<li><p><code>[a-zA-Z\_][0-9a-zA-Z\_]{0, 19}</code> 更精确地限制了变量的长度是1-20个字符（前面1个字符 </p>
+</li>
+<li><p>+后面最多19个字符）。 </p>
+</li>
+<li><p><code>A|B</code> 可以匹配A或B，所以 <code>(P|p)ython</code> 可以匹配 <code>&#39;Python&#39;</code> 或者 <code>&#39;python&#39;</code> 。 </p>
+</li>
+<li><p><code>^</code> 表示行的开头， <code>^\d</code> 表示必须以数字开头。 </p>
+</li>
+<li><p><code>$</code> 表示行的结束， <code>\d$</code> 表示必须以数字结束。</p>
+</li>
+</ul>
+<p>你可能注意到了， <code>py</code> 也可以匹配 <code>&#39;python&#39;</code> ，但是加上 <code>^py$</code> 就变成了整行匹配，就只能匹 </p>
+<ul>
+<li>配 <code>&#39;py&#39;</code> 了。</li>
+</ul>
+<h2 id="re模块"><a href="#re模块" class="headerlink" title="re模块"></a>re模块</h2><p>有了准备知识，我们就可以在Python中使用正则表达式了。Python提供 <code>re</code> 模块，包含所有正 则表达式的功能。由于Python的字符串本身也用 <code>\</code> 转义，所以要特别注意： </p>
+<ul>
+<li><p><code>s = &#39;ABC\\-001&#39; # Python</code> 的字符串 </p>
+</li>
+<li><p><code>#</code> 对应的正则表达式字符串变成 <code>&#39;ABC\-001&#39;</code></p>
+</li>
+</ul>
+<p>因此我们强烈建议使用Python的 <code>r</code> 前缀，就不用考虑转义的问题了： </p>
+<p><code>s = r&#39;ABC\-001&#39; # Python</code> 的字符串 </p>
+<p><code>#</code> 对应的正则表达式字符串不变： <code>&#39;ABC\-001&#39;</code> </p>
+<h2 id="先看看如何判断正则表达式是否匹配："><a href="#先看看如何判断正则表达式是否匹配：" class="headerlink" title="先看看如何判断正则表达式是否匹配："></a>先看看如何判断正则表达式是否匹配：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import re</span><br><span class="line">&gt;&gt;&gt; re.match(r&#x27;^\d&#123;3&#125;\-\d&#123;3,8&#125;$&#x27;, &#x27;010-12345&#x27;)</span><br><span class="line">&lt;_sre.SRE_Match object; span=(0, 9), match=&#x27;010-12345&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; re.match(r&#x27;^\d&#123;3&#125;\-\d&#123;3,8&#125;$&#x27;, &#x27;010 12345&#x27;)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>match()</code> 方法判断是否匹配，如果匹配成功，返回一个 <code>Match</code> 对象，否则返回 <code>None</code> 。常见 的判断方法就是： </p>
+<p><code>test = &#39;</code> 用户输入的字符串 <code>&#39; if re.match(r&#39;</code> 正则表达式 <code>&#39;, test): print(&#39;ok&#39;) else: print(&#39;failed&#39;)</code> </p>
+<h2 id="切分字符串"><a href="#切分字符串" class="headerlink" title="切分字符串"></a>切分字符串</h2><p>用正则表达式切分字符串比用固定的字符更灵活，请看正常的切分代码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &#x27;a b   c&#x27;.split(&#x27; &#x27;)</span><br><span class="line">[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;&#x27;, &#x27;&#x27;, &#x27;c&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>嗯，无法识别连续的空格，用正则表达式试试： </p>
+<p><code>&gt;&gt;&gt; re.split(r&#39;\s+&#39;, &#39;a b   c&#39;) [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code> 无论多少个空格都可以正常分割。加入 <code>,</code> 试试： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; re.split(r&#x27;[\s\,]+&#x27;, &#x27;a,b, c  d&#x27;)</span><br><span class="line">[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>再加入 <code>;</code> 试试： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; re.split(r&#x27;[\s\,\;]+&#x27;, &#x27;a,b;; c  d&#x27;)</span><br><span class="line">[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>如果用户输入了一组标签，下次记得用正则表达式来把不规范的输入转化成正确的数组。 </p>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>除了简单地判断是否匹配之外，正则表达式还有提取子串的强大功能。用 <code>()</code> 表示的就是要提取 的分组（Group）。比如： </p>
+<p><code>^(\d{3})-(\d{3,8})$</code> 分别定义了两个组，可以直接从匹配的字符串中提取出区号和本地号 码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m = re.match(r&#x27;^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$&#x27;, &#x27;010-12345&#x27;)</span><br><span class="line">&gt;&gt;&gt; m</span><br><span class="line">&lt;_sre.SRE_Match object; span=(0, 9), match=&#x27;010-12345&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; m.group(0)</span><br><span class="line">&#x27;010-12345&#x27;</span><br><span class="line">&gt;&gt;&gt; m.group(1)</span><br><span class="line">&#x27;010&#x27;</span><br><span class="line">&gt;&gt;&gt; m.group(2)</span><br><span class="line">&#x27;12345&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>如果正则表达式中定义了组，就可以在 <code>Match</code> 对象上用 <code>group()</code> 方法提取出子串来。 </p>
+<p>注意到 <code>group(0)</code> 永远是与整个正则表达式相匹配的字符串， <code>group(1)</code> 、 <code>group(2)</code> ……表 示第1、2、……个子串。 </p>
+<p>提取子串非常有用。来看一个更凶残的例子： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t = &#x27;19:05:30&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m = re.match(r&#x27;^(0[0-9]|1[0-9]|2[0-3]|[0-9])\:(0[0-9]|1[0-9]|2[0-</span><br><span class="line">9]|3[0-9]|4[0-9]|5[0-9]|[0-9])\:(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|</span><br><span class="line">[0-9])$&#x27;, t)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; m.groups()</span><br><span class="line">(&#x27;19&#x27;, &#x27;05&#x27;, &#x27;30&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>这个正则表达式可以直接识别合法的时间。但是有些时候，用正则表达式也无法做到完全验证， 比如识别日期： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;^(0[1-9]|1[0-2]|[0-9])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[0-9])$&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>对于 <code>&#39;2-30&#39;</code> ， <code>&#39;4-31&#39;</code> 这样的非法日期，用正则还是识别不了，或者说写出来非常困难，这 时就需要程序配合识别了。 </p>
+<h2 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h2><p>最后需要特别指出的是，正则匹配默认是贪婪匹配，也就是匹配尽可能多的字符。举例如下，匹 配出数字后面的 <code>0</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; re.match(r&#x27;^(\d+)(0*)$&#x27;, &#x27;102300&#x27;).groups()</span><br><span class="line">(&#x27;102300&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>由于 <code>\d+</code> 采用贪婪匹配，直接把后面的 <code>0</code> 全部匹配了，结果 <code>0*</code> 只能匹配空字符串了。 </p>
+<p>必须让 <code>\d+</code> 采用非贪婪匹配（也就是尽可能少匹配），才能把后面的 <code>0</code> 匹配出来，加个 <code>?</code> 就可以让 <code>\d+</code> 采用非贪婪匹配： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; re.match(r&#x27;^(\d+?)(0*)$&#x27;, &#x27;102300&#x27;).groups()</span><br><span class="line">(&#x27;1023&#x27;, &#x27;00&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>当我们在Python中使用正则表达式时，re模块内部会干两件事情： </p>
+<ol>
+<li><p>编译正则表达式，如果正则表达式的字符串本身不合法，会报错； </p>
+</li>
+<li><p>用编译后的正则表达式去匹配字符串。</p>
+</li>
+</ol>
+<p>如果一个正则表达式要重复使用几千次，出于效率的考虑，我们可以预编译该正则表达式，接下 来重复使用时就不需要编译这个步骤了，直接匹配： </p>
+<p><code>&gt;&gt;&gt; import re #</code> 编译 <code>: &gt;&gt;&gt; re_telephone = re.compile(r&#39;^(\d{3})-(\d{3,8})$&#39;) #</code> 使用： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; re_telephone.match(&#x27;010-12345&#x27;).groups()</span><br><span class="line">(&#x27;010&#x27;, &#x27;12345&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; re_telephone.match(&#x27;010-8086&#x27;).groups()</span><br><span class="line">(&#x27;010&#x27;, &#x27;8086&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>编译后生成Regular Expression对象，由于该对象自己包含了正则表达式，所以调用对应的方法 时不用给出正则字符串。 </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>正则表达式非常强大，要在短短的一节里讲完是不可能的。要讲清楚正则的所有内容，可以写一 本厚厚的书了。如果你经常遇到正则表达式的问题，你可能需要一本正则表达式的参考书。 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_031/"
+                                   title="Python基础 - 部分 31"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 31</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_029/"
+                                   title="Python基础 - 部分 29"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 29</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E5%9C%A8%E5%8F%A6%E4%B8%80%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%90%AF%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B%EF%BC%88%E6%9C%AC%E6%9C%BA%E4%B8%8A%E5%90%AF%E5%8A%A8%E4%B9%9F%E5%8F%AF%E4%BB%A5%EF%BC%89%EF%BC%9A"><span class="nav-text">然后，在另一台机器上启动任务进程（本机上启动也可以）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B%E8%A6%81%E9%80%9A%E8%BF%87%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%9C%8D%E5%8A%A1%E8%BF%9B%E7%A8%8B%EF%BC%8C%E6%89%80%E4%BB%A5%E8%A6%81%E6%8C%87%E5%AE%9A%E6%9C%8D%E5%8A%A1%E8%BF%9B%E7%A8%8B%E7%9A%84IP%E3%80%82"><span class="nav-text">任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E6%9D%A5%E4%BB%8E%E5%B7%A6%E5%88%B0%E5%8F%B3%E8%A7%A3%E8%AF%BB%E4%B8%80%E4%B8%8B%EF%BC%9A"><span class="nav-text">我们来从左到右解读一下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-text">进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%81%9A%E6%9B%B4%E7%B2%BE%E7%A1%AE%E5%9C%B0%E5%8C%B9%E9%85%8D%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8-%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9A"><span class="nav-text">要做更精确地匹配，可以用 [] 表示范围，比如：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re%E6%A8%A1%E5%9D%97"><span class="nav-text">re模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E7%9C%8B%E7%9C%8B%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%98%AF%E5%90%A6%E5%8C%B9%E9%85%8D%EF%BC%9A"><span class="nav-text">先看看如何判断正则表达式是否匹配：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E5%88%86%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">切分字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84"><span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%A9%AA%E5%8C%B9%E9%85%8D"><span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E5%9C%A8%E5%8F%A6%E4%B8%80%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%90%AF%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B%EF%BC%88%E6%9C%AC%E6%9C%BA%E4%B8%8A%E5%90%AF%E5%8A%A8%E4%B9%9F%E5%8F%AF%E4%BB%A5%EF%BC%89%EF%BC%9A"><span class="nav-text">然后，在另一台机器上启动任务进程（本机上启动也可以）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B%E8%A6%81%E9%80%9A%E8%BF%87%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%9C%8D%E5%8A%A1%E8%BF%9B%E7%A8%8B%EF%BC%8C%E6%89%80%E4%BB%A5%E8%A6%81%E6%8C%87%E5%AE%9A%E6%9C%8D%E5%8A%A1%E8%BF%9B%E7%A8%8B%E7%9A%84IP%E3%80%82"><span class="nav-text">任务进程要通过网络连接到服务进程，所以要指定服务进程的IP。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E6%9D%A5%E4%BB%8E%E5%B7%A6%E5%88%B0%E5%8F%B3%E8%A7%A3%E8%AF%BB%E4%B8%80%E4%B8%8B%EF%BC%9A"><span class="nav-text">我们来从左到右解读一下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-text">进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%81%9A%E6%9B%B4%E7%B2%BE%E7%A1%AE%E5%9C%B0%E5%8C%B9%E9%85%8D%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8-%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9A"><span class="nav-text">要做更精确地匹配，可以用 [] 表示范围，比如：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re%E6%A8%A1%E5%9D%97"><span class="nav-text">re模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E7%9C%8B%E7%9C%8B%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%98%AF%E5%90%A6%E5%8C%B9%E9%85%8D%EF%BC%9A"><span class="nav-text">先看看如何判断正则表达式是否匹配：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E5%88%86%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">切分字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84"><span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%A9%AA%E5%8C%B9%E9%85%8D"><span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 34 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 34
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:33:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>根据用户输入的登录名和口令模拟用户注册，计算更安全的MD5： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db = &#123;&#125;</span><br><span class="line">defregister(username, password):</span><br><span class="line">    db[username] = get_md5(password + username + &#x27;the-Salt&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="然后，根据修改后的MD5算法实现用户登录的验证："><a href="#然后，根据修改后的MD5算法实现用户登录的验证：" class="headerlink" title="然后，根据修改后的MD5算法实现用户登录的验证："></a>然后，根据修改后的MD5算法实现用户登录的验证：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import hashlib, random</span><br><span class="line">classUser(object):</span><br><span class="line">def__init__(self, username, password):</span><br><span class="line">self.username = username</span><br><span class="line">self.salt = &#x27;&#x27;.join([chr(random.randint(48, 122)) for i in</span><br><span class="line">range(20)])</span><br><span class="line">self.password = get_md5(password + self.salt)</span><br><span class="line">db = &#123;</span><br><span class="line">&#x27;michael&#x27;: User(&#x27;michael&#x27;, &#x27;123456&#x27;),</span><br><span class="line">&#x27;bob&#x27;: User(&#x27;bob&#x27;, &#x27;abc999&#x27;),</span><br><span class="line">&#x27;alice&#x27;: User(&#x27;alice&#x27;, &#x27;alice2008&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">defget_md5(user, pws):</span><br><span class="line">return ???</span><br><span class="line">deflogin(username, password):</span><br><span class="line">    user = db[username]</span><br><span class="line">return user.password == get_md5(user, password)</span><br></pre></td></tr></table></figure>
+
+<p><code>#</code> 测试 <code>: assert login(&#39;michael&#39;, &#39;123456&#39;) assert login(&#39;bob&#39;, &#39;abc999&#39;) assert login(&#39;alice&#39;, &#39;alice2008&#39;) assert not login(&#39;michael&#39;, &#39;1234567&#39;) assert not login(&#39;bob&#39;, &#39;123456&#39;) assert not login(&#39;alice&#39;, &#39;Alice2008&#39;) print(&#39;ok&#39;)</code> </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>哈希算法在很多地方都有广泛的应用。要注意哈希算法不是加密算法，不能用于加密（因为无法 通过哈希反推明文），只能用于防篡改，但是它的单向计算特性决定了可以在不存储明文口令的 情况下验证用户口令。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>use_hashlib.py </p>
+<p>评论 </p>
+<h2 id="hmac"><a href="#hmac" class="headerlink" title="hmac"></a><strong>hmac</strong></h2><p>原文链接 </p>
+<p>通过哈希算法，我们可以验证一段数据是否有效，方法就是对比该数据的哈希值，例如，判断用 户口令是否正确，我们用保存在数据库中的 <code>password_md5</code> 对比计算 <code>md5(password)</code> 的结果， 如果一致，用户输入的口令就是正确的。 </p>
+<p>为了防止黑客通过彩虹表根据哈希值反推原始口令，在计算哈希的时候，不能仅针对原始输入计 算，需要增加一个salt来使得相同的输入也能得到不同的哈希，这样，大大增加了黑客破解的难 度。 </p>
+<p>如果salt是我们自己随机生成的，通常我们计算MD5时采用 <code>md5(message + salt)</code> 。但实际 上，把salt看做一个“口令”，加salt的哈希就是：计算一段message的哈希时，根据不同口令计算 出不同的哈希。要验证哈希值，必须同时提供正确的口令。 </p>
+<p>这实际上就是Hmac算法：Keyed-Hashing for Message Authentication。它通过一个标准算 法，在计算哈希的过程中，把key混入计算过程中。 </p>
+<p>和我们自定义的加salt算法不同，Hmac算法针对所有哈希算法都通用，无论是MD5还是SHA1。采用Hmac替代我们自己的salt算法，可以使程序算法更标准化，也更安全。 </p>
+<p>Python自带的hmac模块实现了标准的Hmac算法。我们来看看如何使用hmac实现带key的哈 希。 </p>
+<p>我们首先需要准备待计算的原始消息message，随机key，哈希算法，这里采用MD5，使用 hmac的代码如下： </p>
+<p><code>&gt;&gt;&gt; import hmac &gt;&gt;&gt; message = b&#39;Hello, world!&#39; &gt;&gt;&gt; key = b&#39;secret&#39; &gt;&gt;&gt; h = hmac.new(key, message, digestmod=&#39;MD5&#39;) &gt;&gt;&gt; #</code> 如果消息很长，可以多次调用 <code>h.update(msg) &gt;&gt;&gt; h.hexdigest() &#39;fa4ee7d173f2d97ee79022d1a7355bcf&#39;</code> </p>
+<p>可见使用 <code>hmac</code> 和普通hash算法非常类似。 <code>hmac</code> 输出的长度和原始哈希算法的长度一致。需 要注意传入的key和message都是 <code>bytes</code> 类型， <code>str</code> 类型需要首先编码为 <code>bytes</code> 。 </p>
+<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><h2 id="将上一节的salt改为标准的hmac算法，验证用户口令："><a href="#将上一节的salt改为标准的hmac算法，验证用户口令：" class="headerlink" title="将上一节的salt改为标准的hmac算法，验证用户口令："></a>将上一节的salt改为标准的hmac算法，验证用户口令：</h2><p><code>import hmac, random def hmac_md5(key, s): return hmac.new(key.encode(&#39;utf-8&#39;), s.encode(&#39;utf-8&#39;), &#39;MD5&#39;).hexdigest() class User(object): def __init__(self, username, password): self.username = username self.key = &#39;&#39;.join([chr(random.randint(48, 122)) for i in range(20)]) self.password = hmac_md5(self.key, password) db = { &#39;michael&#39;: User(&#39;michael&#39;, &#39;123456&#39;), &#39;bob&#39;: User(&#39;bob&#39;, &#39;abc999&#39;), &#39;alice&#39;: User(&#39;alice&#39;, &#39;alice2008&#39;) } def login(username, password): user = db[username] return user.password == hmac_md5(user.key, password) #</code> 测试 <code>: assert login(&#39;michael&#39;, &#39;123456&#39;) assert login(&#39;bob&#39;, &#39;abc999&#39;) assert login(&#39;alice&#39;, &#39;alice2008&#39;) assert not login(&#39;michael&#39;, &#39;1234567&#39;) assert not login(&#39;bob&#39;, &#39;123456&#39;) assert not login(&#39;alice&#39;, &#39;Alice2008&#39;) print(&#39;ok&#39;)</code> </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>Python内置的hmac模块实现了标准的Hmac算法，它利用一个key对message计算“杂凑”后的 hash，使用hmac算法比标准hash算法更安全，因为针对相同的message，不同的key会产生不 </p>
+<h2 id="同的hash。"><a href="#同的hash。" class="headerlink" title="同的hash。"></a>同的hash。</h2><p>评论 </p>
+<h2 id="itertools"><a href="#itertools" class="headerlink" title="itertools"></a><strong>itertools</strong></h2><p>原文链接 </p>
+<h2 id="Python的内建模块-itertools-提供了非常有用的用于操作迭代对象的函数。"><a href="#Python的内建模块-itertools-提供了非常有用的用于操作迭代对象的函数。" class="headerlink" title="Python的内建模块 itertools 提供了非常有用的用于操作迭代对象的函数。"></a>Python的内建模块 <code>itertools</code> 提供了非常有用的用于操作迭代对象的函数。</h2><p>首先，我们看看 <code>itertools</code> 提供的几个“无限”迭代器： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import itertools</span><br><span class="line">&gt;&gt;&gt; natuals = itertools.count(1)</span><br><span class="line">&gt;&gt;&gt; for n in natuals:</span><br><span class="line">...     print(n)</span><br><span class="line">...</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>因为 <code>count()</code> 会创建一个无限的迭代器，所以上述代码会打印出自然数序列，根本停不下来， 只能按 <code>Ctrl+C</code> 退出。 </p>
+<h2 id="cycle-会把传入的一个序列无限重复下去："><a href="#cycle-会把传入的一个序列无限重复下去：" class="headerlink" title="cycle() 会把传入的一个序列无限重复下去："></a><code>cycle()</code> 会把传入的一个序列无限重复下去：</h2><p><code>&gt;&gt;&gt; import itertools &gt;&gt;&gt; cs = itertools.cycle(&#39;ABC&#39;) #</code> 注意字符串也是序列的一种 <code>&gt;&gt;&gt; for c in cs: ...     print(c) ... &#39;A&#39; &#39;B&#39;</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;C&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;A&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;B&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;C&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="同样停不下来。"><a href="#同样停不下来。" class="headerlink" title="同样停不下来。"></a>同样停不下来。</h2><h2 id="repeat-负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数："><a href="#repeat-负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数：" class="headerlink" title="repeat() 负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数："></a><code>repeat()</code> 负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ns = itertools.repeat(&#x27;A&#x27;, 3)</span><br><span class="line">&gt;&gt;&gt; for n in ns:</span><br><span class="line">...     print(n)</span><br><span class="line">...</span><br><span class="line">A</span><br><span class="line">A</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+
+<p>无限序列只有在 <code>for</code> 迭代时才会无限地迭代下去，如果只是创建了一个迭代对象，它不会事先 把无限个元素生成出来，事实上也不可能在内存中创建无限多个元素。 </p>
+<p>无限序列虽然可以无限迭代下去，但是通常我们会通过 <code>takewhile()</code> 等函数根据条件判断来截 取出一个有限的序列： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; natuals = itertools.count(1)</span><br><span class="line">&gt;&gt;&gt; ns = itertools.takewhile(lambda x: x &lt;= 10, natuals)</span><br><span class="line">&gt;&gt;&gt; list(ns)</span><br><span class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span><br></pre></td></tr></table></figure>
+
+<h2 id="itertools-提供的几个迭代器操作函数更加有用："><a href="#itertools-提供的几个迭代器操作函数更加有用：" class="headerlink" title="itertools 提供的几个迭代器操作函数更加有用："></a><code>itertools</code> 提供的几个迭代器操作函数更加有用：</h2><h2 id="chain"><a href="#chain" class="headerlink" title="chain()"></a>chain()</h2><h2 id="chain-可以把一组迭代对象串联起来，形成一个更大的迭代器："><a href="#chain-可以把一组迭代对象串联起来，形成一个更大的迭代器：" class="headerlink" title="chain() 可以把一组迭代对象串联起来，形成一个更大的迭代器："></a><code>chain()</code> 可以把一组迭代对象串联起来，形成一个更大的迭代器：</h2><p><code>&gt;&gt;&gt; for c in itertools.chain(&#39;ABC&#39;, &#39;XYZ&#39;): ...     print(c) #</code> 迭代效果： <code>&#39;A&#39; &#39;B&#39; &#39;C&#39; &#39;X&#39; &#39;Y&#39; &#39;Z&#39;</code> </p>
+<h2 id="groupby"><a href="#groupby" class="headerlink" title="groupby()"></a>groupby()</h2><h2 id="groupby-把迭代器中相邻的重复元素挑出来放在一起："><a href="#groupby-把迭代器中相邻的重复元素挑出来放在一起：" class="headerlink" title="groupby() 把迭代器中相邻的重复元素挑出来放在一起："></a><code>groupby()</code> 把迭代器中相邻的重复元素挑出来放在一起：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for key, group in itertools.groupby(&#x27;AAABBBCCAAA&#x27;):</span><br><span class="line">...     print(key, list(group))</span><br><span class="line">...</span><br><span class="line">A [&#x27;A&#x27;, &#x27;A&#x27;, &#x27;A&#x27;]</span><br><span class="line">B [&#x27;B&#x27;, &#x27;B&#x27;, &#x27;B&#x27;]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C [&#x27;C&#x27;, &#x27;C&#x27;]</span><br><span class="line">A [&#x27;A&#x27;, &#x27;A&#x27;, &#x27;A&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>实际上挑选规则是通过函数完成的，只要作用于函数的两个元素返回的值相等，这两个元素就被 认为是在一组的，而函数返回值作为组的key。如果我们要忽略大小写分组，就可以让元 素 <code>&#39;A&#39;</code> 和 <code>&#39;a&#39;</code> 都返回相同的key： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for key, group in itertools.groupby(&#x27;AaaBBbcCAAa&#x27;, lambda c:</span><br><span class="line">c.upper()):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...     print(key, list(group))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A [&#x27;A&#x27;, &#x27;a&#x27;, &#x27;a&#x27;]</span><br><span class="line">B [&#x27;B&#x27;, &#x27;B&#x27;, &#x27;b&#x27;]</span><br><span class="line">C [&#x27;c&#x27;, &#x27;C&#x27;]</span><br><span class="line">A [&#x27;A&#x27;, &#x27;A&#x27;, &#x27;a&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="练习-2"><a href="#练习-2" class="headerlink" title="练习"></a>练习</h2><h2 id="计算圆周率可以根据公式："><a href="#计算圆周率可以根据公式：" class="headerlink" title="计算圆周率可以根据公式："></a>计算圆周率可以根据公式：</h2><p><strong>&#x3D;&#x3D;&gt; picture [154 x 31] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>利用Python提供的itertools模块，我们来计算这个序列的前N项和： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import itertools</span><br></pre></td></tr></table></figure>
+
+<p><code>def pi(N): &#39;</code> 计算 <code>pi</code> 的值 <code>&#39; # step 1:</code> 创建一个奇数序列 <code>: 1, 3, 5, 7, 9, ...</code> </p>
+<p><code># step 2:</code> 取该序列的前 <code>N</code> 项 <code>: 1, 3, 5, 7, 9, ..., 2*N-1. # step 3:</code> 添加正负符号并用 <code>4</code> 除 <code>: 4/1, -4/3, 4/5, -4/7, 4/9, ... # step 4:</code> 求和 <code>: return 3.14 #</code> 测试 <code>: print(pi(10))</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(pi(100))</span><br><span class="line">print(pi(1000))</span><br><span class="line">print(pi(10000))</span><br><span class="line">assert3.04 &lt; pi(10) &lt; 3.05</span><br><span class="line">assert3.13 &lt; pi(100) &lt; 3.14</span><br><span class="line">assert3.140 &lt; pi(1000) &lt; 3.141</span><br><span class="line">assert3.1414 &lt; pi(10000) &lt; 3.1415</span><br><span class="line">print(&#x27;ok&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><p><code>itertools</code> 模块提供的全部是处理迭代功能的函数，它们的返回值不是list，而是 <code>Iterator</code> ， 只有用 <code>for</code> 循环迭代的时候才真正计算。 </p>
+<h2 id="参考源码-1"><a href="#参考源码-1" class="headerlink" title="参考源码"></a>参考源码</h2><p>use_itertools.py </p>
+<p>评论 </p>
+<h2 id="contextlib"><a href="#contextlib" class="headerlink" title="contextlib"></a><strong>contextlib</strong></h2><p>原文链接 </p>
+<p>在Python中，读写文件这样的资源要特别注意，必须在使用完毕后正确关闭它们。正确关闭文件 资源的一个方法是使用 <code>try...finally</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    f = open(&#x27;/path/to/file&#x27;, &#x27;r&#x27;)</span><br><span class="line">    f.read()</span><br><span class="line">finally:</span><br><span class="line">if f:</span><br><span class="line">        f.close()</span><br></pre></td></tr></table></figure>
+
+<p>写 <code>try...finally</code> 非常繁琐。Python的 <code>with</code> 语句允许我们非常方便地使用资源，而不必担 心资源没有关闭，所以上面的代码可以简化为： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">withopen(&#x27;/path/to/file&#x27;, &#x27;r&#x27;) as f:</span><br><span class="line">    f.read()</span><br></pre></td></tr></table></figure>
+
+<p>并不是只有 <code>open()</code> 函数返回的fp对象才能使用 <code>with</code> 语句。实际上，任何对象，只要正确实 现了上下文管理，就可以用于 <code>with</code> 语句。 </p>
+<p>实现上下文管理是通过 <code>__enter__</code> 和 <code>__exit__</code> 这两个方法实现的。例如，下面的class实现了 这两个方法： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">classQuery(object):</span><br><span class="line">def__init__(self, name):</span><br><span class="line">self.name = name</span><br><span class="line">def__enter__(self):</span><br><span class="line">print(&#x27;Begin&#x27;)</span><br><span class="line">returnself</span><br><span class="line">def__exit__(self, exc_type, exc_value, traceback):</span><br><span class="line">if exc_type:</span><br><span class="line">print(&#x27;Error&#x27;)</span><br><span class="line">else:</span><br><span class="line">print(&#x27;End&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defquery(self):</span><br><span class="line">print(&#x27;Query info about %s...&#x27; % self.name)</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以把自己写的资源对象用于 <code>with</code> 语句： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with Query(&#x27;Bob&#x27;) as q:</span><br><span class="line">    q.query()</span><br></pre></td></tr></table></figure>
+
+<h2 id="contextmanager"><a href="#contextmanager" class="headerlink" title="@contextmanager"></a>@contextmanager</h2><p>编写 <code>__enter__</code> 和 <code>__exit__</code> 仍然很繁琐，因此Python的标准库 <code>contextlib</code> 提供了更简单 的写法，上面的代码可以改写如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from contextlib import contextmanager</span><br><span class="line">classQuery(object):</span><br><span class="line">def__init__(self, name):</span><br><span class="line">self.name = name</span><br><span class="line">defquery(self):</span><br><span class="line">print(&#x27;Query info about %s...&#x27; % self.name)</span><br><span class="line">@contextmanager</span><br><span class="line">defcreate_query(name):</span><br><span class="line">print(&#x27;Begin&#x27;)</span><br><span class="line">    q = Query(name)</span><br><span class="line">yield q</span><br><span class="line">print(&#x27;End&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><code>@contextmanager</code> 这个decorator接受一个generator，用 <code>yield</code> 语句把 <code>with ... as var</code> 把变量输出出去，然后， <code>with</code> 语句就可以正常地工作了： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with create_query(&#x27;Bob&#x27;) as q:</span><br><span class="line">    q.query()</span><br></pre></td></tr></table></figure>
+
+<p>很多时候，我们希望在某段代码执行前后自动执行特定代码，也可以用 <code>@contextmanager</code> 实 现。例如： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@contextmanager</span><br><span class="line">deftag(name):</span><br><span class="line">print(&quot;&lt;%s&gt;&quot; % name)</span><br><span class="line">yield</span><br><span class="line">print(&quot;&lt;/%s&gt;&quot; % name)</span><br><span class="line">with tag(&quot;h1&quot;):</span><br><span class="line">print(&quot;hello&quot;)</span><br><span class="line">print(&quot;world&quot;)</span><br></pre></td></tr></table></figure>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_035/"
+                                   title="Python基础 - 部分 35"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 35</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_033/"
+                                   title="Python基础 - 部分 33"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 33</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E6%A0%B9%E6%8D%AE%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84MD5%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%9A%84%E9%AA%8C%E8%AF%81%EF%BC%9A"><span class="nav-text">然后，根据修改后的MD5算法实现用户登录的验证：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hmac"><span class="nav-text">hmac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-1"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E4%B8%8A%E4%B8%80%E8%8A%82%E7%9A%84salt%E6%94%B9%E4%B8%BA%E6%A0%87%E5%87%86%E7%9A%84hmac%E7%AE%97%E6%B3%95%EF%BC%8C%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E5%8F%A3%E4%BB%A4%EF%BC%9A"><span class="nav-text">将上一节的salt改为标准的hmac算法，验证用户口令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E7%9A%84hash%E3%80%82"><span class="nav-text">同的hash。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itertools"><span class="nav-text">itertools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E7%9A%84%E5%86%85%E5%BB%BA%E6%A8%A1%E5%9D%97-itertools-%E6%8F%90%E4%BE%9B%E4%BA%86%E9%9D%9E%E5%B8%B8%E6%9C%89%E7%94%A8%E7%9A%84%E7%94%A8%E4%BA%8E%E6%93%8D%E4%BD%9C%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0%E3%80%82"><span class="nav-text">Python的内建模块 itertools 提供了非常有用的用于操作迭代对象的函数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cycle-%E4%BC%9A%E6%8A%8A%E4%BC%A0%E5%85%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E5%BA%8F%E5%88%97%E6%97%A0%E9%99%90%E9%87%8D%E5%A4%8D%E4%B8%8B%E5%8E%BB%EF%BC%9A"><span class="nav-text">cycle() 会把传入的一个序列无限重复下去：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%E5%81%9C%E4%B8%8D%E4%B8%8B%E6%9D%A5%E3%80%82"><span class="nav-text">同样停不下来。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeat-%E8%B4%9F%E8%B4%A3%E6%8A%8A%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E6%97%A0%E9%99%90%E9%87%8D%E5%A4%8D%E4%B8%8B%E5%8E%BB%EF%BC%8C%E4%B8%8D%E8%BF%87%E5%A6%82%E6%9E%9C%E6%8F%90%E4%BE%9B%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8F%82%E6%95%B0%E5%B0%B1%E5%8F%AF%E4%BB%A5%E9%99%90%E5%AE%9A%E9%87%8D%E5%A4%8D%E6%AC%A1%E6%95%B0%EF%BC%9A"><span class="nav-text">repeat() 负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itertools-%E6%8F%90%E4%BE%9B%E7%9A%84%E5%87%A0%E4%B8%AA%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%9B%B4%E5%8A%A0%E6%9C%89%E7%94%A8%EF%BC%9A"><span class="nav-text">itertools 提供的几个迭代器操作函数更加有用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chain"><span class="nav-text">chain()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chain-%E5%8F%AF%E4%BB%A5%E6%8A%8A%E4%B8%80%E7%BB%84%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E4%B8%B2%E8%81%94%E8%B5%B7%E6%9D%A5%EF%BC%8C%E5%BD%A2%E6%88%90%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%9A"><span class="nav-text">chain() 可以把一组迭代对象串联起来，形成一个更大的迭代器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupby"><span class="nav-text">groupby()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupby-%E6%8A%8A%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%AD%E7%9B%B8%E9%82%BB%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E6%8C%91%E5%87%BA%E6%9D%A5%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%EF%BC%9A"><span class="nav-text">groupby() 把迭代器中相邻的重复元素挑出来放在一起：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-2"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%9C%86%E5%91%A8%E7%8E%87%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="nav-text">计算圆周率可以根据公式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contextlib"><span class="nav-text">contextlib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contextmanager"><span class="nav-text">@contextmanager</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E6%A0%B9%E6%8D%AE%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84MD5%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%9A%84%E9%AA%8C%E8%AF%81%EF%BC%9A"><span class="nav-text">然后，根据修改后的MD5算法实现用户登录的验证：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hmac"><span class="nav-text">hmac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-1"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E4%B8%8A%E4%B8%80%E8%8A%82%E7%9A%84salt%E6%94%B9%E4%B8%BA%E6%A0%87%E5%87%86%E7%9A%84hmac%E7%AE%97%E6%B3%95%EF%BC%8C%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E5%8F%A3%E4%BB%A4%EF%BC%9A"><span class="nav-text">将上一节的salt改为标准的hmac算法，验证用户口令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E7%9A%84hash%E3%80%82"><span class="nav-text">同的hash。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itertools"><span class="nav-text">itertools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E7%9A%84%E5%86%85%E5%BB%BA%E6%A8%A1%E5%9D%97-itertools-%E6%8F%90%E4%BE%9B%E4%BA%86%E9%9D%9E%E5%B8%B8%E6%9C%89%E7%94%A8%E7%9A%84%E7%94%A8%E4%BA%8E%E6%93%8D%E4%BD%9C%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0%E3%80%82"><span class="nav-text">Python的内建模块 itertools 提供了非常有用的用于操作迭代对象的函数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cycle-%E4%BC%9A%E6%8A%8A%E4%BC%A0%E5%85%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E5%BA%8F%E5%88%97%E6%97%A0%E9%99%90%E9%87%8D%E5%A4%8D%E4%B8%8B%E5%8E%BB%EF%BC%9A"><span class="nav-text">cycle() 会把传入的一个序列无限重复下去：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%E5%81%9C%E4%B8%8D%E4%B8%8B%E6%9D%A5%E3%80%82"><span class="nav-text">同样停不下来。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeat-%E8%B4%9F%E8%B4%A3%E6%8A%8A%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E6%97%A0%E9%99%90%E9%87%8D%E5%A4%8D%E4%B8%8B%E5%8E%BB%EF%BC%8C%E4%B8%8D%E8%BF%87%E5%A6%82%E6%9E%9C%E6%8F%90%E4%BE%9B%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8F%82%E6%95%B0%E5%B0%B1%E5%8F%AF%E4%BB%A5%E9%99%90%E5%AE%9A%E9%87%8D%E5%A4%8D%E6%AC%A1%E6%95%B0%EF%BC%9A"><span class="nav-text">repeat() 负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itertools-%E6%8F%90%E4%BE%9B%E7%9A%84%E5%87%A0%E4%B8%AA%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%9B%B4%E5%8A%A0%E6%9C%89%E7%94%A8%EF%BC%9A"><span class="nav-text">itertools 提供的几个迭代器操作函数更加有用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chain"><span class="nav-text">chain()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chain-%E5%8F%AF%E4%BB%A5%E6%8A%8A%E4%B8%80%E7%BB%84%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E4%B8%B2%E8%81%94%E8%B5%B7%E6%9D%A5%EF%BC%8C%E5%BD%A2%E6%88%90%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%9A"><span class="nav-text">chain() 可以把一组迭代对象串联起来，形成一个更大的迭代器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupby"><span class="nav-text">groupby()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupby-%E6%8A%8A%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%AD%E7%9B%B8%E9%82%BB%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E6%8C%91%E5%87%BA%E6%9D%A5%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%EF%BC%9A"><span class="nav-text">groupby() 把迭代器中相邻的重复元素挑出来放在一起：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-2"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%9C%86%E5%91%A8%E7%8E%87%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="nav-text">计算圆周率可以根据公式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contextlib"><span class="nav-text">contextlib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contextmanager"><span class="nav-text">@contextmanager</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

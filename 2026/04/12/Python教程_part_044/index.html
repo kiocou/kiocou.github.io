@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 44 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 44
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:43:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="是不是有点Web-App的感觉了？"><a href="#是不是有点Web-App的感觉了？" class="headerlink" title="是不是有点Web App的感觉了？"></a>是不是有点Web App的感觉了？</h2><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>无论多么复杂的Web应用程序，入口都是一个WSGI处理函数。HTTP请求的所有输入信息都可以 通过 <code>environ</code> 获得，HTTP响应的输出都可以通过 <code>start_response()</code> 加上函数返回值作为 Body。 </p>
+<p>复杂的Web应用程序，光靠一个WSGI函数来处理还是太底层了，我们需要在WSGI之上再抽象出 Web框架，进一步简化Web开发。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>hello.py server.py 评论 </p>
+<h2 id="使用Web框架"><a href="#使用Web框架" class="headerlink" title="使用Web框架"></a><strong>使用Web框架</strong></h2><p>原文链接 </p>
+<p>了解了WSGI框架，我们发现：其实一个Web App，就是写一个WSGI的处理函数，针对每个 HTTP请求进行响应。 </p>
+<p>但是如何处理HTTP请求不是问题，问题是如何处理100个不同的URL。 </p>
+<p>每一个URL可以对应GET和POST请求，当然还有PUT、DELETE等请求，但是我们通常只考虑最 常见的GET和POST请求。 </p>
+<h2 id="一个最简单的想法是从-environ-变量里取出HTTP请求的信息，然后逐个判断："><a href="#一个最简单的想法是从-environ-变量里取出HTTP请求的信息，然后逐个判断：" class="headerlink" title="一个最简单的想法是从 environ 变量里取出HTTP请求的信息，然后逐个判断："></a>一个最简单的想法是从 <code>environ</code> 变量里取出HTTP请求的信息，然后逐个判断：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">defapplication(environ, start_response):</span><br><span class="line">    method = environ[&#x27;REQUEST_METHOD&#x27;]</span><br><span class="line">    path = environ[&#x27;PATH_INFO&#x27;]</span><br><span class="line">if method==&#x27;GET&#x27;and path==&#x27;/&#x27;:</span><br><span class="line">return handle_home(environ, start_response)</span><br><span class="line">if method==&#x27;POST&#x27;and path=&#x27;/signin&#x27;:</span><br><span class="line">return handle_signin(environ, start_response)</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<p>只是这么写下去代码是肯定没法维护了。 </p>
+<p>代码这么写没法维护的原因是因为WSGI提供的接口虽然比HTTP接口高级了不少，但和Web App的处理逻辑比，还是比较低级，我们需要在WSGI接口之上能进一步抽象，让我们专注于用 一个函数处理一个URL，至于URL到函数的映射，就交给Web框架来做。 </p>
+<p>由于用Python开发一个Web框架十分容易，所以Python有上百个开源的Web框架。这里我们先 不讨论各种Web框架的优缺点，直接选择一个比较流行的Web框架——Flask来使用。 </p>
+<p>用Flask编写Web App比WSGI接口简单（这不是废话么，要是比WSGI还复杂，用框架干 嘛？），我们先用 <code>pip</code> 安装Flask： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install flask</span><br></pre></td></tr></table></figure>
+
+<p>然后写一个 <code>app.py</code> ，处理3个URL，分别是： </p>
+<p><code>GET /</code> ：首页，返回 <code>Home</code> ； </p>
+<p><code>GET /signin</code> ：登录页，显示登录表单； </p>
+<p><code>POST /signin</code> ：处理登录表单，显示登录结果。 </p>
+<p>注意噢，同一个URL <code>/signin</code> 分别有GET和POST两种请求，映射到两个处理函数中。 </p>
+<p>Flask通过Python的装饰器在内部自动地把URL和函数给关联起来，所以，我们写出来的代码就 像这样： </p>
+<p><code>from flask import Flask from flask import request app = Flask(__name__) @app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;]) def home(): return &#39;&lt;h1&gt;Home&lt;/h1&gt;&#39; @app.route(&#39;/signin&#39;, methods=[&#39;GET&#39;]) def signin_form(): return &#39;&#39;&#39;&lt;form action=&quot;/signin&quot; method=&quot;post&quot;&gt; &lt;p&gt;&lt;input name=&quot;username&quot;&gt;&lt;/p&gt; &lt;p&gt;&lt;input name=&quot;password&quot; type=&quot;password&quot;&gt;&lt;/p&gt; &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Sign In&lt;/button&gt;&lt;/p&gt; &lt;/form&gt;&#39;&#39;&#39; @app.route(&#39;/signin&#39;, methods=[&#39;POST&#39;]) def signin(): #</code> 需要从 <code>request</code> 对象读取表单内容： <code>if request.form[&#39;username&#39;]==&#39;admin&#39; and request.form[&#39;password&#39;]==&#39;password&#39;: return &#39;&lt;h3&gt;Hello, admin!&lt;/h3&gt;&#39; return &#39;&lt;h3&gt;Bad username or password.&lt;/h3&gt;&#39; if __name__ == &#39;__main__&#39;: app.run()</code> </p>
+<p>运行 <code>python app.py</code> ，Flask自带的Server在端口 <code>5000</code> 上监听： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python app.py</span><br><span class="line"> * Running on http://127.0.0.1:5000/</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器，输入首页地址 <code>http://localhost:5000/</code> ： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [386 x 290] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<h2 id="首页显示正确！"><a href="#首页显示正确！" class="headerlink" title="首页显示正确！"></a>首页显示正确！</h2><p>再在浏览器地址栏输入 <code>http://localhost:5000/signin</code> ，会显示登录表单： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [386 x 291] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>输入预设的用户名 <code>admin</code> 和口令 <code>password</code> ，登录成功： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [386 x 291] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>输入其他错误的用户名和口令，登录失败： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [386 x 291] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>实际的Web App应该拿到用户名和口令后，去数据库查询再比对，来判断用户是否能登录成功。 </p>
+<p>除了Flask，常见的Python Web框架还有： </p>
+<p>Django：全能型Web框架； </p>
+<p>web.py：一个小巧的Web框架； </p>
+<h2 id="Bottle：和Flask类似的Web框架；"><a href="#Bottle：和Flask类似的Web框架；" class="headerlink" title="Bottle：和Flask类似的Web框架；"></a>Bottle：和Flask类似的Web框架；</h2><p>Tornado：Facebook的开源异步Web框架。 </p>
+<p>当然了，因为开发Python的Web框架也不是什么难事，我们后面也会讲到开发Web框架的内 容。 </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>有了Web框架，我们在编写Web应用时，注意力就从WSGI处理函数转移到URL+对应的处理函 数，这样，编写Web App就更加简单了。 </p>
+<p>在编写URL处理函数时，除了配置URL外，从HTTP请求拿到用户数据也是非常重要的。Web框 架都提供了自己的API来实现这些功能。Flask通过 <code>request.form[&#39;name&#39;]</code> 来获取表单的内容。 </p>
+<h2 id="参考源码-1"><a href="#参考源码-1" class="headerlink" title="参考源码"></a>参考源码</h2><p>app.py </p>
+<p>评论 </p>
+<h2 id="使用模板"><a href="#使用模板" class="headerlink" title="使用模板"></a><strong>使用模板</strong></h2><p>原文链接 </p>
+<p>Web框架把我们从WSGI中拯救出来了。现在，我们只需要不断地编写函数，带上URL，就可以 继续Web App的开发了。 </p>
+<p>但是，Web App不仅仅是处理逻辑，展示给用户的页面也非常重要。在函数中返回一个包含 HTML的字符串，简单的页面还可以，但是，想想新浪首页的6000多行的HTML，你确信能在 Python的字符串中正确地写出来么？反正我是做不到。 </p>
+<p>俗话说得好，不懂前端的Python工程师不是好的产品经理。有Web开发经验的同学都明白， Web App最复杂的部分就在HTML页面。HTML不仅要正确，还要通过CSS美化，再加上复杂的 JavaScript脚本来实现各种交互和动画效果。总之，生成HTML页面的难度很大。 </p>
+<p>由于在Python代码里拼字符串是不现实的，所以，模板技术出现了。 </p>
+<p>使用模板，我们需要预先准备一个HTML文档，这个HTML文档不是普通的HTML，而是嵌入了一 些变量和指令，然后，根据我们传入的数据，替换后，得到最终的HTML，发送给用户： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [416 x 274] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>这就是传说中的MVC：Model-View-Controller，中文名“模型-视图-控制器”。 </p>
+<p>Python处理URL的函数就是C：Controller，Controller负责业务逻辑，比如检查用户名是否存 在，取出用户信息等等； </p>
+<p>包含变量 <code>&#123;&#123; name &#125;&#125;</code> 的模板就是V：View，View负责显示逻辑，通过简单地替换一些变量， View最终输出的就是用户看到的HTML。 </p>
+<p>MVC中的Model在哪？Model是用来传给View的，这样View在替换变量的时候，就可以从 Model中取出相应的数据。 </p>
+<p>上面的例子中，Model就是一个 <code>dict</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#x27;name&#x27;: &#x27;Michael&#x27; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>只是因为Python支持关键字参数，很多Web框架允许传入关键字参数，然后，在框架内部组装 出一个 <code>dict</code> 作为Model。 </p>
+<p>现在，我们把上次直接输出字符串作为HTML的例子用高端大气上档次的MVC模式改写一下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask, request, render_template</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app = Flask(__name__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#x27;/&#x27;, methods=[&#x27;GET&#x27;, &#x27;POST&#x27;])</span><br><span class="line">defhome():</span><br><span class="line">return render_template(&#x27;home.html&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#x27;/signin&#x27;, methods=[&#x27;GET&#x27;])</span><br><span class="line">defsignin_form():</span><br><span class="line">return render_template(&#x27;form.html&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#x27;/signin&#x27;, methods=[&#x27;POST&#x27;])</span><br><span class="line">defsignin():</span><br><span class="line">    username = request.form[&#x27;username&#x27;]</span><br><span class="line">    password = request.form[&#x27;password&#x27;]</span><br><span class="line">if username==&#x27;admin&#x27;and password==&#x27;password&#x27;:</span><br><span class="line">return render_template(&#x27;signin-ok.html&#x27;, username=username)</span><br><span class="line">return render_template(&#x27;form.html&#x27;, message=&#x27;Bad username or password&#x27;,</span><br><span class="line">username=username)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+<p>Flask通过 <code>render_template()</code> 函数来实现模板的渲染。和Web框架类似，Python的模板也有 很多种。Flask默认支持的模板是jinja2，所以我们先直接安装jinja2： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install jinja2</span><br></pre></td></tr></table></figure>
+
+<p>然后，开始编写jinja2模板： </p>
+<h2 id="home-html"><a href="#home-html" class="headerlink" title="home.html"></a>home.html</h2><h2 id="用来显示首页的模板："><a href="#用来显示首页的模板：" class="headerlink" title="用来显示首页的模板："></a>用来显示首页的模板：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Home&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1style=&quot;font-style:italic&quot;&gt;Home&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="form-html"><a href="#form-html" class="headerlink" title="form.html"></a>form.html</h2><h2 id="用来显示登录表单的模板："><a href="#用来显示登录表单的模板：" class="headerlink" title="用来显示登录表单的模板："></a>用来显示登录表单的模板：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Please Sign In&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &#123;% if message %&#125;</span><br><span class="line">&lt;pstyle=&quot;color:red&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;formaction=&quot;/signin&quot;method=&quot;post&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;legend&gt;Please sign in:&lt;/legend&gt;</span><br><span class="line">&lt;p&gt;&lt;inputname=&quot;username&quot;placeholder=&quot;Username&quot;value=&quot;&#123;&#123; username</span><br><span class="line">&#125;&#125;&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;inputname=&quot;password&quot;placeholder=&quot;Password&quot;type=&quot;password&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;buttontype=&quot;submit&quot;&gt;Sign In&lt;/button&gt;&lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="signin-ok-html"><a href="#signin-ok-html" class="headerlink" title="signin-ok.html"></a>signin-ok.html</h2><h2 id="登录成功的模板："><a href="#登录成功的模板：" class="headerlink" title="登录成功的模板："></a>登录成功的模板：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Welcome, &#123;&#123; username &#125;&#125;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;Welcome, &#123;&#123; username &#125;&#125;!&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>登录失败的模板呢？我们在 <code>form.html</code> 中加了一点条件判断，把 <code>form.html</code> 重用为登录失败 的模板。 </p>
+<p>最后，一定要把模板放到正确的 <code>templates</code> 目录下， <code>templates</code> 和 <code>app.py</code> 在同级目录下： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [247 x 44] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>启动 <code>python app.py</code> ，看看使用模板的页面效果： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [386 x 291] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>通过MVC，我们在Python代码中处理M：Model和C：Controller，而V：View是通过模板处理 的，这样，我们就成功地把Python代码和HTML代码最大限度地分离了。 </p>
+<p>使用模板的另一大好处是，模板改起来很方便，而且，改完保存后，刷新浏览器就能看到最新的 效果，这对于调试HTML、CSS和JavaScript的前端工程师来说实在是太重要了。 </p>
+<p>在Jinja2模板中，我们用 <code>&#123;&#123; name &#125;&#125;</code> 表示一个需要替换的变量。很多时候，还需要循环、条件 判断等指令语句，在Jinja2中，用 <code>&#123;% ... %&#125;</code> 表示指令。 </p>
+<h2 id="比如循环输出页码："><a href="#比如循环输出页码：" class="headerlink" title="比如循环输出页码："></a>比如循环输出页码：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for i in page_list %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;</span><br><span class="line">&lt;ahref=&quot;/page/&#123;&#123; i &#125;&#125;&gt;&#123;&#123; i &#125;&#125;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>page_list</code> 是一个list： <code>[1, 2, 3, 4, 5]</code> ，上面的模板将输出5个超链接。 </p>
+<h2 id="除了Jinja2，常见的模板还有："><a href="#除了Jinja2，常见的模板还有：" class="headerlink" title="除了Jinja2，常见的模板还有："></a>除了Jinja2，常见的模板还有：</h2><p>Mako：用 <code>&lt;% ... %&gt;</code> 和 <code>$&#123;xxx&#125;</code> 的一个模板； </p>
+<ul>
+<li><p>Cheetah：也是用 <code>&lt;% ... %&gt;</code> 和 <code>$&#123;xxx&#125;</code> 的一个模板； </p>
+</li>
+<li><p>Django：Django是一站式框架，内置一个用 <code>&#123;% ... %&#125;</code> 和 <code>&#123;&#123; xxx &#125;&#125;</code> 的模板。</p>
+</li>
+</ul>
+<h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><p>有了MVC，我们就分离了Python代码和HTML代码。HTML代码全部放到模板里，写起来更有效 率。 </p>
+<h2 id="参考源码-2"><a href="#参考源码-2" class="headerlink" title="参考源码"></a>参考源码</h2><p>app.zip </p>
+<p>评论 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_045/"
+                                   title="Python基础 - 部分 45"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 45</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_043/"
+                                   title="Python基础 - 部分 43"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 43</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%B8%8D%E6%98%AF%E6%9C%89%E7%82%B9Web-App%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%EF%BC%9F"><span class="nav-text">是不是有点Web App的感觉了？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Web%E6%A1%86%E6%9E%B6"><span class="nav-text">使用Web框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%83%B3%E6%B3%95%E6%98%AF%E4%BB%8E-environ-%E5%8F%98%E9%87%8F%E9%87%8C%E5%8F%96%E5%87%BAHTTP%E8%AF%B7%E6%B1%82%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%90%E4%B8%AA%E5%88%A4%E6%96%AD%EF%BC%9A"><span class="nav-text">一个最简单的想法是从 environ 变量里取出HTTP请求的信息，然后逐个判断：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%AD%A3%E7%A1%AE%EF%BC%81"><span class="nav-text">首页显示正确！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bottle%EF%BC%9A%E5%92%8CFlask%E7%B1%BB%E4%BC%BC%E7%9A%84Web%E6%A1%86%E6%9E%B6%EF%BC%9B"><span class="nav-text">Bottle：和Flask类似的Web框架；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="nav-text">使用模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#home-html"><span class="nav-text">home.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%9D%A5%E6%98%BE%E7%A4%BA%E9%A6%96%E9%A1%B5%E7%9A%84%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-text">用来显示首页的模板：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form-html"><span class="nav-text">form.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%9D%A5%E6%98%BE%E7%A4%BA%E7%99%BB%E5%BD%95%E8%A1%A8%E5%8D%95%E7%9A%84%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-text">用来显示登录表单的模板：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#signin-ok-html"><span class="nav-text">signin-ok.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%88%90%E5%8A%9F%E7%9A%84%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-text">登录成功的模板：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E5%A6%82%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA%E9%A1%B5%E7%A0%81%EF%BC%9A"><span class="nav-text">比如循环输出页码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%A4%E4%BA%86Jinja2%EF%BC%8C%E5%B8%B8%E8%A7%81%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%BF%98%E6%9C%89%EF%BC%9A"><span class="nav-text">除了Jinja2，常见的模板还有：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-2"><span class="nav-text">参考源码</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%B8%8D%E6%98%AF%E6%9C%89%E7%82%B9Web-App%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%EF%BC%9F"><span class="nav-text">是不是有点Web App的感觉了？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Web%E6%A1%86%E6%9E%B6"><span class="nav-text">使用Web框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%83%B3%E6%B3%95%E6%98%AF%E4%BB%8E-environ-%E5%8F%98%E9%87%8F%E9%87%8C%E5%8F%96%E5%87%BAHTTP%E8%AF%B7%E6%B1%82%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%90%E4%B8%AA%E5%88%A4%E6%96%AD%EF%BC%9A"><span class="nav-text">一个最简单的想法是从 environ 变量里取出HTTP请求的信息，然后逐个判断：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%AD%A3%E7%A1%AE%EF%BC%81"><span class="nav-text">首页显示正确！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bottle%EF%BC%9A%E5%92%8CFlask%E7%B1%BB%E4%BC%BC%E7%9A%84Web%E6%A1%86%E6%9E%B6%EF%BC%9B"><span class="nav-text">Bottle：和Flask类似的Web框架；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="nav-text">使用模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#home-html"><span class="nav-text">home.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%9D%A5%E6%98%BE%E7%A4%BA%E9%A6%96%E9%A1%B5%E7%9A%84%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-text">用来显示首页的模板：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form-html"><span class="nav-text">form.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%9D%A5%E6%98%BE%E7%A4%BA%E7%99%BB%E5%BD%95%E8%A1%A8%E5%8D%95%E7%9A%84%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-text">用来显示登录表单的模板：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#signin-ok-html"><span class="nav-text">signin-ok.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%88%90%E5%8A%9F%E7%9A%84%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-text">登录成功的模板：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E5%A6%82%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA%E9%A1%B5%E7%A0%81%EF%BC%9A"><span class="nav-text">比如循环输出页码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%A4%E4%BA%86Jinja2%EF%BC%8C%E5%B8%B8%E8%A7%81%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%BF%98%E6%9C%89%EF%BC%9A"><span class="nav-text">除了Jinja2，常见的模板还有：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-2"><span class="nav-text">参考源码</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

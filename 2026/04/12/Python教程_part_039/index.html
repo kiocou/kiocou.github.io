@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 39 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 39
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:38:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h2 id="和客户端编程相比，服务器编程就要复杂一些。"><a href="#和客户端编程相比，服务器编程就要复杂一些。" class="headerlink" title="和客户端编程相比，服务器编程就要复杂一些。"></a>和客户端编程相比，服务器编程就要复杂一些。</h2><p>服务器进程首先要绑定一个端口并监听来自其他客户端的连接。如果某个客户端连接过来了，服 务器就与该客户端建立Socket连接，随后的通信就靠这个Socket连接了。 </p>
+<p>所以，服务器会打开固定端口（比如80）监听，每来一个客户端连接，就创建该Socket连接。由 于服务器会有大量来自客户端的连接，所以，服务器要能够区分一个Socket连接是和哪个客户端 绑定的。一个Socket依赖4项：服务器地址、服务器端口、客户端地址、客户端端口来唯一确定 一个Socket。 </p>
+<p>但是服务器还需要同时响应多个客户端的请求，所以，每个连接都需要一个新的进程或者新的线 程来处理，否则，服务器一次就只能服务一个客户端了。 </p>
+<p>我们来编写一个简单的服务器程序，它接收客户端连接，把客户端发过来的字符串加上 <code>Hello</code> 再发回去。 </p>
+<p>首先，创建一个基于IPv4和TCP协议的Socket： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br></pre></td></tr></table></figure>
+
+<p>然后，我们要绑定监听的地址和端口。服务器可能有多块网卡，可以绑定到某一块网卡的IP地址 上，也可以用 <code>0.0.0.0</code> 绑定到所有的网络地址，还可以用 <code>127.0.0.1</code> 绑定到本机地址。 <code>127.0.0.1</code> 是一个特殊的IP地址，表示本机地址，如果绑定到这个地址，客户端必须同时在本 机运行才能连接，也就是说，外部的计算机无法连接进来。 </p>
+<p>端口号需要预先指定。因为我们写的这个服务不是标准服务，所以用 <code>9999</code> 这个端口号。请注 意，小于 <code>1024</code> 的端口号必须要有管理员权限才能绑定： </p>
+<p><code>#</code> 监听端口 <code>: s.bind((&#39;127.0.0.1&#39;, 9999))</code> </p>
+<p>紧接着，调用 <code>listen()</code> 方法开始监听端口，传入的参数指定等待连接的最大数量： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.listen(5)</span><br><span class="line">print(&#x27;Waiting for connection...&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>接下来，服务器程序通过一个永久循环来接受来自客户端的连接， <code>accept()</code> 会等待并返回一个 客户端的连接: </p>
+<p><code>while True: #</code> 接受一个新连接 <code>: sock, addr = s.accept() #</code> 创建新线程来处理 <code>TCP</code> 连接 <code>: t = threading.Thread(target=tcplink, args=(sock, addr)) t.start()</code> </p>
+<p>每个连接都必须创建新线程（或进程）来处理，否则，单线程在处理连接的过程中，无法接受其 他客户端的连接： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deftcplink(sock, addr):</span><br><span class="line">print(&#x27;Accept new connection from %s:%s...&#x27; % addr)</span><br><span class="line">    sock.send(b&#x27;Welcome!&#x27;)</span><br><span class="line">whileTrue:</span><br><span class="line">        data = sock.recv(1024)</span><br><span class="line">        time.sleep(1)</span><br><span class="line">ifnot data or data.decode(&#x27;utf-8&#x27;) == &#x27;exit&#x27;:</span><br><span class="line">break</span><br><span class="line">        sock.send((&#x27;Hello, %s!&#x27; % data.decode(&#x27;utf-8&#x27;)).encode(&#x27;utf-8&#x27;))</span><br><span class="line">    sock.close()</span><br><span class="line">print(&#x27;Connection from %s:%s closed.&#x27; % addr)</span><br></pre></td></tr></table></figure>
+
+<p>连接建立后，服务器首先发一条欢迎消息，然后等待客户端数据，并加上 <code>Hello</code> 再发送给客户 端。如果客户端发送了 <code>exit</code> 字符串，就直接关闭连接。 </p>
+<h2 id="要测试这个服务器程序，我们还需要编写一个客户端程序："><a href="#要测试这个服务器程序，我们还需要编写一个客户端程序：" class="headerlink" title="要测试这个服务器程序，我们还需要编写一个客户端程序："></a>要测试这个服务器程序，我们还需要编写一个客户端程序：</h2><p><code>s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #</code> 建立连接 <code>: s.connect((&#39;127.0.0.1&#39;, 9999)) #</code> 接收欢迎消息 <code>: print(s.recv(1024).decode(&#39;utf-8&#39;)) for data in [b&#39;Michael&#39;, b&#39;Tracy&#39;, b&#39;Sarah&#39;]: #</code> 发送数据 <code>: s.send(data) print(s.recv(1024).decode(&#39;utf-8&#39;)) s.send(b&#39;exit&#39;) s.close()</code> </p>
+<p>我们需要打开两个命令行窗口，一个运行服务器程序，另一个运行客户端程序，就可以看到效果 了： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">┌────────────────────────────────────────────────────────┐</span><br><span class="line">│Windows PowerShell                                - □ x │</span><br><span class="line">├────────────────────────────────────────────────────────┤</span><br><span class="line">│PS C:\Users\liaoxuefeng&gt; python echo_server.py          │</span><br><span class="line">│Waiting for connection���                               │</span><br><span class="line">│Accept new connection from 127.0.0.1:64398���           │</span><br><span class="line">│Connection from 127.0.0.1:64398 closed.                 │</span><br><span class="line">│                                                        │</span><br><span class="line">│       ┌────────────────────────────────────────────────┴───────┐</span><br><span class="line">│       │Windows PowerShell                                - □ x │</span><br><span class="line">│       ├────────────────────────────────────────────────────────┤</span><br><span class="line">└───────┤PS C:\Users\liaoxuefeng&gt; python echo_client.py          │</span><br><span class="line">        │Welcome!                                                │</span><br><span class="line">        │Hello, Michael!                                         │</span><br><span class="line">        │Hello, Tracy!                                           │</span><br><span class="line">        │Hello, Sarah!                                           │</span><br><span class="line">        │PS C:\Users\liaoxuefeng&gt;                                │</span><br><span class="line">        │                                                        │</span><br><span class="line">        │                                                        │</span><br><span class="line">        └────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，客户端程序运行完毕就退出了，而服务器程序会永远运行下去，必须按Ctrl+C退 出程序。 </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>用TCP协议进行Socket编程在Python中十分简单，对于客户端，要主动连接服务器的IP和指定端 口，对于服务器，要首先监听指定端口，然后，对每一个新的连接，创建一个线程或进程来处 理。通常，服务器程序会无限运行下去。 </p>
+<p>同一个端口，被一个Socket绑定了以后，就不能被别的Socket绑定了。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>do_tcp.py </p>
+<p>评论 </p>
+<h2 id="UDP编程"><a href="#UDP编程" class="headerlink" title="UDP编程"></a><strong>UDP编程</strong></h2><p>原文链接 </p>
+<p>TCP是建立可靠连接，并且通信双方都可以以流的形式发送数据。相对TCP，UDP则是面向无连 接的协议。 </p>
+<p>使用UDP协议时，不需要建立连接，只需要知道对方的IP地址和端口号，就可以直接发数据包。 但是，能不能到达就不知道了。 </p>
+<p>虽然用UDP传输数据不可靠，但它的优点是和TCP比，速度快，对于不要求可靠到达的数据，就 可以使用UDP协议。 </p>
+<p>我们来看看如何通过UDP协议传输数据。和TCP类似，使用UDP的通信双方也分为客户端和服务 器。服务器首先需要绑定端口： </p>
+<p><code>s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #</code> 绑定端口 <code>: s.bind((&#39;127.0.0.1&#39;, 9999))</code> </p>
+<p>创建Socket时， <code>SOCK_DGRAM</code> 指定了这个Socket的类型是UDP。绑定端口和TCP一样，但是不 需要调用 <code>listen()</code> 方法，而是直接接收来自任何客户端的数据： </p>
+<p><code>print(&#39;Bind UDP on 9999...&#39;) while True: #</code> 接收数据 <code>: data, addr = s.recvfrom(1024) print(&#39;Received from %s:%s.&#39; % addr) s.sendto(b&#39;Hello, %s!&#39; % data, addr)</code> </p>
+<p><code>recvfrom()</code> 方法返回数据和客户端的地址与端口，这样，服务器收到数据后，直接调用 <code>sendto()</code> 就可以把数据用UDP发给客户端。 </p>
+<p>注意这里省掉了多线程，因为这个例子很简单。 </p>
+<p>客户端使用UDP时，首先仍然创建基于UDP的Socket，然后，不需要调用 <code>connect()</code> ，直接通 过 <code>sendto()</code> 给服务器发数据： </p>
+<p><code>s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) for data in [b&#39;Michael&#39;, b&#39;Tracy&#39;, b&#39;Sarah&#39;]: #</code> 发送数据 <code>: s.sendto(data, (&#39;127.0.0.1&#39;, 9999)) #</code> 接收数据 <code>: print(s.recv(1024).decode(&#39;utf-8&#39;)) s.close()</code> </p>
+<h2 id="从服务器接收数据仍然调用-recv-方法。"><a href="#从服务器接收数据仍然调用-recv-方法。" class="headerlink" title="从服务器接收数据仍然调用 recv() 方法。"></a>从服务器接收数据仍然调用 <code>recv()</code> 方法。</h2><h2 id="仍然用两个命令行分别启动服务器和客户端测试，结果如下："><a href="#仍然用两个命令行分别启动服务器和客户端测试，结果如下：" class="headerlink" title="仍然用两个命令行分别启动服务器和客户端测试，结果如下："></a>仍然用两个命令行分别启动服务器和客户端测试，结果如下：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌────────────────────────────────────────────────────────┐</span><br><span class="line">│Windows PowerShell                                - □ x │</span><br><span class="line">├────────────────────────────────────────────────────────┤</span><br><span class="line">│PS C:\Users\liaoxuefeng&gt; python udp_server.py           │</span><br><span class="line">│Bind UDP on 9999���                                     │</span><br><span class="line">│Received from 127.0.0.1:63823���                        │</span><br><span class="line">│Received from 127.0.0.1:63823���                        │</span><br><span class="line">│Received from 127.0.0.1:63823���                        │</span><br><span class="line">│       ┌────────────────────────────────────────────────┴───────┐</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">│       │Windows PowerShell                                - □ x │</span><br><span class="line">│       ├────────────────────────────────────────────────────────┤</span><br><span class="line">│       │PS C:\Users\liaoxuefeng&gt; python udp_client.py           │</span><br><span class="line">└───────┤Welcome!                                                │</span><br><span class="line">        │Hello, Michael!                                         │</span><br><span class="line">        │Hello, Tracy!                                           │</span><br><span class="line">        │Hello, Sarah!                                           │</span><br><span class="line">        │PS C:\Users\liaoxuefeng&gt;                                │</span><br><span class="line">        │                                                        │</span><br><span class="line">        │                                                        │</span><br><span class="line">        └────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>UDP的使用与TCP类似，但是不需要建立连接。此外，服务器绑定UDP端口和TCP端口互不冲 突，也就是说，UDP的 <code>9999</code> 端口与TCP的 <code>9999</code> 端口可以各自绑定。 </p>
+<h2 id="参考源码-1"><a href="#参考源码-1" class="headerlink" title="参考源码"></a>参考源码</h2><p>udp_server.py udp_client.py </p>
+<h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><h2 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a><strong>电子邮件</strong></h2><p>原文链接 </p>
+<p>Email的历史比Web还要久远，直到现在，Email也是互联网上应用非常广泛的服务。 </p>
+<p>几乎所有的编程语言都支持发送和接收电子邮件，但是，先等等，在我们开始编写代码之前，有 必要搞清楚电子邮件是如何在互联网上运作的。 </p>
+<p>我们来看看传统邮件是如何运作的。假设你现在在北京，要给一个香港的朋友发一封信，怎么做 呢？ </p>
+<p>首先你得写好信，装进信封，写上地址，贴上邮票，然后就近找个邮局，把信仍进去。 </p>
+<p>信件会从就近的小邮局转运到大邮局，再从大邮局往别的城市发，比如先发到天津，再走海运到 达香港，也可能走京九线到香港，但是你不用关心具体路线，你只需要知道一件事，就是信件走 得很慢，至少要几天时间。 </p>
+<p>信件到达香港的某个邮局，也不会直接送到朋友的家里，因为邮局的叔叔是很聪明的，他怕你的 朋友不在家，一趟一趟地白跑，所以，信件会投递到你的朋友的邮箱里，邮箱可能在公寓的一 层，或者家门口，直到你的朋友回家的时候检查邮箱，发现信件后，就可以取到邮件了。 </p>
+<p>电子邮件的流程基本上也是按上面的方式运作的，只不过速度不是按天算，而是按秒算。 </p>
+<p>现在我们回到电子邮件，假设我们自己的电子邮件地址是 <code>me@163.com</code> ，对方的电子邮件地址是 <code>friend@sina.com</code> （注意地址都是虚构的哈），现在我们用 <code>Outlook</code> 或者 <code>Foxmail</code> 之类的软 件写好邮件，填上对方的Email地址，点“发送”，电子邮件就发出去了。这些电子邮件软件被称为 <strong>MUA</strong> ：Mail User Agent——邮件用户代理。 </p>
+<p>Email从MUA发出去，不是直接到达对方电脑，而是发到 <strong>MTA</strong> ：Mail Transfer Agent——邮件 传输代理，就是那些Email服务提供商，比如网易、新浪等等。由于我们自己的电子邮件是 <code>163.com</code> ，所以，Email首先被投递到网易提供的MTA，再由网易的MTA发到对方服务商，也 就是新浪的MTA。这个过程中间可能还会经过别的MTA，但是我们不关心具体路线，我们只关心 速度。 </p>
+<p>Email到达新浪的MTA后，由于对方使用的是 <code>@sina.com</code> 的邮箱，因此，新浪的MTA会把Email 投递到邮件的最终目的地 <strong>MDA</strong> ：Mail Delivery Agent——邮件投递代理。Email到达MDA后， 就静静地躺在新浪的某个服务器上，存放在某个文件或特殊的数据库里，我们将这个长期保存邮 件的地方称之为电子邮箱。 </p>
+<p>同普通邮件类似，Email不会直接到达对方的电脑，因为对方电脑不一定开机，开机也不一定联 网。对方要取到邮件，必须通过MUA从MDA上把邮件取到自己的电脑上。 </p>
+<p>所以，一封电子邮件的旅程就是： </p>
+<p>发件人 <code>-&gt; MUA -&gt; MTA -&gt; MTA -&gt;</code> 若干个 <code>MTA -&gt; MDA &lt;- MUA &lt;-</code> 收件人 </p>
+<p>有了上述基本概念，要编写程序来发送和接收邮件，本质上就是： </p>
+<ol>
+<li><p>编写MUA把邮件发到MTA； </p>
+</li>
+<li><p>编写MUA从MDA上收邮件。</p>
+</li>
+</ol>
+<p>发邮件时，MUA和MTA使用的协议就是SMTP：Simple Mail Transfer Protocol，后面的MTA到 另一个MTA也是用SMTP协议。 </p>
+<p>收邮件时，MUA和MDA使用的协议有两种：POP：Post Office Protocol，目前版本是3，俗称 POP3；IMAP：Internet Message Access Protocol，目前版本是4，优点是不但能取邮件，还 可以直接操作MDA上存储的邮件，比如从收件箱移到垃圾箱，等等。 </p>
+<p>邮件客户端软件在发邮件时，会让你先配置SMTP服务器，也就是你要发到哪个MTA上。假设你 正在使用163的邮箱，你就不能直接发到新浪的MTA上，因为它只服务新浪的用户，所以，你得 填163提供的SMTP服务器地址： <code>smtp.163.com</code> ，为了证明你是163的用户，SMTP服务器还要 求你填写邮箱地址和邮箱口令，这样，MUA才能正常地把Email通过SMTP协议发送到MTA。 </p>
+<p>类似的，从MDA收邮件时，MDA服务器也要求验证你的邮箱口令，确保不会有人冒充你收取你 的邮件，所以，Outlook之类的邮件客户端会要求你填写POP3或IMAP服务器地址、邮箱地址和 口令，这样，MUA才能顺利地通过POP或IMAP协议从MDA取到邮件。 </p>
+<p>在使用Python收发邮件前，请先准备好至少两个电子邮件，如 <code>xxx@163.com</code> ， <code>xxx@sina.com</code> ， <code>xxx@qq.com</code> 等，注意两个邮箱不要用同一家邮件服务商。 </p>
+<p>最后 <strong>特别注意</strong> ，目前大多数邮件服务商都需要手动打开SMTP发信和POP收信的功能，否则只允 许在网页登录： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [535 x 746] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p><strong>—– Start of picture text —–</strong><br><br>评论<br><strong>—– End of picture text —–</strong><br></p>
+<h2 id="SMTP发送邮件"><a href="#SMTP发送邮件" class="headerlink" title="SMTP发送邮件"></a><strong>SMTP发送邮件</strong></h2><p>原文链接 </p>
+<p>SMTP是发送邮件的协议，Python内置对SMTP的支持，可以发送纯文本邮件、HTML邮件以及 带附件的邮件。 </p>
+<p>Python对SMTP支持有 <code>smtplib</code> 和 <code>email</code> 两个模块， <code>email</code> 负责构造邮件， <code>smtplib</code> 负 责发送邮件。 </p>
+<p>首先，我们来构造一个最简单的纯文本邮件： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from email.mime.text import MIMEText</span><br><span class="line">msg = MIMEText(&#x27;hello, send by Python...&#x27;, &#x27;plain&#x27;, &#x27;utf-8&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>注意到构造 <code>MIMEText</code> 对象时，第一个参数就是邮件正文，第二个参数是MIME的subtype，传 入 <code>&#39;plain&#39;</code> 表示纯文本，最终的MIME就是 <code>&#39;text/plain&#39;</code> ，最后一定要用 <code>utf-8</code> 编码保证 多语言兼容性。 </p>
+<p>然后，通过SMTP发出去： </p>
+<p><code>#</code> 输入 <code>Email</code> 地址和口令 <code>: from_addr = input(&#39;From: &#39;) password = input(&#39;Password: &#39;) #</code> 输入收件人地址 <code>: to_addr = input(&#39;To: &#39;) #</code> 输入 <code>SMTP</code> 服务器地址 <code>: smtp_server = input(&#39;SMTP server: &#39;)</code> </p>
+<p><code>import smtplib server = smtplib.SMTP(smtp_server, 25) # SMTP</code> 协议默认端口是 <code>25 server.set_debuglevel(1) server.login(from_addr, password) server.sendmail(from_addr, [to_addr], msg.as_string()) server.quit()</code> </p>
+<p>我们用 <code>set_debuglevel(1)</code> 就可以打印出和SMTP服务器交互的所有信息。SMTP协议就是简单 的文本命令和响应。 <code>login()</code> 方法用来登录SMTP服务器， <code>sendmail()</code> 方法就是发邮件，由 </p>
+<p>于可以一次发给多个人，所以传入一个 <code>list</code> ，邮件正文是一个 <code>str</code> ， <code>as_string()</code> 把 <code>MIMEText</code> 对象变成 <code>str</code> 。 </p>
+<p>如果一切顺利，就可以在收件人信箱中收到我们刚发送的Email： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [263 x 122] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>仔细观察，发现如下问题： </p>
+<ol>
+<li><p>邮件没有主题； </p>
+</li>
+<li><p>收件人的名字没有显示为友好的名字，比如 <code>Mr Green &lt;green@example.com&gt;</code> ； </p>
+</li>
+<li><p>明明收到了邮件，却提示不在收件人中。</p>
+</li>
+</ol>
+<p>这是因为邮件主题、如何显示发件人、收件人等信息并不是通过SMTP协议发给MTA，而是包含 在发给MTA的文本中的，所以，我们必须把 <code>From</code> 、 <code>To</code> 和 <code>Subject</code> 添加到 <code>MIMEText</code> 中， 才是一封完整的邮件： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from email import encoders</span><br><span class="line">from email.header import Header</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">from email.utils import parseaddr, formataddr</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import smtplib</span><br><span class="line">def_format_addr(s):</span><br><span class="line">    name, addr = parseaddr(s)</span><br><span class="line">return formataddr((Header(name, &#x27;utf-8&#x27;).encode(), addr))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from_addr = input(&#x27;From: &#x27;)</span><br><span class="line">password = input(&#x27;Password: &#x27;)</span><br><span class="line">to_addr = input(&#x27;To: &#x27;)</span><br><span class="line">smtp_server = input(&#x27;SMTP server: &#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><code>msg = MIMEText(&#39;hello, send by Python...&#39;, &#39;plain&#39;, &#39;utf-8&#39;) msg[&#39;From&#39;] = _format_addr(&#39;Python</code> 爱好者 <code>&lt;%s&gt;&#39; % from_addr)</code> </p>
+<p><code>msg[&#39;To&#39;] = _format_addr(&#39;</code> 管理员 <code>&lt;%s&gt;&#39; % to_addr) msg[&#39;Subject&#39;] = Header(&#39;</code> 来自 <code>SMTP</code> 的问候 <code>……&#39;, &#39;utf-8&#39;).encode()</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server = smtplib.SMTP(smtp_server, 25)</span><br><span class="line">server.set_debuglevel(1)</span><br><span class="line">server.login(from_addr, password)</span><br><span class="line">server.sendmail(from_addr, [to_addr], msg.as_string())</span><br><span class="line">server.quit()</span><br></pre></td></tr></table></figure>
+
+<p>我们编写了一个函数 <code>_format_addr()</code> 来格式化一个邮件地址。注意不能简单地传入 <code>name &lt;addr@example.com&gt;</code> ，因为如果包含中文，需要通过 <code>Header</code> 对象进行编码。 </p>
+<p><code>msg[&#39;To&#39;]</code> 接收的是字符串而不是list，如果有多个邮件地址，用 <code>,</code> 分隔即可。 </p>
+<p>再发送一遍邮件，就可以在收件人邮箱中看到正确的标题、发件人和收件人： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [226 x 102] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>你看到的收件人的名字很可能不是我们传入的 管理员 ，因为很多邮件服务商在显示邮件时，会 把收件人名字自动替换为用户注册的名字，但是其他收件人名字的显示不受影响。 </p>
+<p>如果我们查看Email的原始内容，可以看到如下经过编码的邮件头： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">From: =?utf-8?b?UHl0aG9u54ix5aW96ICF?= &lt;xxxxxx@163.com&gt;</span><br><span class="line">To: =?utf-8?b?566h55CG5ZGY?= &lt;xxxxxx@qq.com&gt;</span><br><span class="line">Subject: =?utf-8?b?5p2l6IeqU01UUOeahOmXruWAmeKApuKApg==?=</span><br></pre></td></tr></table></figure>
+
+<p>这就是经过 <code>Header</code> 对象编码的文本，包含utf-8编码信息和Base64编码的文本。如果我们自己 来手动构造这样的编码文本，显然比较复杂。 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_040/"
+                                   title="Python基础 - 部分 40"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 40</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_038/"
+                                   title="Python基础 - 部分 38"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 38</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BC%96%E7%A8%8B%E7%9B%B8%E6%AF%94%EF%BC%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%96%E7%A8%8B%E5%B0%B1%E8%A6%81%E5%A4%8D%E6%9D%82%E4%B8%80%E4%BA%9B%E3%80%82"><span class="nav-text">和客户端编程相比，服务器编程就要复杂一些。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B5%8B%E8%AF%95%E8%BF%99%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A8%8B%E5%BA%8F%EF%BC%8C%E6%88%91%E4%BB%AC%E8%BF%98%E9%9C%80%E8%A6%81%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A8%8B%E5%BA%8F%EF%BC%9A"><span class="nav-text">要测试这个服务器程序，我们还需要编写一个客户端程序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP%E7%BC%96%E7%A8%8B"><span class="nav-text">UDP编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE%E4%BB%8D%E7%84%B6%E8%B0%83%E7%94%A8-recv-%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-text">从服务器接收数据仍然调用 recv() 方法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8D%E7%84%B6%E7%94%A8%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%86%E5%88%AB%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B5%8B%E8%AF%95%EF%BC%8C%E7%BB%93%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">仍然用两个命令行分别启动服务器和客户端测试，结果如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="nav-text">电子邮件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMTP%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6"><span class="nav-text">SMTP发送邮件</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BC%96%E7%A8%8B%E7%9B%B8%E6%AF%94%EF%BC%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%96%E7%A8%8B%E5%B0%B1%E8%A6%81%E5%A4%8D%E6%9D%82%E4%B8%80%E4%BA%9B%E3%80%82"><span class="nav-text">和客户端编程相比，服务器编程就要复杂一些。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B5%8B%E8%AF%95%E8%BF%99%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A8%8B%E5%BA%8F%EF%BC%8C%E6%88%91%E4%BB%AC%E8%BF%98%E9%9C%80%E8%A6%81%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A8%8B%E5%BA%8F%EF%BC%9A"><span class="nav-text">要测试这个服务器程序，我们还需要编写一个客户端程序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP%E7%BC%96%E7%A8%8B"><span class="nav-text">UDP编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE%E4%BB%8D%E7%84%B6%E8%B0%83%E7%94%A8-recv-%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-text">从服务器接收数据仍然调用 recv() 方法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8D%E7%84%B6%E7%94%A8%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%86%E5%88%AB%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B5%8B%E8%AF%95%EF%BC%8C%E7%BB%93%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">仍然用两个命令行分别启动服务器和客户端测试，结果如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="nav-text">电子邮件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMTP%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6"><span class="nav-text">SMTP发送邮件</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

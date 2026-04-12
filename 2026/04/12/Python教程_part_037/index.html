@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 37 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 37
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:36:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="最后，要指定超时，传入以秒为单位的timeout参数："><a href="#最后，要指定超时，传入以秒为单位的timeout参数：" class="headerlink" title="最后，要指定超时，传入以秒为单位的timeout参数："></a>最后，要指定超时，传入以秒为单位的timeout参数：</h2><p><code>&gt;&gt;&gt; r = requests.get(url, timeout=2.5) # 2.5</code> 秒后超时 </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><h2 id="用requests获取URL资源，就是这么简单！"><a href="#用requests获取URL资源，就是这么简单！" class="headerlink" title="用requests获取URL资源，就是这么简单！"></a>用requests获取URL资源，就是这么简单！</h2><h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><h2 id="chardet"><a href="#chardet" class="headerlink" title="chardet"></a><strong>chardet</strong></h2><p>原文链接 </p>
+<p>字符串编码一直是令人非常头疼的问题，尤其是我们在处理一些不规范的第三方网页的时候。虽 然Python提供了Unicode表示的 <code>str</code> 和 <code>bytes</code> 两种数据类型，并且可以通过 <code>encode()</code> 和 <code>decode()</code> 方法转换，但是，在不知道编码的情况下，对 <code>bytes</code> 做 <code>decode()</code> 不好做。 </p>
+<p>对于未知编码的 <code>bytes</code> ，要把它转换成 <code>str</code> ，需要先“猜测”编码。猜测的方式是先收集各种 编码的特征字符，根据特征字符判断，就能有很大概率“猜对”。 </p>
+<p>当然，我们肯定不能从头自己写这个检测编码的功能，这样做费时费力。 <code>chardet</code> 这个第三方 库正好就派上了用场。用它来检测编码，简单易用。 </p>
+<h2 id="安装chardet"><a href="#安装chardet" class="headerlink" title="安装chardet"></a>安装chardet</h2><p>如果安装了Anaconda， <code>chardet</code> 就已经可用了。否则，需要在命令行下通过pip安装： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install chardet</span><br></pre></td></tr></table></figure>
+
+<p>如果遇到Permission denied安装失败，请加上sudo重试。 </p>
+<h2 id="使用chardet"><a href="#使用chardet" class="headerlink" title="使用chardet"></a>使用chardet</h2><p>当我们拿到一个 <code>bytes</code> 时，就可以对其检测编码。用 <code>chardet</code> 检测编码，只需要一行代码： </p>
+<p><code>&gt;&gt;&gt; chardet.detect(b&#39;Hello, world!&#39;) {&#39;encoding&#39;: &#39;ascii&#39;, &#39;confidence&#39;: 1.0, &#39;language&#39;: &#39;&#39;}</code> 检测出的编码是 <code>ascii</code> ，注意到还有个 <code>confidence</code> 字段，表示检测的概率是1.0（即 100%）。 </p>
+<p>我们来试试检测GBK编码的中文： </p>
+<p><code>&gt;&gt;&gt; data = &#39;</code> 离离原上草，一岁一枯荣 <code>&#39;.encode(&#39;gbk&#39;) &gt;&gt;&gt; chardet.detect(data) {&#39;encoding&#39;: &#39;GB2312&#39;, &#39;confidence&#39;: 0.7407407407407407, &#39;language&#39;: &#39;Chinese&#39;}</code> </p>
+<p>检测的编码是 <code>GB2312</code> ，注意到GBK是GB2312的超集，两者是同一种编码，检测正确的概率是 74%， <code>language</code> 字段指出的语言是 <code>&#39;Chinese&#39;</code> 。 </p>
+<h2 id="对UTF-8编码进行检测："><a href="#对UTF-8编码进行检测：" class="headerlink" title="对UTF-8编码进行检测："></a>对UTF-8编码进行检测：</h2><p><code>&gt;&gt;&gt; data = &#39;</code> 离离原上草，一岁一枯荣 <code>&#39;.encode(&#39;utf-8&#39;) &gt;&gt;&gt; chardet.detect(data) {&#39;encoding&#39;: &#39;utf-8&#39;, &#39;confidence&#39;: 0.99, &#39;language&#39;: &#39;&#39;}</code> </p>
+<h2 id="我们再试试对日文进行检测："><a href="#我们再试试对日文进行检测：" class="headerlink" title="我们再试试对日文进行检测："></a>我们再试试对日文进行检测：</h2><p><code>&gt;&gt;&gt; data = &#39;</code> 最新 の 主要 ニュース <code>&#39;.encode(&#39;euc-jp&#39;) &gt;&gt;&gt; chardet.detect(data)</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;encoding&#x27;: &#x27;EUC-JP&#x27;, &#x27;confidence&#x27;: 0.99, &#x27;language&#x27;: &#x27;Japanese&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可见，用 <code>chardet</code> 检测编码，使用简单。获取到编码后，再转换为 <code>str</code> ，就可以方便后续处 理。 </p>
+<p><code>chardet</code> 支持检测的编码列表请参考官方文档Supported encodings。 </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>使用 <code>chardet</code> 检测编码非常容易， <code>chardet</code> 支持检测中文、日文、韩文等多种语言。 </p>
+<p>评论 </p>
+<h2 id="psutil"><a href="#psutil" class="headerlink" title="psutil"></a><strong>psutil</strong></h2><p>原文链接 </p>
+<p>用Python来编写脚本简化日常的运维工作是Python的一个重要用途。在Linux下，有许多系统命 令可以让我们时刻监控系统运行的状态，如 <code>ps</code> ， <code>top</code> ， <code>free</code> 等等。要获取这些系统信 息，Python可以通过 <code>subprocess</code> 模块调用并获取结果。但这样做显得很麻烦，尤其是要写很 多解析代码。 </p>
+<p>在Python中获取系统信息的另一个好办法是使用 <code>psutil</code> 这个第三方模块。顾名思义，psutil &#x3D; process and system utilities，它不仅可以通过一两行代码实现系统监控，还可以跨平台使用， 支持Linux／UNIX／OSX／Windows等，是系统管理员和运维小伙伴不可或缺的必备模块。 </p>
+<h2 id="安装psutil"><a href="#安装psutil" class="headerlink" title="安装psutil"></a>安装psutil</h2><p>如果安装了Anaconda， <code>psutil</code> 就已经可用了。否则，需要在命令行下通过pip安装： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install psutil</span><br></pre></td></tr></table></figure>
+
+<p>如果遇到Permission denied安装失败，请加上sudo重试。 </p>
+<h2 id="获取CPU信息"><a href="#获取CPU信息" class="headerlink" title="获取CPU信息"></a>获取CPU信息</h2><p>我们先来获取CPU的信息： </p>
+<ul>
+<li><p><code>&gt;&gt;&gt; import psutil</code> </p>
+</li>
+<li><p><code>&gt;&gt;&gt; psutil.cpu_count() # CPU</code> 逻辑数量 <code>4</code></p>
+</li>
+</ul>
+<p><code>&gt;&gt;&gt; psutil.cpu_count(logical=False) # CPU</code> 物理核心 <code>2</code> </p>
+<p><code># 2</code> 说明是双核超线程 <code>, 4</code> 则是 <code>4</code> 核非超线程 </p>
+<p>统计CPU的用户／系统／空闲时间： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; psutil.cpu_times()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scputimes(user=10963.31, nice=0.0, system=5138.67, idle=356102.45)</span><br></pre></td></tr></table></figure>
+
+<p>再实现类似 <code>top</code> 命令的CPU使用率，每秒刷新一次，累计10次： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for x in range(10):</span><br><span class="line">...     print(psutil.cpu_percent(interval=1, percpu=True))</span><br><span class="line">...</span><br><span class="line">[14.0, 4.0, 4.0, 4.0]</span><br><span class="line">[12.0, 3.0, 4.0, 3.0]</span><br><span class="line">[8.0, 4.0, 3.0, 4.0]</span><br><span class="line">[12.0, 3.0, 3.0, 3.0]</span><br><span class="line">[18.8, 5.1, 5.9, 5.0]</span><br><span class="line">[10.9, 5.0, 4.0, 3.0]</span><br><span class="line">[12.0, 5.0, 4.0, 5.0]</span><br><span class="line">[15.0, 5.0, 4.0, 4.0]</span><br><span class="line">[19.0, 5.0, 5.0, 4.0]</span><br><span class="line">[9.0, 3.0, 2.0, 3.0]</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取内存信息"><a href="#获取内存信息" class="headerlink" title="获取内存信息"></a>获取内存信息</h2><h2 id="使用-psutil-获取物理内存和交换内存信息，分别使用："><a href="#使用-psutil-获取物理内存和交换内存信息，分别使用：" class="headerlink" title="使用 psutil 获取物理内存和交换内存信息，分别使用："></a>使用 <code>psutil</code> 获取物理内存和交换内存信息，分别使用：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; psutil.virtual_memory()</span><br><span class="line">svmem(total=8589934592, available=2866520064, percent=66.6,</span><br><span class="line">used=7201386496, free=216178688, active=3342192640, inactive=2650341376,</span><br><span class="line">wired=1208852480)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; psutil.swap_memory()</span><br><span class="line">sswap(total=1073741824, used=150732800, free=923009024, percent=14.0,</span><br><span class="line">sin=10705981440, sout=40353792)</span><br></pre></td></tr></table></figure>
+
+<h2 id="返回的是字节为单位的整数，可以看到，总内存大小是8589934592-8-GB，已用7201386496"><a href="#返回的是字节为单位的整数，可以看到，总内存大小是8589934592-8-GB，已用7201386496" class="headerlink" title="返回的是字节为单位的整数，可以看到，总内存大小是8589934592 &#x3D; 8 GB，已用7201386496"></a>返回的是字节为单位的整数，可以看到，总内存大小是8589934592 &#x3D; 8 GB，已用7201386496</h2><p>&#x3D; 6.7 GB，使用了66.6%。 </p>
+<p>而交换区大小是1073741824 &#x3D; 1 GB。 </p>
+<h2 id="获取磁盘信息"><a href="#获取磁盘信息" class="headerlink" title="获取磁盘信息"></a>获取磁盘信息</h2><p>可以通过 <code>psutil</code> 获取磁盘分区、磁盘使用率和磁盘IO信息： </p>
+<p><code>&gt;&gt;&gt; psutil.disk_partitions() #</code> 磁盘分区信息 <code>[sdiskpart(device=&#39;/dev/disk1&#39;, mountpoint=&#39;/&#39;, fstype=&#39;hfs&#39;, opts=&#39;rw,local,rootfs,dovolfs,journaled,multilabel&#39;)] &gt;&gt;&gt; psutil.disk_usage(&#39;/&#39;) #</code> 磁盘使用情况 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdiskusage(total=998982549504, used=390880133120, free=607840272384,</span><br><span class="line">percent=39.1)</span><br></pre></td></tr></table></figure>
+
+<p><code>&gt;&gt;&gt; psutil.disk_io_counters() #</code> 磁盘 <code>IO sdiskio(read_count=988513, write_count=274457, read_bytes=14856830464, write_bytes=17509420032, read_time=2228966, write_time=1618405)</code> </p>
+<p>可以看到，磁盘 <code>&#39;/&#39;</code> 的总容量是998982549504 &#x3D; 930 GB，使用了39.1%。文件格式是HFS， <code>opts</code> 中包含 <code>rw</code> 表示可读写， <code>journaled</code> 表示支持日志。 </p>
+<h2 id="获取网络信息"><a href="#获取网络信息" class="headerlink" title="获取网络信息"></a>获取网络信息</h2><h2 id="psutil可以获取网络接口和网络连接信息："><a href="#psutil可以获取网络接口和网络连接信息：" class="headerlink" title="psutil可以获取网络接口和网络连接信息："></a>psutil可以获取网络接口和网络连接信息：</h2><p><code>&gt;&gt;&gt; psutil.net_io_counters() #</code> 获取网络读写字节／包的个数 <code>snetio(bytes_sent=3885744870, bytes_recv=10357676702,</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">packets_sent=10613069, packets_recv=10423357, errin=0, errout=0, dropin=0,</span><br><span class="line">dropout=0)</span><br></pre></td></tr></table></figure>
+
+<p><code>&gt;&gt;&gt; psutil.net_if_addrs() #</code> 获取网络接口信息 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  &#x27;lo0&#x27;: [snic(family=&lt;AddressFamily.AF_INET: 2&gt;, address=&#x27;127.0.0.1&#x27;,</span><br><span class="line">netmask=&#x27;255.0.0.0&#x27;), ...],</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  &#x27;en1&#x27;: [snic(family=&lt;AddressFamily.AF_INET: 2&gt;, address=&#x27;10.0.1.80&#x27;,</span><br><span class="line">netmask=&#x27;255.255.255.0&#x27;), ...],</span><br></pre></td></tr></table></figure>
+
+<p><code>&#39;en0&#39;: [...], &#39;en2&#39;: [...], &#39;bridge0&#39;: [...] } &gt;&gt;&gt; psutil.net_if_stats() #</code> 获取网络接口状态 <code>{ &#39;lo0&#39;: snicstats(isup=True, duplex=&lt;NicDuplex.NIC_DUPLEX_UNKNOWN: 0&gt;, speed=0, mtu=16384),</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  &#x27;en0&#x27;: snicstats(isup=True, duplex=&lt;NicDuplex.NIC_DUPLEX_UNKNOWN: 0&gt;,</span><br><span class="line">speed=0, mtu=1500),</span><br><span class="line">  &#x27;en1&#x27;: snicstats(...),</span><br><span class="line">  &#x27;en2&#x27;: snicstats(...),</span><br><span class="line">  &#x27;bridge0&#x27;: snicstats(...)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要获取当前网络连接信息，使用 <code>net_connections()</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; psutil.net_connections()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">PermissionError: [Errno 1] Operation not permitted</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">psutil.AccessDenied: psutil.AccessDenied (pid=3847)</span><br></pre></td></tr></table></figure>
+
+<p>你可能会得到一个 <code>AccessDenied</code> 错误，原因是psutil获取信息也是要走系统接口，而获取网络 连接信息需要root权限，这种情况下，可以退出Python交互环境，用 <code>sudo</code> 重新启动： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ sudo python3</span><br><span class="line">Password: ******</span><br><span class="line">Python 3.8 ... on darwin</span><br><span class="line">Type &quot;help&quot;, ... for more information.</span><br><span class="line">&gt;&gt;&gt; import psutil</span><br><span class="line">&gt;&gt;&gt; psutil.net_connections()</span><br><span class="line">[</span><br><span class="line">    sconn(fd=83, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1,</span><br><span class="line">laddr=addr(ip=&#x27;::127.0.0.1&#x27;, port=62911), raddr=addr(ip=&#x27;::127.0.0.1&#x27;,</span><br><span class="line">port=3306), status=&#x27;ESTABLISHED&#x27;, pid=3725),</span><br><span class="line">    sconn(fd=84, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1,</span><br><span class="line">laddr=addr(ip=&#x27;::127.0.0.1&#x27;, port=62905), raddr=addr(ip=&#x27;::127.0.0.1&#x27;,</span><br><span class="line">port=3306), status=&#x27;ESTABLISHED&#x27;, pid=3725),</span><br><span class="line">    sconn(fd=93, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1,</span><br><span class="line">laddr=addr(ip=&#x27;::&#x27;, port=8080), raddr=(), status=&#x27;LISTEN&#x27;, pid=3725),</span><br><span class="line">    sconn(fd=103, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1,</span><br><span class="line">laddr=addr(ip=&#x27;::127.0.0.1&#x27;, port=62918), raddr=addr(ip=&#x27;::127.0.0.1&#x27;,</span><br><span class="line">port=3306), status=&#x27;ESTABLISHED&#x27;, pid=3725),</span><br><span class="line">    sconn(fd=105, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1, ...,</span><br><span class="line">pid=3725),</span><br><span class="line">    sconn(fd=106, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1, ...,</span><br><span class="line">pid=3725),</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    sconn(fd=107, family=&lt;AddressFamily.AF_INET6: 30&gt;, type=1, ...,</span><br><span class="line">pid=3725),</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    sconn(fd=27, family=&lt;AddressFamily.AF_INET: 2&gt;, type=2, ..., pid=1)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取进程信息"><a href="#获取进程信息" class="headerlink" title="获取进程信息"></a>获取进程信息</h2><h2 id="通过psutil可以获取到所有进程的详细信息："><a href="#通过psutil可以获取到所有进程的详细信息：" class="headerlink" title="通过psutil可以获取到所有进程的详细信息："></a>通过psutil可以获取到所有进程的详细信息：</h2><p><code>&gt;&gt;&gt; psutil.pids() #</code> 所有进程 <code>ID [3865, 3864, 3863, 3856, 3855, 3853, 3776, ..., 45, 44, 1, 0] &gt;&gt;&gt; p = psutil.Process(3776) #</code> 获取指定进程 <code>ID=3776</code> ，其实就是当前 <code>Python</code> 交互环境 <code>&gt;&gt;&gt; p.name() #</code> 进程名称 <code>&#39;python3.6&#39; &gt;&gt;&gt; p.exe() #</code> 进程 <code>exe</code> 路径 <code>&#39;/Users/michael/anaconda3/bin/python3.6&#39; &gt;&gt;&gt; p.cwd() #</code> 进程工作目录 <code>&#39;/Users/michael&#39; &gt;&gt;&gt; p.cmdline() #</code> 进程启动的命令行 <code>[&#39;python3&#39;] &gt;&gt;&gt; p.ppid() #</code> 父进程 <code>ID 3765 &gt;&gt;&gt; p.parent() #</code> 父进程 <code>&lt;psutil.Process(pid=3765, name=&#39;bash&#39;) at 4503144040&gt; &gt;&gt;&gt; p.children() #</code> 子进程列表 <code>[] &gt;&gt;&gt; p.status() #</code> 进程状态 <code>&#39;running&#39; &gt;&gt;&gt; p.username() #</code> 进程用户名 <code>&#39;michael&#39; &gt;&gt;&gt; p.create_time() #</code> 进程创建时间 <code>1511052731.120333 &gt;&gt;&gt; p.terminal() #</code> 进程终端 <code>&#39;/dev/ttys002&#39; &gt;&gt;&gt; p.cpu_times() #</code> 进程使用的 <code>CPU</code> 时间 <code>pcputimes(user=0.081150144, system=0.053269812, children_user=0.0, children_system=0.0) &gt;&gt;&gt; p.memory_info() #</code> 进程使用的内存 <code>pmem(rss=8310784, vms=2481725440, pfaults=3207, pageins=18) &gt;&gt;&gt; p.open_files() #</code> 进程打开的文件 <code>[] &gt;&gt;&gt; p.connections() #</code> 进程相关网络连接 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[]</span><br></pre></td></tr></table></figure>
+
+<p><code>&gt;&gt;&gt; p.num_threads() #</code> 进程的线程数量 <code>1 &gt;&gt;&gt; p.threads() #</code> 所有线程信息 <code>[pthread(id=1, user_time=0.090318, system_time=0.062736)] &gt;&gt;&gt; p.environ() #</code> 进程环境变量 <code>{&#39;SHELL&#39;: &#39;/bin/bash&#39;, &#39;PATH&#39;: &#39;/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:...&#39;, &#39;PWD&#39;: &#39;/Users/michael&#39;, &#39;LANG&#39;: &#39;zh_CN.UTF-8&#39;, ...} &gt;&gt;&gt; p.terminate() #</code> 结束进程 <code>Terminated: 15 &lt;--</code> 自己把自己结束了 </p>
+<p>和获取网络连接类似，获取一个root用户的进程需要root权限，启动Python交互环境或者 <code>.py</code> 文件时，需要 <code>sudo</code> 权限。 </p>
+<h2 id="psutil还提供了一个-test-函数，可以模拟出-ps-命令的效果："><a href="#psutil还提供了一个-test-函数，可以模拟出-ps-命令的效果：" class="headerlink" title="psutil还提供了一个 test() 函数，可以模拟出 ps 命令的效果："></a>psutil还提供了一个 <code>test()</code> 函数，可以模拟出 <code>ps</code> 命令的效果：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ sudo python3</span><br><span class="line">Password: ******</span><br><span class="line">Python 3.6.3 ... on darwin</span><br><span class="line">Type &quot;help&quot;, ... for more information.</span><br><span class="line">&gt;&gt;&gt; import psutil</span><br><span class="line">&gt;&gt;&gt; psutil.test()</span><br><span class="line">USER         PID %MEM     VSZ     RSS TTY           START    TIME  COMMAND</span><br><span class="line">root           0 24.0 74270628 2016380 ?             Nov18   40:51</span><br><span class="line">kernel_task</span><br><span class="line">root           1  0.1 2494140    9484 ?             Nov18   01:39  launchd</span><br><span class="line">root          44  0.4 2519872   36404 ?             Nov18   02:02</span><br><span class="line">UserEventAgent</span><br><span class="line">root          45    ? 2474032    1516 ?             Nov18   00:14  syslogd</span><br><span class="line">root          47  0.1 2504768    8912 ?             Nov18   00:03  kextd</span><br><span class="line">root          48  0.1 2505544    4720 ?             Nov18   00:19</span><br><span class="line">fseventsd</span><br><span class="line">_appleeven    52  0.1 2499748    5024 ?             Nov18   00:00</span><br><span class="line">appleeventsd</span><br><span class="line">root          53  0.1 2500592    6132 ?             Nov18   00:02  configd</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><h2 id="psutil-使得Python程序获取系统信息变得易如反掌。"><a href="#psutil-使得Python程序获取系统信息变得易如反掌。" class="headerlink" title="psutil 使得Python程序获取系统信息变得易如反掌。"></a><code>psutil</code> 使得Python程序获取系统信息变得易如反掌。</h2><p><code>psutil</code> 还可以获取用户信息、Windows服务等很多有用的系统信息，具体请参考 <code>psutil</code> 的 官网：<a class="link"   target="_blank" rel="noopener" href="https://github.com/giampaolo/psutil" >https://github.com/giampaolo/psutil<i class="fas fa-external-link-alt"></i></a> </p>
+<p>评论 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_038/"
+                                   title="Python基础 - 部分 38"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 38</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_036/"
+                                   title="Python基础 - 部分 36"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 36</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%EF%BC%8C%E8%A6%81%E6%8C%87%E5%AE%9A%E8%B6%85%E6%97%B6%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%BB%A5%E7%A7%92%E4%B8%BA%E5%8D%95%E4%BD%8D%E7%9A%84timeout%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">最后，要指定超时，传入以秒为单位的timeout参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8requests%E8%8E%B7%E5%8F%96URL%E8%B5%84%E6%BA%90%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%BF%99%E4%B9%88%E7%AE%80%E5%8D%95%EF%BC%81"><span class="nav-text">用requests获取URL资源，就是这么简单！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chardet"><span class="nav-text">chardet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85chardet"><span class="nav-text">安装chardet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8chardet"><span class="nav-text">使用chardet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9UTF-8%E7%BC%96%E7%A0%81%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="nav-text">对UTF-8编码进行检测：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E5%86%8D%E8%AF%95%E8%AF%95%E5%AF%B9%E6%97%A5%E6%96%87%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="nav-text">我们再试试对日文进行检测：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil"><span class="nav-text">psutil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85psutil"><span class="nav-text">安装psutil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96CPU%E4%BF%A1%E6%81%AF"><span class="nav-text">获取CPU信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%86%85%E5%AD%98%E4%BF%A1%E6%81%AF"><span class="nav-text">获取内存信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-psutil-%E8%8E%B7%E5%8F%96%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E5%92%8C%E4%BA%A4%E6%8D%A2%E5%86%85%E5%AD%98%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%88%86%E5%88%AB%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="nav-text">使用 psutil 获取物理内存和交换内存信息，分别使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E7%9A%84%E6%98%AF%E5%AD%97%E8%8A%82%E4%B8%BA%E5%8D%95%E4%BD%8D%E7%9A%84%E6%95%B4%E6%95%B0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%EF%BC%8C%E6%80%BB%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%E6%98%AF8589934592-8-GB%EF%BC%8C%E5%B7%B2%E7%94%A87201386496"><span class="nav-text">返回的是字节为单位的整数，可以看到，总内存大小是8589934592 &#x3D; 8 GB，已用7201386496</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%A3%81%E7%9B%98%E4%BF%A1%E6%81%AF"><span class="nav-text">获取磁盘信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF"><span class="nav-text">获取网络信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%92%8C%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">psutil可以获取网络接口和网络连接信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="nav-text">获取进程信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87psutil%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%88%B0%E6%89%80%E6%9C%89%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">通过psutil可以获取到所有进程的详细信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil%E8%BF%98%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E4%B8%AA-test-%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A8%A1%E6%8B%9F%E5%87%BA-ps-%E5%91%BD%E4%BB%A4%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">psutil还提供了一个 test() 函数，可以模拟出 ps 命令的效果：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil-%E4%BD%BF%E5%BE%97Python%E7%A8%8B%E5%BA%8F%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E5%8F%98%E5%BE%97%E6%98%93%E5%A6%82%E5%8F%8D%E6%8E%8C%E3%80%82"><span class="nav-text">psutil 使得Python程序获取系统信息变得易如反掌。</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%EF%BC%8C%E8%A6%81%E6%8C%87%E5%AE%9A%E8%B6%85%E6%97%B6%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%BB%A5%E7%A7%92%E4%B8%BA%E5%8D%95%E4%BD%8D%E7%9A%84timeout%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">最后，要指定超时，传入以秒为单位的timeout参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8requests%E8%8E%B7%E5%8F%96URL%E8%B5%84%E6%BA%90%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%BF%99%E4%B9%88%E7%AE%80%E5%8D%95%EF%BC%81"><span class="nav-text">用requests获取URL资源，就是这么简单！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chardet"><span class="nav-text">chardet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85chardet"><span class="nav-text">安装chardet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8chardet"><span class="nav-text">使用chardet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9UTF-8%E7%BC%96%E7%A0%81%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="nav-text">对UTF-8编码进行检测：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E5%86%8D%E8%AF%95%E8%AF%95%E5%AF%B9%E6%97%A5%E6%96%87%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="nav-text">我们再试试对日文进行检测：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil"><span class="nav-text">psutil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85psutil"><span class="nav-text">安装psutil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96CPU%E4%BF%A1%E6%81%AF"><span class="nav-text">获取CPU信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%86%85%E5%AD%98%E4%BF%A1%E6%81%AF"><span class="nav-text">获取内存信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-psutil-%E8%8E%B7%E5%8F%96%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E5%92%8C%E4%BA%A4%E6%8D%A2%E5%86%85%E5%AD%98%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%88%86%E5%88%AB%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="nav-text">使用 psutil 获取物理内存和交换内存信息，分别使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E7%9A%84%E6%98%AF%E5%AD%97%E8%8A%82%E4%B8%BA%E5%8D%95%E4%BD%8D%E7%9A%84%E6%95%B4%E6%95%B0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%EF%BC%8C%E6%80%BB%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%E6%98%AF8589934592-8-GB%EF%BC%8C%E5%B7%B2%E7%94%A87201386496"><span class="nav-text">返回的是字节为单位的整数，可以看到，总内存大小是8589934592 &#x3D; 8 GB，已用7201386496</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%A3%81%E7%9B%98%E4%BF%A1%E6%81%AF"><span class="nav-text">获取磁盘信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF"><span class="nav-text">获取网络信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%92%8C%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">psutil可以获取网络接口和网络连接信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="nav-text">获取进程信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87psutil%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%88%B0%E6%89%80%E6%9C%89%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">通过psutil可以获取到所有进程的详细信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil%E8%BF%98%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E4%B8%AA-test-%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A8%A1%E6%8B%9F%E5%87%BA-ps-%E5%91%BD%E4%BB%A4%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">psutil还提供了一个 test() 函数，可以模拟出 ps 命令的效果：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#psutil-%E4%BD%BF%E5%BE%97Python%E7%A8%8B%E5%BA%8F%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E5%8F%98%E5%BE%97%E6%98%93%E5%A6%82%E5%8F%8D%E6%8E%8C%E3%80%82"><span class="nav-text">psutil 使得Python程序获取系统信息变得易如反掌。</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 8 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 8
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:07:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="再议不可变对象"><a href="#再议不可变对象" class="headerlink" title="再议不可变对象"></a>再议不可变对象</h2><p>上面我们讲了，str是不变对象，而list是可变对象。 </p>
+<p>对于可变对象，比如list，对list进行操作，list内部的内容是会变化的，比如： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [&#x27;c&#x27;, &#x27;b&#x27;, &#x27;a&#x27;]</span><br><span class="line">&gt;&gt;&gt; a.sort()</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="而对于不可变对象，比如str，对str进行操作呢："><a href="#而对于不可变对象，比如str，对str进行操作呢：" class="headerlink" title="而对于不可变对象，比如str，对str进行操作呢："></a>而对于不可变对象，比如str，对str进行操作呢：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = &#x27;abc&#x27;</span><br><span class="line">&gt;&gt;&gt; a.replace(&#x27;a&#x27;, &#x27;A&#x27;)</span><br><span class="line">&#x27;Abc&#x27;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&#x27;abc&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>虽然字符串有个 <code>replace()</code> 方法，也确实变出了 <code>&#39;Abc&#39;</code> ，但变量 <code>a</code> 最后仍是 <code>&#39;abc&#39;</code> ，应 该怎么理解呢？ </p>
+<h2 id="我们先把代码改成下面这样："><a href="#我们先把代码改成下面这样：" class="headerlink" title="我们先把代码改成下面这样："></a>我们先把代码改成下面这样：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = &#x27;abc&#x27;</span><br><span class="line">&gt;&gt;&gt; b = a.replace(&#x27;a&#x27;, &#x27;A&#x27;)</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">&#x27;Abc&#x27;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&#x27;abc&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>要始终牢记的是， <code>a</code> 是变量，而 <code>&#39;abc&#39;</code> 才是字符串对象！有些时候，我们经常说，对象 <code>a</code> 的内容是 <code>&#39;abc&#39;</code> ，但其实是指， <code>a</code> 本身是一个变量，它指向的对象的内容才是 <code>&#39;abc&#39;</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">┌───┐     ┌───────┐</span><br><span class="line">│ a │────▶│ &#x27;abc&#x27; │</span><br><span class="line">└───┘     └───────┘</span><br></pre></td></tr></table></figure>
+
+<p>当我们调用 <code>a.replace(&#39;a&#39;, &#39;A&#39;)</code> 时，实际上调用方法 <code>replace</code> 是作用在字符串对 象 <code>&#39;abc&#39;</code> 上的，而这个方法虽然名字叫 <code>replace</code> ，但却没有改变字符串 <code>&#39;abc&#39;</code> 的内容。相 反， <code>replace</code> 方法创建了一个新字符串 <code>&#39;Abc&#39;</code> 并返回，如果我们用变量 <code>b</code> 指向该新字符 串，就容易理解了，变量 <code>a</code> 仍指向原有的字符串 <code>&#39;abc&#39;</code> ，但变量 <code>b</code> 却指向新字符 串 <code>&#39;Abc&#39;</code> 了： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌───┐     ┌───────┐</span><br><span class="line">│ a │────▶│ &#x27;abc&#x27; │</span><br><span class="line">└───┘     └───────┘</span><br><span class="line">┌───┐     ┌───────┐</span><br><span class="line">│ b │────▶│ &#x27;Abc&#x27; │</span><br><span class="line">└───┘     └───────┘</span><br></pre></td></tr></table></figure>
+
+<p>所以，对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容。相反，这 些方法会创建新的对象并返回，这样，就保证了不可变对象本身永远是不可变的。 </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>the_dict.py the_set.py </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>使用key-value存储结构的dict在Python中非常有用，选择不可变对象作为key很重要，最常用的 key是字符串。 </p>
+<p>tuple虽然是不变对象，但试试把 <code>(1, 2, 3)</code> 和 <code>(1, [2, 3])</code> 放入dict或set中，并解释结果。 </p>
+<p>评论 </p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a><strong>函数</strong></h2><p>原文链接 </p>
+<h2 id="我们知道圆的面积计算公式为："><a href="#我们知道圆的面积计算公式为：" class="headerlink" title="我们知道圆的面积计算公式为："></a>我们知道圆的面积计算公式为：</h2><p><em>S</em> &#x3D; <em>πr</em>[2] </p>
+<p>当我们知道半径 <code>r</code> 的值时，就可以根据公式计算出面积。假设我们需要计算3个不同大小的圆 的面积： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">r1 = 12.34</span><br><span class="line">r2 = 9.08</span><br><span class="line">r3 = 73.1</span><br><span class="line">s1 = 3.14 * r1 * r1</span><br><span class="line">s2 = 3.14 * r2 * r2</span><br><span class="line">s3 = 3.14 * r3 * r3</span><br></pre></td></tr></table></figure>
+
+<p>当代码出现有规律的重复的时候，你就需要当心了，每次写 <code>3.14 * x * x</code> 不仅很麻烦，而且， 如果要把 <code>3.14</code> 改成 <code>3.14159265359</code> 的时候，得全部替换。 </p>
+<p>有了函数，我们就不再每次写 <code>s = 3.14 * x * x</code> ，而是写成更有意义的函数调用 <code>s = area_of_circle(x)</code> ，而函数 <code>area_of_circle</code> 本身只需要写一次，就可以多次调用。 </p>
+<p>基本上所有的高级语言都支持函数，Python也不例外。Python不但能非常灵活地定义函数，而 且本身内置了很多有用的函数，可以直接调用。 </p>
+<h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><p>抽象是数学中非常常见的概念。举个例子： </p>
+<p>计算数列的和，比如： <code>1 + 2 + 3 + ... + 100</code> ，写起来十分不方便，于是数学家发明了求和 符号∑，可以把 <code>1 + 2 + 3 + ... + 100</code> 记作： </p>
+<p>100 <em>n</em> ∑ <em>n</em> &#x3D;1 </p>
+<p>这种抽象记法非常强大，因为我们看到 ∑ 就可以理解成求和，而不是还原成低级的加法运算。 </p>
+<h2 id="而且，这种抽象记法是可扩展的，比如："><a href="#而且，这种抽象记法是可扩展的，比如：" class="headerlink" title="而且，这种抽象记法是可扩展的，比如："></a>而且，这种抽象记法是可扩展的，比如：</h2><p>100 2 <em>n</em> + 1 ∑ <em>n</em> &#x3D;1 </p>
+<p>还原成加法运算就变成了： </p>
+<p>(1 x 1 + 1) + (2 x 2 + 1) + (3 x 3 + 1) + … + (100 x 100 + 1) </p>
+<p>可见，借助抽象，我们才能不关心底层的具体计算过程，而直接在更高的层次上思考问题。 写计算机程序也是一样，函数就是最基本的一种代码抽象的方式。 </p>
+<p>评论 </p>
+<h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a><strong>调用函数</strong></h2><p>原文链接 </p>
+<h2 id="Python内置了很多有用的函数，我们可以直接调用。"><a href="#Python内置了很多有用的函数，我们可以直接调用。" class="headerlink" title="Python内置了很多有用的函数，我们可以直接调用。"></a>Python内置了很多有用的函数，我们可以直接调用。</h2><p>要调用一个函数，需要知道函数的名称和参数，比如求绝对值的函数 <code>abs</code> ，只有一个参数。可 以直接从Python的官方网站查看文档，也可以在交互式命令行通过 <code>help(abs)</code> 查看 <code>abs</code> 函数 的帮助信息。 </p>
+<p>调用 <code>abs</code> 函数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; abs(100)</span><br><span class="line">100</span><br><span class="line">&gt;&gt;&gt; abs(-20)</span><br><span class="line">20</span><br><span class="line">&gt;&gt;&gt; abs(12.34)</span><br><span class="line">12.34</span><br></pre></td></tr></table></figure>
+
+<p>调用函数的时候，如果传入的参数数量不对，会报 <code>TypeError</code> 的错误，并且Python会明确地告 诉你： <code>abs()</code> 有且仅有1个参数，但给出了两个： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; abs(1, 2)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: abs() takes exactly one argument (2 given)</span><br></pre></td></tr></table></figure>
+
+<p>如果传入的参数数量是对的，但参数类型不能被函数所接受，也会报 <code>TypeError</code> 的错误，并且 给出错误信息： <code>str</code> 是错误的参数类型： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; abs(&#x27;a&#x27;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: bad operand type for abs(): &#x27;str&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="而-max-函数-max-可以接收任意多个参数，并返回最大的那个："><a href="#而-max-函数-max-可以接收任意多个参数，并返回最大的那个：" class="headerlink" title="而 max 函数 max() 可以接收任意多个参数，并返回最大的那个："></a>而 <code>max</code> 函数 <code>max()</code> 可以接收任意多个参数，并返回最大的那个：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; max(1, 2)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; max(2, 3, 1, -5)</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>Python内置的常用函数还包括数据类型转换函数，比如 <code>int()</code> 函数可以把其他数据类型转换为 整数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; int(&#x27;123&#x27;)</span><br><span class="line">123</span><br><span class="line">&gt;&gt;&gt; int(12.34)</span><br><span class="line">12</span><br><span class="line">&gt;&gt;&gt; float(&#x27;12.34&#x27;)</span><br><span class="line">12.34</span><br><span class="line">&gt;&gt;&gt; str(1.23)</span><br><span class="line">&#x27;1.23&#x27;</span><br><span class="line">&gt;&gt;&gt; str(100)</span><br><span class="line">&#x27;100&#x27;</span><br><span class="line">&gt;&gt;&gt; bool(1)</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; bool(&#x27;&#x27;)</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+
+<p>函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数 起了一个“别名”： </p>
+<p><code>&gt;&gt;&gt; a = abs #</code> 变量 <code>a</code> 指向 <code>abs</code> 函数 <code>&gt;&gt;&gt; a(-1) #</code> 所以也可以通过 <code>a</code> 调用 <code>abs</code> 函数 <code>1</code> </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>请利用Python内置的 <code>hex()</code> 函数把一个整数转换成十六进制表示的字符串： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = 255</span><br><span class="line">n2 = 1000</span><br><span class="line">print(???)</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考源码-1"><a href="#参考源码-1" class="headerlink" title="参考源码"></a>参考源码</h2><p>call_func.py </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>调用Python的函数，需要根据函数定义，传入正确的参数。如果函数调用出错，一定要学会看错 误信息，所以英文很重要！ </p>
+<p>评论 </p>
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a><strong>定义函数</strong></h2><p>原文链接 </p>
+<p>在Python中，定义一个函数要使用 <code>def</code> 语句，依次写出函数名、括号、括号中的参数和冒 号 <code>:</code> ，然后，在缩进块中编写函数体，函数的返回值用 <code>return</code> 语句返回。 </p>
+<p>我们以自定义一个求绝对值的 <code>my_abs</code> 函数为例： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">defmy_abs(x):</span><br><span class="line">if x &gt;= 0:</span><br><span class="line">return x</span><br><span class="line">else:</span><br><span class="line">return -x</span><br><span class="line">print(my_abs(-99))</span><br></pre></td></tr></table></figure>
+
+<p>请自行测试并调用 <code>my_abs</code> 看看返回结果是否正确。 </p>
+<p>请注意，函数体内部的语句在执行时，一旦执行到 <code>return</code> 时，函数就执行完毕，并将结果返 回。因此，函数内部通过条件判断和循环可以实现非常复杂的逻辑。 </p>
+<p>如果没有 <code>return</code> 语句，函数执行完毕后也会返回结果，只是结果为 <code>None</code> 。 <code>return None</code> 可以简写为 <code>return</code> 。 </p>
+<p>在Python交互环境中定义函数时，注意Python会出现 <code>...</code> 的提示。函数定义结束后需要按两 次回车重新回到 <code>&gt;&gt;&gt;</code> 提示符下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│Windows PowerShell                                 - □ x │</span><br><span class="line">├─────────────────────────────────────────────────────────┤</span><br><span class="line">│��� def my_abs(x):                                       │</span><br><span class="line">│���     if x �� 0:                                       │</span><br><span class="line">│���         return x                                     │</span><br><span class="line">│���     else:                                            │</span><br><span class="line">│���         return -x                                    │</span><br><span class="line">│���                                                      │</span><br><span class="line">│��� my_abs(-9)                                           │</span><br><span class="line">│9                                                        │</span><br><span class="line">│���                                                      │</span><br><span class="line">│                                                         │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<p>如果你已经把 <code>my_abs()</code> 的函数定义保存为 <code>abstest.py</code> 文件了，那么，可以在该文件的当前 目录下启动Python解释器，用 <code>from abstest import my_abs</code> 来导入 <code>my_abs()</code> 函数，注意 <code>abstest</code> 是文件名（不含 <code>.py</code> 扩展名）： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│Windows PowerShell                                 - □ x │</span><br><span class="line">├─────────────────────────────────────────────────────────┤</span><br><span class="line">│��� from abstest import my_abs                           │</span><br><span class="line">│��� my_abs(-9)                                           │</span><br><span class="line">│9                                                        │</span><br><span class="line">│���                                                      │</span><br><span class="line">│                                                         │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<p><code>import</code> 的用法在后续模块一节中会详细介绍。 </p>
+<h2 id="空函数"><a href="#空函数" class="headerlink" title="空函数"></a>空函数</h2><p>如果想定义一个什么事也不做的空函数，可以用 <code>pass</code> 语句： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defnop():</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+
+<p><code>pass</code> 语句什么都不做，那有什么用？实际上 <code>pass</code> 可以用来作为占位符，比如现在还没想好 怎么写函数的代码，就可以先放一个 <code>pass</code> ，让代码能运行起来。 </p>
+<p><code>pass</code> 还可以用在其他语句里，比如： </p>
+<p><code>if age &gt;= 18: pass</code> 缺少了 <code>pass</code> ，代码运行就会有语法错误。 </p>
+<h2 id="参数检查"><a href="#参数检查" class="headerlink" title="参数检查"></a>参数检查</h2><p>调用函数时，如果参数个数不对，Python解释器会自动检查出来，并抛出 <code>TypeError</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_abs(1, 2)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: my_abs() takes 1 positional argument but 2 were given</span><br></pre></td></tr></table></figure>
+
+<p>但是如果参数类型不对，Python解释器就无法帮我们检查。试试 <code>my_abs</code> 和内置函数 <code>abs</code> 的 差别： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_abs(&#x27;A&#x27;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 2, in my_abs</span><br><span class="line">TypeError: unorderable types: str() &gt;= int()</span><br><span class="line">&gt;&gt;&gt; abs(&#x27;A&#x27;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: bad operand type for abs(): &#x27;str&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>当传入了不恰当的参数时，内置函数 <code>abs</code> 会检查出参数错误，而我们定义的 <code>my_abs</code> 没有参数 检查，会导致 <code>if</code> 语句出错，出错信息和 <code>abs</code> 不一样。所以，这个函数定义不够完善。 </p>
+<p>让我们修改一下 <code>my_abs</code> 的定义，对参数类型做检查，只允许整数和浮点数类型的参数。数据类 型检查可以用内置函数 <code>isinstance()</code> 实现： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">defmy_abs(x):</span><br><span class="line">ifnotisinstance(x, (int, float)):</span><br><span class="line">raise TypeError(&#x27;bad operand type&#x27;)</span><br><span class="line">if x &gt;= 0:</span><br><span class="line">return x</span><br><span class="line">else:</span><br><span class="line">return -x</span><br></pre></td></tr></table></figure>
+
+<p>添加了参数检查后，如果传入错误的参数类型，函数就可以抛出一个错误： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_abs(&#x27;A&#x27;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 3, in my_abs</span><br><span class="line">TypeError: bad operand type</span><br></pre></td></tr></table></figure>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_009/"
+                                   title="Python基础 - 部分 9"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 9</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_007/"
+                                   title="Python基础 - 部分 7"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 7</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%8D%E8%AE%AE%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1"><span class="nav-text">再议不可变对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8C%E5%AF%B9%E4%BA%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%AF%94%E5%A6%82str%EF%BC%8C%E5%AF%B9str%E8%BF%9B%E8%A1%8C%E6%93%8D%E4%BD%9C%E5%91%A2%EF%BC%9A"><span class="nav-text">而对于不可变对象，比如str，对str进行操作呢：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E5%85%88%E6%8A%8A%E4%BB%A3%E7%A0%81%E6%94%B9%E6%88%90%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%A0%B7%EF%BC%9A"><span class="nav-text">我们先把代码改成下面这样：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%E5%9C%86%E7%9A%84%E9%9D%A2%E7%A7%AF%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F%E4%B8%BA%EF%BC%9A"><span class="nav-text">我们知道圆的面积计算公式为：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8C%E4%B8%94%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%8A%BD%E8%B1%A1%E8%AE%B0%E6%B3%95%E6%98%AF%E5%8F%AF%E6%89%A9%E5%B1%95%E7%9A%84%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9A"><span class="nav-text">而且，这种抽象记法是可扩展的，比如：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%86%85%E7%BD%AE%E4%BA%86%E5%BE%88%E5%A4%9A%E6%9C%89%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8%E3%80%82"><span class="nav-text">Python内置了很多有用的函数，我们可以直接调用。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8C-max-%E5%87%BD%E6%95%B0-max-%E5%8F%AF%E4%BB%A5%E6%8E%A5%E6%94%B6%E4%BB%BB%E6%84%8F%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%8C%E5%B9%B6%E8%BF%94%E5%9B%9E%E6%9C%80%E5%A4%A7%E7%9A%84%E9%82%A3%E4%B8%AA%EF%BC%9A"><span class="nav-text">而 max 函数 max() 可以接收任意多个参数，并返回最大的那个：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">数据类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E5%87%BD%E6%95%B0"><span class="nav-text">空函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A3%80%E6%9F%A5"><span class="nav-text">参数检查</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%8D%E8%AE%AE%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1"><span class="nav-text">再议不可变对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8C%E5%AF%B9%E4%BA%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%AF%94%E5%A6%82str%EF%BC%8C%E5%AF%B9str%E8%BF%9B%E8%A1%8C%E6%93%8D%E4%BD%9C%E5%91%A2%EF%BC%9A"><span class="nav-text">而对于不可变对象，比如str，对str进行操作呢：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E5%85%88%E6%8A%8A%E4%BB%A3%E7%A0%81%E6%94%B9%E6%88%90%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%A0%B7%EF%BC%9A"><span class="nav-text">我们先把代码改成下面这样：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%E5%9C%86%E7%9A%84%E9%9D%A2%E7%A7%AF%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F%E4%B8%BA%EF%BC%9A"><span class="nav-text">我们知道圆的面积计算公式为：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8C%E4%B8%94%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%8A%BD%E8%B1%A1%E8%AE%B0%E6%B3%95%E6%98%AF%E5%8F%AF%E6%89%A9%E5%B1%95%E7%9A%84%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9A"><span class="nav-text">而且，这种抽象记法是可扩展的，比如：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%86%85%E7%BD%AE%E4%BA%86%E5%BE%88%E5%A4%9A%E6%9C%89%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8%E3%80%82"><span class="nav-text">Python内置了很多有用的函数，我们可以直接调用。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8C-max-%E5%87%BD%E6%95%B0-max-%E5%8F%AF%E4%BB%A5%E6%8E%A5%E6%94%B6%E4%BB%BB%E6%84%8F%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%8C%E5%B9%B6%E8%BF%94%E5%9B%9E%E6%9C%80%E5%A4%A7%E7%9A%84%E9%82%A3%E4%B8%AA%EF%BC%9A"><span class="nav-text">而 max 函数 max() 可以接收任意多个参数，并返回最大的那个：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">数据类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E5%87%BD%E6%95%B0"><span class="nav-text">空函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A3%80%E6%9F%A5"><span class="nav-text">参数检查</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

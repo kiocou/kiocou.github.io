@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 10 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 10
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:09:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="但是调用的时候，需要先组装出一个list或tuple："><a href="#但是调用的时候，需要先组装出一个list或tuple：" class="headerlink" title="但是调用的时候，需要先组装出一个list或tuple："></a>但是调用的时候，需要先组装出一个list或tuple：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; calc([1, 2, 3])</span><br><span class="line">14</span><br><span class="line">&gt;&gt;&gt; calc((1, 3, 5, 7))</span><br><span class="line">84</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果利用可变参数，调用函数的方式可以简化成这样："><a href="#如果利用可变参数，调用函数的方式可以简化成这样：" class="headerlink" title="如果利用可变参数，调用函数的方式可以简化成这样："></a>如果利用可变参数，调用函数的方式可以简化成这样：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; calc(1, 2, 3)</span><br><span class="line">14</span><br><span class="line">&gt;&gt;&gt; calc(1, 3, 5, 7)</span><br><span class="line">84</span><br></pre></td></tr></table></figure>
+
+<h2 id="所以，我们把函数的参数改为可变参数："><a href="#所以，我们把函数的参数改为可变参数：" class="headerlink" title="所以，我们把函数的参数改为可变参数："></a>所以，我们把函数的参数改为可变参数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defcalc(*numbers):</span><br><span class="line">sum = 0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for n in numbers:</span><br><span class="line">sum = sum + n * n</span><br><span class="line">returnsum</span><br></pre></td></tr></table></figure>
+
+<p>定义可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个 <code>*</code> 号。在函数内部， 参数 <code>numbers</code> 接收到的是一个tuple，因此，函数代码完全不变。但是，调用该函数时，可以传 入任意个参数，包括0个参数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; calc(1, 2)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; calc()</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p>如果已经有一个list或者tuple，要调用一个可变参数怎么办？可以这样做： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; nums = [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; calc(nums[0], nums[1], nums[2])</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<p>这种写法当然是可行的，问题是太繁琐，所以Python允许你在list或tuple前面加一个 <code>*</code> 号，把 list或tuple的元素变成可变参数传进去： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; nums = [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; calc(*nums)</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<p><code>*nums</code> 表示把 <code>nums</code> 这个list的所有元素作为可变参数传进去。这种写法相当有用，而且很常 见。 </p>
+<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>可变参数允许你传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple。而关 键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个 dict。请看示例： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defperson(name, age, **kw):</span><br><span class="line">print(&#x27;name:&#x27;, name, &#x27;age:&#x27;, age, &#x27;other:&#x27;, kw)</span><br></pre></td></tr></table></figure>
+
+<p>函数 <code>person</code> 除了必选参数 <code>name</code> 和 <code>age</code> 外，还接受关键字参数 <code>kw</code> 。在调用该函数时，可 以只传入必选参数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person(&#x27;Michael&#x27;, 30)</span><br><span class="line">name: Michael age: 30 other: &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="也可以传入任意个数的关键字参数："><a href="#也可以传入任意个数的关键字参数：" class="headerlink" title="也可以传入任意个数的关键字参数："></a>也可以传入任意个数的关键字参数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person(&#x27;Bob&#x27;, 35, city=&#x27;Beijing&#x27;)</span><br><span class="line">name: Bob age: 35 other: &#123;&#x27;city&#x27;: &#x27;Beijing&#x27;&#125;</span><br><span class="line">&gt;&gt;&gt; person(&#x27;Adam&#x27;, 45, gender=&#x27;M&#x27;, job=&#x27;Engineer&#x27;)</span><br><span class="line">name: Adam age: 45 other: &#123;&#x27;gender&#x27;: &#x27;M&#x27;, &#x27;job&#x27;: &#x27;Engineer&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关键字参数有什么用？它可以扩展函数的功能。比如，在 <code>person</code> 函数里，我们保证能接收到 <code>name</code> 和 <code>age</code> 这两个参数，但是，如果调用者愿意提供更多的参数，我们也能收到。试想你正 在做一个用户注册的功能，除了用户名和年龄是必填项外，其他都是可选项，利用关键字参数来 定义这个函数就能满足注册的需求。 </p>
+<p>和可变参数类似，也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; extra = &#123;&#x27;city&#x27;: &#x27;Beijing&#x27;, &#x27;job&#x27;: &#x27;Engineer&#x27;&#125;</span><br><span class="line">&gt;&gt;&gt; person(&#x27;Jack&#x27;, 24, city=extra[&#x27;city&#x27;], job=extra[&#x27;job&#x27;])</span><br><span class="line">name: Jack age: 24 other: &#123;&#x27;city&#x27;: &#x27;Beijing&#x27;, &#x27;job&#x27;: &#x27;Engineer&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="当然，上面复杂的调用可以用简化的写法："><a href="#当然，上面复杂的调用可以用简化的写法：" class="headerlink" title="当然，上面复杂的调用可以用简化的写法："></a>当然，上面复杂的调用可以用简化的写法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; extra = &#123;&#x27;city&#x27;: &#x27;Beijing&#x27;, &#x27;job&#x27;: &#x27;Engineer&#x27;&#125;</span><br><span class="line">&gt;&gt;&gt; person(&#x27;Jack&#x27;, 24, **extra)</span><br><span class="line">name: Jack age: 24 other: &#123;&#x27;city&#x27;: &#x27;Beijing&#x27;, &#x27;job&#x27;: &#x27;Engineer&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>**extra</code> 表示把 <code>extra</code> 这个dict的所有key-value用关键字参数传入到函数的 <code>**kw</code> 参数， <code>kw</code> 将获得一个dict，注意 <code>kw</code> 获得的dict是 <code>extra</code> 的一份拷贝，对 <code>kw</code> 的改动不会影响到 函数外的 <code>extra</code> 。 </p>
+<h2 id="命名关键字参数"><a href="#命名关键字参数" class="headerlink" title="命名关键字参数"></a>命名关键字参数</h2><p>对于关键字参数，函数的调用者可以传入任意不受限制的关键字参数。至于到底传入了哪些，就 需要在函数内部通过 <code>kw</code> 检查。 </p>
+<h2 id="仍以-person-函数为例，我们希望检查是否有-city-和-job-参数："><a href="#仍以-person-函数为例，我们希望检查是否有-city-和-job-参数：" class="headerlink" title="仍以 person() 函数为例，我们希望检查是否有 city 和 job 参数："></a>仍以 <code>person()</code> 函数为例，我们希望检查是否有 <code>city</code> 和 <code>job</code> 参数：</h2><p><code>def person(name, age, **kw): if &#39;city&#39; in kw: #</code> 有 <code>city</code> 参数 <code>pass if &#39;job&#39; in kw: #</code> 有 <code>job</code> 参数 <code>pass print(&#39;name:&#39;, name, &#39;age:&#39;, age, &#39;other:&#39;, kw)</code> </p>
+<h2 id="但是调用者仍可以传入不受限制的关键字参数："><a href="#但是调用者仍可以传入不受限制的关键字参数：" class="headerlink" title="但是调用者仍可以传入不受限制的关键字参数："></a>但是调用者仍可以传入不受限制的关键字参数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person(&#x27;Jack&#x27;, 24, city=&#x27;Beijing&#x27;, addr=&#x27;Chaoyang&#x27;, zipcode=123456)</span><br></pre></td></tr></table></figure>
+
+<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收 <code>city</code> 和 <code>job</code> 作为关 键字参数。这种方式定义的函数如下： </p>
+<p><code>def person(name, age, *, city, job): print(name, age, city, job)</code> 和关键字参数 <code>**kw</code> 不同，命名关键字参数需要一个特殊分隔符 <code>*</code> ， <code>*</code> 后面的参数被视为命 名关键字参数。 调用方式如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person(&#x27;Jack&#x27;, 24, city=&#x27;Beijing&#x27;, job=&#x27;Engineer&#x27;)</span><br><span class="line">Jack 24 Beijing Engineer</span><br></pre></td></tr></table></figure>
+
+<p>如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符 <code>*</code> 了： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defperson(name, age, *args, city, job):</span><br><span class="line">print(name, age, args, city, job)</span><br></pre></td></tr></table></figure>
+
+<p>命名关键字参数必须传入参数名，这和位置参数不同。如果没有传入参数名，调用将报错： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person(&#x27;Jack&#x27;, 24, &#x27;Beijing&#x27;, &#x27;Engineer&#x27;)</span><br><span class="line">Traceback (most recent call last):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TypeError: person() missing 2 required keyword-only arguments: &#x27;city&#x27; and</span><br><span class="line">&#x27;job&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>由于调用时缺少参数名 <code>city</code> 和 <code>job</code> ，Python解释器把前两个参数视为位置参数，后两个参 数传给 <code>*args</code> ，但缺少命名关键字参数导致报错。 </p>
+<p>命名关键字参数可以有缺省值，从而简化调用： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defperson(name, age, *, city=&#x27;Beijing&#x27;, job):</span><br><span class="line">print(name, age, city, job)</span><br></pre></td></tr></table></figure>
+
+<p>由于命名关键字参数 <code>city</code> 具有默认值，调用时，可不传入 <code>city</code> 参数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person(&#x27;Jack&#x27;, 24, job=&#x27;Engineer&#x27;)</span><br><span class="line">Jack 24 Beijing Engineer</span><br></pre></td></tr></table></figure>
+
+<p>使用命名关键字参数时，要特别注意，如果没有可变参数，就必须加一个 <code>*</code> 作为特殊分隔符。 如果缺少 <code>*</code> ，Python解释器将无法识别位置参数和命名关键字参数： </p>
+<p><code>def person(name, age, city, job): #</code> 缺少 <code>*</code> ， <code>city</code> 和 <code>job</code> 被视为位置参数 <code>pass</code> </p>
+<h2 id="参数组合"><a href="#参数组合" class="headerlink" title="参数组合"></a>参数组合</h2><p>在Python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数， 这5种参数都可以组合使用。但是请注意，参数定义的顺序必须是：必选参数、默认参数、可变 参数、命名关键字参数和关键字参数。 </p>
+<p>比如定义一个函数，包含上述若干种参数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deff1(a, b, c=0, *args, **kw):</span><br><span class="line">print(&#x27;a =&#x27;, a, &#x27;b =&#x27;, b, &#x27;c =&#x27;, c, &#x27;args =&#x27;, args, &#x27;kw =&#x27;, kw)</span><br><span class="line">deff2(a, b, c=0, *, d, **kw):</span><br><span class="line">print(&#x27;a =&#x27;, a, &#x27;b =&#x27;, b, &#x27;c =&#x27;, c, &#x27;d =&#x27;, d, &#x27;kw =&#x27;, kw)</span><br></pre></td></tr></table></figure>
+
+<p>在函数调用的时候，Python解释器自动按照参数位置和参数名把对应的参数传进去。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f1(1, 2)</span><br><span class="line">a = 1 b = 2 c = 0 args = () kw = &#123;&#125;</span><br><span class="line">&gt;&gt;&gt; f1(1, 2, c=3)</span><br><span class="line">a = 1 b = 2 c = 3 args = () kw = &#123;&#125;</span><br><span class="line">&gt;&gt;&gt; f1(1, 2, 3, &#x27;a&#x27;, &#x27;b&#x27;)</span><br><span class="line">a = 1 b = 2 c = 3 args = (&#x27;a&#x27;, &#x27;b&#x27;) kw = &#123;&#125;</span><br><span class="line">&gt;&gt;&gt; f1(1, 2, 3, &#x27;a&#x27;, &#x27;b&#x27;, x=99)</span><br><span class="line">a = 1 b = 2 c = 3 args = (&#x27;a&#x27;, &#x27;b&#x27;) kw = &#123;&#x27;x&#x27;: 99&#125;</span><br><span class="line">&gt;&gt;&gt; f2(1, 2, d=99, ext=None)</span><br><span class="line">a = 1 b = 2 c = 0 d = 99 kw = &#123;&#x27;ext&#x27;: None&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最神奇的是通过一个tuple和dict，你也可以调用上述函数："><a href="#最神奇的是通过一个tuple和dict，你也可以调用上述函数：" class="headerlink" title="最神奇的是通过一个tuple和dict，你也可以调用上述函数："></a>最神奇的是通过一个tuple和dict，你也可以调用上述函数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; args = (1, 2, 3, 4)</span><br><span class="line">&gt;&gt;&gt; kw = &#123;&#x27;d&#x27;: 99, &#x27;x&#x27;: &#x27;#&#x27;&#125;</span><br><span class="line">&gt;&gt;&gt; f1(*args, **kw)</span><br><span class="line">a = 1 b = 2 c = 3 args = (4,) kw = &#123;&#x27;d&#x27;: 99, &#x27;x&#x27;: &#x27;#&#x27;&#125;</span><br><span class="line">&gt;&gt;&gt; args = (1, 2, 3)</span><br><span class="line">&gt;&gt;&gt; kw = &#123;&#x27;d&#x27;: 88, &#x27;x&#x27;: &#x27;#&#x27;&#125;</span><br><span class="line">&gt;&gt;&gt; f2(*args, **kw)</span><br><span class="line">a = 1 b = 2 c = 3 d = 88 kw = &#123;&#x27;x&#x27;: &#x27;#&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以，对于任意函数，都可以通过类似 <code>func(*args, **kw)</code> 的形式调用它，无论它的参数是如 何定义的。 </p>
+<p>提示 </p>
+<p>虽然可以组合多达5种参数，但不要同时使用太多的组合，否则函数接口的可理解性很差。 </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>以下函数允许计算两个数的乘积，请稍加改造，变成可接收一个或多个数并计算乘积： </p>
+<p><code>def mul(x, y): return x * y #</code> 测试 <code>print(&#39;mul(5) =&#39;, mul(5)) print(&#39;mul(5, 6) =&#39;, mul(5, 6))</code> </p>
+<p><code>print(&#39;mul(5, 6, 7) =&#39;, mul(5, 6, 7)) print(&#39;mul(5, 6, 7, 9) =&#39;, mul(5, 6, 7, 9)) if mul(5) != 5: print(&#39;mul(5)</code> 测试失败 <code>!&#39;) elif mul(5, 6) != 30: print(&#39;mul(5, 6)</code> 测试失败 <code>!&#39;) elif mul(5, 6, 7) != 210: print(&#39;mul(5, 6, 7)</code> 测试失败 <code>!&#39;) elif mul(5, 6, 7, 9) != 1890: print(&#39;mul(5, 6, 7, 9)</code> 测试失败 <code>!&#39;) else: try: mul() print(&#39;mul()</code> 测试失败 <code>!&#39;) except TypeError: print(&#39;</code> 测试成功 <code>!&#39;)</code> </p>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>var_args.py kw_args.py </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python的函数具有非常灵活的参数形态，既可以实现简单的调用，又可以传入非常复杂的参数。 默认参数一定要用不可变对象，如果是可变对象，程序运行时会有逻辑错误！ </p>
+<p>要注意定义可变参数和关键字参数的语法： </p>
+<p><code>*args</code> 是可变参数，args接收的是一个tuple； </p>
+<p><code>**kw</code> 是关键字参数，kw接收的是一个dict。 </p>
+<p>以及调用函数时如何传入可变参数和关键字参数的语法： </p>
+<p>可变参数既可以直接传入： <code>func(1, 2, 3)</code> ，又可以先组装list或tuple，再通过 <code>*args</code> 传入： </p>
+<p><code>func(*(1, 2, 3))</code> ； </p>
+<p>关键字参数既可以直接传入： <code>func(a=1, b=2)</code> ，又可以先组装dict，再通过 <code>**kw</code> 传入： <code>func(**{&#39;a&#39;: 1, &#39;b&#39;: 2})</code> 。 </p>
+<p>使用 <code>*args</code> 和 <code>**kw</code> 是Python的习惯写法，当然也可以用其他参数名，但最好使用习惯用 法。 </p>
+<p>命名的关键字参数是为了限制调用者可以传入的参数名，同时可以提供默认值。 </p>
+<p>定义命名的关键字参数在没有可变参数的情况下不要忘了写分隔符 <code>*</code> ，否则定义的将是位置参 数。 </p>
+<p>评论 </p>
+<h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a><strong>递归函数</strong></h2><p>原文链接 </p>
+<p>在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数。 举个例子，我们来计算阶乘 <code>n! = 1 x 2 x 3 x ... x n</code> ，用函数 <code>fact(n)</code> 表示，可以看出： <em>fact</em> ( <em>n</em> ) &#x3D; <em>n</em> ! &#x3D; 1 × 2 × 3 × ⋅⋅⋅× ( <em>n</em> −1) × <em>n</em> &#x3D; ( <em>n</em> −1)! × <em>n</em> &#x3D; <em>fact</em> ( <em>n</em> −1) × <em>n</em> 所以， <code>fact(n)</code> 可以表示为 <code>n x fact(n-1)</code> ，只有n&#x3D;1时需要特殊处理。 </p>
+<p>于是， <code>fact(n)</code> 用递归的方式写出来就是： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deffact(n):</span><br><span class="line">if n==1:</span><br><span class="line">return1</span><br><span class="line">return n * fact(n - 1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="上面就是一个递归函数。可以试试："><a href="#上面就是一个递归函数。可以试试：" class="headerlink" title="上面就是一个递归函数。可以试试："></a>上面就是一个递归函数。可以试试：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; fact(1)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; fact(5)</span><br><span class="line">120</span><br><span class="line">&gt;&gt;&gt; fact(100)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">933262154439441526816992388562667004907159682643816214685929638952175999932</span><br><span class="line">299156089414639761565182862536979208272237582511852109168640000000000000000</span><br><span class="line">00000000</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果我们计算-fact-5-，可以根据函数定义看到计算过程如下："><a href="#如果我们计算-fact-5-，可以根据函数定义看到计算过程如下：" class="headerlink" title="如果我们计算 fact(5) ，可以根据函数定义看到计算过程如下："></a>如果我们计算 <code>fact(5)</code> ，可以根据函数定义看到计算过程如下：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">�� fact(5)</span><br><span class="line">�� 5 * fact(4)</span><br><span class="line">�� 5 * (4 * fact(3))</span><br><span class="line">�� 5 * (4 * (3 * fact(2)))</span><br><span class="line">�� 5 * (4 * (3 * (2 * fact(1))))</span><br><span class="line">�� 5 * (4 * (3 * (2 * 1)))</span><br><span class="line">�� 5 * (4 * (3 * 2))</span><br><span class="line">�� 5 * (4 * 6)</span><br><span class="line">�� 5 * 24</span><br><span class="line">�� 120</span><br></pre></td></tr></table></figure>
+
+<p>递归函数的优点是定义简单，逻辑清晰。理论上，所有的递归函数都可以写成循环的方式，但循 环的逻辑不如递归清晰。 </p>
+<p>使用递归函数需要注意防止栈溢出。在计算机中，函数调用是通过栈（stack）这种数据结构实现 的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的 大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。可以试试 <code>fact(1000)</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; fact(1000)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 4, in fact</span><br><span class="line">  ...</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 4, in fact</span><br><span class="line">RuntimeError: maximum recursion depth exceeded in comparison</span><br></pre></td></tr></table></figure>
+
+<p>解决递归调用栈溢出的方法是通过 <strong>尾递归</strong> 优化，事实上尾递归和循环的效果是一样的，所以，把 循环看成是一种特殊的尾递归函数也是可以的。 </p>
+<p>尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式。这样，编 译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会 出现栈溢出的情况。 </p>
+<p>上面的 <code>fact(n)</code> 函数由于 <code>return n * fact(n - 1)</code> 引入了乘法表达式，所以就不是尾递归 了。要改成尾递归方式，需要多一点代码，主要是要把每一步的乘积传入到递归函数中： </p>
+<p><code>def fact(n): return fact_iter(n, 1) def fact_iter(num, product): if num == 1: return product return fact_iter(num - 1, num * product)</code> 可以看到， <code>return fact_iter(num - 1, num * product)</code> 仅返回递归函数本身， <code>num - 1</code> 和 <code>num * product</code> 在函数调用前就会被计算，不影响函数调用。 </p>
+<p><code>fact(5)</code> 对应的 <code>fact_iter(5, 1)</code> 的调用如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">�� fact_iter(5, 1)</span><br><span class="line">�� fact_iter(4, 5)</span><br><span class="line">�� fact_iter(3, 20)</span><br><span class="line">�� fact_iter(2, 60)</span><br><span class="line">�� fact_iter(1, 120)</span><br><span class="line">�� 120</span><br></pre></td></tr></table></figure>
+
+<p>尾递归调用时，如果做了优化，栈不会增长，因此，无论多少次调用也不会导致栈溢出。 </p>
+<p>遗憾的是，大多数编程语言没有针对尾递归做优化，Python解释器也没有做优化，所以，即使把 上面的 <code>fact(n)</code> 函数改成尾递归方式，也会导致栈溢出。 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_011/"
+                                   title="Python基础 - 部分 11"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 11</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_009/"
+                                   title="Python基础 - 部分 9"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 9</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E8%B0%83%E7%94%A8%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E9%9C%80%E8%A6%81%E5%85%88%E7%BB%84%E8%A3%85%E5%87%BA%E4%B8%80%E4%B8%AAlist%E6%88%96tuple%EF%BC%9A"><span class="nav-text">但是调用的时候，需要先组装出一个list或tuple：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%88%A9%E7%94%A8%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%EF%BC%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E6%96%B9%E5%BC%8F%E5%8F%AF%E4%BB%A5%E7%AE%80%E5%8C%96%E6%88%90%E8%BF%99%E6%A0%B7%EF%BC%9A"><span class="nav-text">如果利用可变参数，调用函数的方式可以简化成这样：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E4%BB%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E6%8A%8A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E6%94%B9%E4%B8%BA%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">所以，我们把函数的参数改为可变参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-text">关键字参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BC%A0%E5%85%A5%E4%BB%BB%E6%84%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">也可以传入任意个数的关键字参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%93%E7%84%B6%EF%BC%8C%E4%B8%8A%E9%9D%A2%E5%A4%8D%E6%9D%82%E7%9A%84%E8%B0%83%E7%94%A8%E5%8F%AF%E4%BB%A5%E7%94%A8%E7%AE%80%E5%8C%96%E7%9A%84%E5%86%99%E6%B3%95%EF%BC%9A"><span class="nav-text">当然，上面复杂的调用可以用简化的写法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-text">命名关键字参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8D%E4%BB%A5-person-%E5%87%BD%E6%95%B0%E4%B8%BA%E4%BE%8B%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B8%8C%E6%9C%9B%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E6%9C%89-city-%E5%92%8C-job-%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">仍以 person() 函数为例，我们希望检查是否有 city 和 job 参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E8%B0%83%E7%94%A8%E8%80%85%E4%BB%8D%E5%8F%AF%E4%BB%A5%E4%BC%A0%E5%85%A5%E4%B8%8D%E5%8F%97%E9%99%90%E5%88%B6%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">但是调用者仍可以传入不受限制的关键字参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%BB%84%E5%90%88"><span class="nav-text">参数组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%A5%9E%E5%A5%87%E7%9A%84%E6%98%AF%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AAtuple%E5%92%8Cdict%EF%BC%8C%E4%BD%A0%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8%E4%B8%8A%E8%BF%B0%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-text">最神奇的是通过一个tuple和dict，你也可以调用上述函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E9%9D%A2%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E3%80%82%E5%8F%AF%E4%BB%A5%E8%AF%95%E8%AF%95%EF%BC%9A"><span class="nav-text">上面就是一个递归函数。可以试试：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E4%BB%AC%E8%AE%A1%E7%AE%97-fact-5-%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E7%9C%8B%E5%88%B0%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">如果我们计算 fact(5) ，可以根据函数定义看到计算过程如下：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E8%B0%83%E7%94%A8%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E9%9C%80%E8%A6%81%E5%85%88%E7%BB%84%E8%A3%85%E5%87%BA%E4%B8%80%E4%B8%AAlist%E6%88%96tuple%EF%BC%9A"><span class="nav-text">但是调用的时候，需要先组装出一个list或tuple：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%88%A9%E7%94%A8%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%EF%BC%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E6%96%B9%E5%BC%8F%E5%8F%AF%E4%BB%A5%E7%AE%80%E5%8C%96%E6%88%90%E8%BF%99%E6%A0%B7%EF%BC%9A"><span class="nav-text">如果利用可变参数，调用函数的方式可以简化成这样：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E4%BB%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E6%8A%8A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E6%94%B9%E4%B8%BA%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">所以，我们把函数的参数改为可变参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-text">关键字参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BC%A0%E5%85%A5%E4%BB%BB%E6%84%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">也可以传入任意个数的关键字参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%93%E7%84%B6%EF%BC%8C%E4%B8%8A%E9%9D%A2%E5%A4%8D%E6%9D%82%E7%9A%84%E8%B0%83%E7%94%A8%E5%8F%AF%E4%BB%A5%E7%94%A8%E7%AE%80%E5%8C%96%E7%9A%84%E5%86%99%E6%B3%95%EF%BC%9A"><span class="nav-text">当然，上面复杂的调用可以用简化的写法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-text">命名关键字参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8D%E4%BB%A5-person-%E5%87%BD%E6%95%B0%E4%B8%BA%E4%BE%8B%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B8%8C%E6%9C%9B%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E6%9C%89-city-%E5%92%8C-job-%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">仍以 person() 函数为例，我们希望检查是否有 city 和 job 参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E8%B0%83%E7%94%A8%E8%80%85%E4%BB%8D%E5%8F%AF%E4%BB%A5%E4%BC%A0%E5%85%A5%E4%B8%8D%E5%8F%97%E9%99%90%E5%88%B6%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-text">但是调用者仍可以传入不受限制的关键字参数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%BB%84%E5%90%88"><span class="nav-text">参数组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%A5%9E%E5%A5%87%E7%9A%84%E6%98%AF%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AAtuple%E5%92%8Cdict%EF%BC%8C%E4%BD%A0%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8%E4%B8%8A%E8%BF%B0%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-text">最神奇的是通过一个tuple和dict，你也可以调用上述函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E9%9D%A2%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E3%80%82%E5%8F%AF%E4%BB%A5%E8%AF%95%E8%AF%95%EF%BC%9A"><span class="nav-text">上面就是一个递归函数。可以试试：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E4%BB%AC%E8%AE%A1%E7%AE%97-fact-5-%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E7%9C%8B%E5%88%B0%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">如果我们计算 fact(5) ，可以根据函数定义看到计算过程如下：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

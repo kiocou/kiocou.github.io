@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 1 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 1
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:00:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <p><strong>&#x3D;&#x3D;&gt; picture [229 x 228] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<h2 id="Python教程"><a href="#Python教程" class="headerlink" title="Python教程"></a>Python教程</h2><h2 id="小白的零基础Python新手教程！"><a href="#小白的零基础Python新手教程！" class="headerlink" title="小白的零基础Python新手教程！"></a>小白的零基础Python新手教程！</h2><p> <code>2025-06-16</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><strong>目录</strong></h2><ol>
+<li><p>简介 </p>
+</li>
+<li><p>Python历史 </p>
+</li>
+<li><p>安装Python</p>
+</li>
+</ol>
+<p>3.1. Python解释器 </p>
+<ol start="4">
+<li><p>第一个Python程序 </p>
+<ul>
+<li><p>4.1. 使用文本编辑器 </p>
+</li>
+<li><p>4.2. 输入和输出</p>
+</li>
+</ul>
+</li>
+<li><p>Python基础</p>
+</li>
+</ol>
+<p>5.1. 数据类型和变量 </p>
+<ul>
+<li><p>5.2. 字符串和编码 </p>
+</li>
+<li><p>5.3. 使用list和tuple </p>
+</li>
+<li><p>5.4. 条件判断 </p>
+</li>
+<li><p>5.5. 模式匹配 </p>
+</li>
+<li><p>5.6. 循环 </p>
+</li>
+<li><p>5.7. 使用dict和set</p>
+</li>
+</ul>
+<ol start="6">
+<li>函数</li>
+</ol>
+<p>6.1. 调用函数 </p>
+<ul>
+<li>6.2. 定义函数</li>
+</ul>
+<p>6.3. 函数的参数 </p>
+<p>6.4. 递归函数 </p>
+<ol start="7">
+<li>高级特性</li>
+</ol>
+<p>7.1. 切片 </p>
+<p>7.2. 迭代 </p>
+<p>7.3. 列表生成式 </p>
+<p>7.4. 生成器 </p>
+<p>7.5. 迭代器 </p>
+<h2 id="8-函数式编程"><a href="#8-函数式编程" class="headerlink" title="8. 函数式编程"></a>8. 函数式编程</h2><h2 id="8-1-高阶函数"><a href="#8-1-高阶函数" class="headerlink" title="8.1. 高阶函数"></a>8.1. 高阶函数</h2><p>8.1.1. map&#x2F;reduce </p>
+<p>8.1.2. filter </p>
+<p>8.1.3. sorted </p>
+<p>8.2. 返回函数 </p>
+<p>8.3. 匿名函数 </p>
+<p>8.4. 装饰器 </p>
+<p>8.5. 偏函数 </p>
+<h2 id="9-模块"><a href="#9-模块" class="headerlink" title="9. 模块"></a>9. 模块</h2><p>9.1. 使用模块 </p>
+<p>9.2. 安装第三方模块 </p>
+<h2 id="10-面向对象编程"><a href="#10-面向对象编程" class="headerlink" title="10. 面向对象编程"></a>10. 面向对象编程</h2><p>10.1. 类和实例 </p>
+<p>10.2. 访问限制 </p>
+<p>10.3. 继承和多态 </p>
+<p>10.4. 获取对象信息 </p>
+<p>10.5. 实例属性和类属性 </p>
+<ol start="11">
+<li>面向对象高级编程</li>
+</ol>
+<p>11.1. 使用__slots__ </p>
+<p>11.2. 使用@property </p>
+<p>11.3. 多重继承 </p>
+<p>11.4. 定制类 </p>
+<p>11.5. 使用枚举类 </p>
+<p>11.6. 使用元类 </p>
+<ol start="12">
+<li>错误、调试和测试</li>
+</ol>
+<p>12.1. 错误处理 </p>
+<p>12.2. 调试 </p>
+<p>12.3. 单元测试 </p>
+<h2 id="12-4-文档测试"><a href="#12-4-文档测试" class="headerlink" title="12.4. 文档测试"></a>12.4. 文档测试</h2><h2 id="13-IO编程"><a href="#13-IO编程" class="headerlink" title="13. IO编程"></a>13. IO编程</h2><p>13.1. 文件读写 </p>
+<p>13.2. StringIO和BytesIO </p>
+<p>13.3. 操作文件和目录 </p>
+<p>13.4. 序列化 </p>
+<ol start="14">
+<li>进程和线程</li>
+</ol>
+<p>14.1. 多进程 </p>
+<p>14.2. 多线程 </p>
+<p>14.3. ThreadLocal </p>
+<p>14.4. 进程 vs. 线程 </p>
+<p>14.5. 分布式进程 </p>
+<ol start="15">
+<li><p>正则表达式 </p>
+</li>
+<li><p>常用内建模块</p>
+</li>
+</ol>
+<p>16.1. datetime </p>
+<p>16.2. collections </p>
+<p>16.3. argparse </p>
+<p>16.4. base64 </p>
+<p>16.5. struct </p>
+<p>16.6. hashlib </p>
+<p>16.7. hmac </p>
+<p>16.8. itertools </p>
+<p>16.9. contextlib </p>
+<p>16.10. urllib </p>
+<p>16.11. XML </p>
+<p>16.12. HTMLParser </p>
+<p>16.13. venv </p>
+<ol start="17">
+<li>常用第三方模块</li>
+</ol>
+<p>17.1. Pillow </p>
+<p>17.2. requests </p>
+<p>17.3. chardet </p>
+<p>17.4. psutil </p>
+<ol start="18">
+<li>图形界面</li>
+</ol>
+<p>18.1. 海龟绘图 </p>
+<ol start="19">
+<li>网络编程</li>
+</ol>
+<p>19.1. TCP&#x2F;IP简介 19.2. TCP编程 </p>
+<p>19.3. UDP编程 </p>
+<ol start="20">
+<li>电子邮件</li>
+</ol>
+<p>20.1. SMTP发送邮件 20.2. POP3收取邮件 </p>
+<ol start="21">
+<li>访问数据库</li>
+</ol>
+<p>21.1. 使用SQLite </p>
+<p>21.2. 使用MySQL </p>
+<p>21.3. 使用SQLAlchemy </p>
+<ol start="22">
+<li>Web开发</li>
+</ol>
+<p>22.1. HTTP协议简介 </p>
+<p>22.2. HTML简介 22.3. WSGI接口 </p>
+<p>22.4. 使用Web框架 </p>
+<p>22.5. 使用模板 </p>
+<ol start="23">
+<li>异步IO</li>
+</ol>
+<p>23.1. 协程 </p>
+<p>23.2. 使用asyncio </p>
+<p>23.3. 使用aiohttp </p>
+<ol start="24">
+<li><p>FAQ </p>
+</li>
+<li><p>期末总结</p>
+</li>
+</ol>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h2><p><strong>&#x3D;&#x3D;&gt; picture [49 x 13] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p><strong>—– Start of picture text —–</strong><br><br>原文链接<br><strong>—– End of picture text —–</strong><br></p>
+<p><strong>&#x3D;&#x3D;&gt; picture [511 x 288] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>这是小白的Python新手教程，具有如下特点： </p>
+<h2 id="中文，免费，零起点，完整示例，基于最新的-Python-3版本。"><a href="#中文，免费，零起点，完整示例，基于最新的-Python-3版本。" class="headerlink" title="中文，免费，零起点，完整示例，基于最新的 Python 3版本。"></a>中文，免费，零起点，完整示例，基于最新的 Python 3版本。</h2><p>Python是一种计算机程序设计语言。你可能已经听说过很多种流行的编程语言，比如非常难学的 C语言，非常流行的Java语言，适合初学者的Basic语言，适合网页编程的JavaScript语言等等。 </p>
+<h2 id="那Python是一种什么语言？"><a href="#那Python是一种什么语言？" class="headerlink" title="那Python是一种什么语言？"></a>那Python是一种什么语言？</h2><p>首先，我们普及一下编程语言的基础知识。用任何编程语言来开发程序，都是为了让计算机干 活，比如下载一个MP3，编写一个文档等等，而计算机干活的CPU只认识机器指令，所以，尽管 不同的编程语言差异极大，最后都得“翻译”成CPU可以执行的机器指令。而不同的编程语言，干 同一个活，编写的代码量，差距也很大。 </p>
+<p>比如，完成同一个任务，C语言要写1000行代码，Java只需要写100行，而Python可能只要20 行。 </p>
+<h2 id="所以Python是一种相当高级的语言。"><a href="#所以Python是一种相当高级的语言。" class="headerlink" title="所以Python是一种相当高级的语言。"></a>所以Python是一种相当高级的语言。</h2><p>你也许会问，代码少还不好？代码少的代价是运行速度慢，C程序运行1秒钟，Java程序可能需要 2秒，而Python程序可能就需要10秒。 </p>
+<p>那是不是越低级的程序越难学，越高级的程序越简单？表面上来说，是的，但是，在非常高的抽 象计算中，高级的Python程序设计也是非常难学的，所以，高级程序语言不等于简单。 </p>
+<p>但是，对于初学者和完成普通任务，Python语言是非常简单易用的。连Google都在大规模使用 Python，你就不用担心学了会没用。 </p>
+<p>用Python可以做什么？可以做日常任务，比如自动备份你的MP3；可以做网站，很多著名的网站 包括YouTube就是Python写的；可以做网络游戏的后台，很多在线游戏的后台都是Python开发 的。总之就是能干很多很多事啦。 </p>
+<p>Python当然也有不能干的事情，比如写操作系统，这个只能用C语言写；写手机应用，只能用 Swift&#x2F;Objective-C（针对iPhone）和Java（针对Android）；写3D游戏，最好用C或C++。 </p>
+<p>如果你是小白用户，满足以下条件： </p>
+<ul>
+<li><p>会使用电脑，但从来没写过程序； </p>
+</li>
+<li><p>还记得初中数学学的方程式和一点点代数知识； </p>
+</li>
+<li><p>想从编程小白变成专业的软件架构师； </p>
+</li>
+<li><p>每天能抽出半个小时学习。</p>
+</li>
+</ul>
+<p>不要再犹豫了，这个教程就是为你准备的！ </p>
+<h2 id="准备好了吗？"><a href="#准备好了吗？" class="headerlink" title="准备好了吗？"></a>准备好了吗？</h2><p><strong>&#x3D;&#x3D;&gt; picture [259 x 163] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>评论 </p>
+<h2 id="Python历史"><a href="#Python历史" class="headerlink" title="Python历史"></a><strong>Python历史</strong></h2><p>原文链接 </p>
+<p>Python是著名的“龟叔”Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写 的一个编程语言。 </p>
+<p>现在，全世界差不多有600多种编程语言，但流行的编程语言也就那么20来种。如果你听说过 TIOBE排行榜，你就能知道编程语言的大致流行程度。这是最近几十年最常用的10种编程语言的 变化图： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [511 x 163] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>总的来说，这几种编程语言各有千秋。C语言是可以用来编写操作系统的贴近硬件的语言，所 以，C语言适合开发那些追求运行速度、充分发挥硬件性能的程序。而Python是用来编写应用程 序的高级编程语言。 </p>
+<p>当你用一种语言开始作真正的软件开发时，你除了编写代码外，还需要很多基本的已经写好的现 成的东西，来帮助你加快开发进度。比如说，要编写一个电子邮件客户端，如果先从最底层开始 编写网络协议相关的代码，那估计一年半载也开发不出来。高级编程语言通常都会提供一个比较 完善的基础代码库，让你能直接调用，比如，针对电子邮件协议的SMTP库，针对桌面环境的GUI 库，在这些已有的代码库的基础上开发，一个电子邮件客户端几天就能开发出来。 </p>
+<p>Python就为我们提供了非常完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量 内容，被形象地称作“内置电池（batteries included）”。用Python开发，许多功能不必从零编 写，直接使用现成的即可。 </p>
+<p>除了内置的库外，Python还有大量的第三方库，也就是别人开发的，供你直接使用的东西。当 然，如果你开发的代码通过很好的封装，也可以作为第三方库给别人使用。 </p>
+<p>许多大型网站就是用Python开发的，例如YouTube、Instagram，还有国内的豆瓣。很多大公 司，包括Google、Yahoo等，甚至NASA都大量地使用Python。 </p>
+<p>龟叔给Python的定位是“优雅”、“明确”、“简单”，所以Python程序看上去总是简单易懂，初学者 学Python，不但入门容易，而且将来深入下去，可以编写那些非常非常复杂的程序。 </p>
+<p>总的来说，Python的哲学就是简单优雅，尽量写容易看明白的代码，尽量写少的代码。如果一个 资深程序员向你炫耀他写的晦涩难懂、动不动就几万行的代码，你可以尽情地嘲笑他。 </p>
+<p>那Python适合开发哪些类型的应用呢？ </p>
+<p>首选是网络应用，包括网站、后台服务等等； </p>
+<p>其次是许多日常需要的小工具，包括系统管理员需要的脚本任务等等； </p>
+<p>另外就是把其他语言开发的程序再包装起来，方便使用。 </p>
+<p>最后说说Python的缺点。 </p>
+<p>任何编程语言都有缺点，Python也不例外。优点说过了，那Python有哪些缺点呢？ </p>
+<p>第一个缺点就是运行速度慢，和C程序相比非常慢，因为Python是解释型语言，你的代码在执行 时会一行一行地翻译成CPU能理解的机器码，这个翻译过程非常耗时，所以很慢。而C程序是运 行前直接编译成CPU能执行的机器码，所以非常快。 </p>
+<p>但是大量的应用程序不需要这么快的运行速度，因为用户根本感觉不出来。例如开发一个下载 MP3的网络应用程序，C程序的运行时间需要0.001秒，而Python程序的运行时间需要0.1秒，慢 了100倍，但由于网络更慢，需要等待1秒，你想，用户能感觉到1.001秒和1.1秒的区别吗？这就 好比F1赛车和普通的出租车在北京三环路上行驶的道理一样，虽然F1赛车理论时速高达400公 里，但由于三环路堵车的时速只有20公里，因此，作为乘客，你感觉的时速永远是20公里。 </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [287 x 137] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>第二个缺点就是代码不能加密。如果要发布你的Python程序，实际上就是发布源代码，这一点跟 C语言不同，C语言不用发布源代码，只需要把编译后的机器码（也就是你在Windows上常见的 </p>
+<p>xxx.exe文件）发布出去。要从机器码反推出C代码是不可能的，所以，凡是编译型的语言，都没 有这个问题，而解释型的语言，则必须把源码发布出去。 </p>
+<p>这个缺点仅限于你要编写的软件需要卖给别人挣钱的时候。好消息是目前的互联网时代，靠卖软 件授权的商业模式越来越少了，靠网站和移动应用卖服务的模式越来越多了，后一种模式不需要 把源码给别人。 </p>
+<p>再说了，现在如火如荼的开源运动和互联网自由开放的精神是一致的，互联网上有无数非常优秀 的像Linux一样的开源代码，我们千万不要高估自己写的代码真的有非常大的“商业价值”。那些大 公司的代码不愿意开放的更重要的原因是代码写得太烂了，一旦开源，就没人敢用他们的产品 了。 </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [323 x 136] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>当然，Python还有其他若干小缺点，请自行忽略，就不一一列举了。 </p>
+<p>请问Python之父Guido van Rossum是： </p>
+<p>美国人 中国人 荷兰人 芬兰人 地球人 </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [18 x 18] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>评论 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_002/"
+                                   title="Python基础 - 部分 2"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 2</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E6%95%99%E7%A8%8B"><span class="nav-text">Python教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%99%BD%E7%9A%84%E9%9B%B6%E5%9F%BA%E7%A1%80Python%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B%EF%BC%81"><span class="nav-text">小白的零基础Python新手教程！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">8. 函数式编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-text">8.1. 高阶函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%A8%A1%E5%9D%97"><span class="nav-text">9. 模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-text">10. 面向对象编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-4-%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95"><span class="nav-text">12.4. 文档测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-IO%E7%BC%96%E7%A8%8B"><span class="nav-text">13. IO编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%EF%BC%8C%E5%85%8D%E8%B4%B9%EF%BC%8C%E9%9B%B6%E8%B5%B7%E7%82%B9%EF%BC%8C%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B%EF%BC%8C%E5%9F%BA%E4%BA%8E%E6%9C%80%E6%96%B0%E7%9A%84-Python-3%E7%89%88%E6%9C%AC%E3%80%82"><span class="nav-text">中文，免费，零起点，完整示例，基于最新的 Python 3版本。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%A3Python%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="nav-text">那Python是一种什么语言？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E4%BB%A5Python%E6%98%AF%E4%B8%80%E7%A7%8D%E7%9B%B8%E5%BD%93%E9%AB%98%E7%BA%A7%E7%9A%84%E8%AF%AD%E8%A8%80%E3%80%82"><span class="nav-text">所以Python是一种相当高级的语言。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97%EF%BC%9F"><span class="nav-text">准备好了吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%8E%86%E5%8F%B2"><span class="nav-text">Python历史</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E6%95%99%E7%A8%8B"><span class="nav-text">Python教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%99%BD%E7%9A%84%E9%9B%B6%E5%9F%BA%E7%A1%80Python%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B%EF%BC%81"><span class="nav-text">小白的零基础Python新手教程！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">8. 函数式编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-text">8.1. 高阶函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%A8%A1%E5%9D%97"><span class="nav-text">9. 模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-text">10. 面向对象编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-4-%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95"><span class="nav-text">12.4. 文档测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-IO%E7%BC%96%E7%A8%8B"><span class="nav-text">13. IO编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%EF%BC%8C%E5%85%8D%E8%B4%B9%EF%BC%8C%E9%9B%B6%E8%B5%B7%E7%82%B9%EF%BC%8C%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B%EF%BC%8C%E5%9F%BA%E4%BA%8E%E6%9C%80%E6%96%B0%E7%9A%84-Python-3%E7%89%88%E6%9C%AC%E3%80%82"><span class="nav-text">中文，免费，零起点，完整示例，基于最新的 Python 3版本。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%A3Python%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="nav-text">那Python是一种什么语言？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E4%BB%A5Python%E6%98%AF%E4%B8%80%E7%A7%8D%E7%9B%B8%E5%BD%93%E9%AB%98%E7%BA%A7%E7%9A%84%E8%AF%AD%E8%A8%80%E3%80%82"><span class="nav-text">所以Python是一种相当高级的语言。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97%EF%BC%9F"><span class="nav-text">准备好了吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%8E%86%E5%8F%B2"><span class="nav-text">Python历史</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

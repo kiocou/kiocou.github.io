@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 5 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 5
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:04:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="Python的字符串"><a href="#Python的字符串" class="headerlink" title="Python的字符串"></a>Python的字符串</h2><p>搞清楚了令人头疼的字符编码问题后，我们再来研究Python的字符串。 </p>
+<p>在最新的Python 3版本中，字符串是以Unicode编码的，也就是说，Python的字符串支持多语 言，例如： </p>
+<p><code>&gt;&gt;&gt; print(&#39;</code> 包含中文的 <code>str&#39;)</code> 包含中文的 <code>str</code> </p>
+<p>对于单个字符的编码，Python提供了 <code>ord()</code> 函数获取字符的整数表示， <code>chr()</code> 函数把编码转 换为对应的字符： </p>
+<p><code>&gt;&gt;&gt; ord(&#39;A&#39;) 65 &gt;&gt;&gt; ord(&#39;</code> 中 <code>&#39;) 20013 &gt;&gt;&gt; chr(66) &#39;B&#39; &gt;&gt;&gt; chr(25991) &#39;</code> 文 <code>&#39;</code> </p>
+<p>如果知道字符的整数编码，还可以用十六进制这么写 <code>str</code> ： </p>
+<p><code>&gt;&gt;&gt; &#39;\u4e2d\u6587&#39; &#39;</code> 中文 <code>&#39;</code> </p>
+<h2 id="两种写法完全是等价的。"><a href="#两种写法完全是等价的。" class="headerlink" title="两种写法完全是等价的。"></a>两种写法完全是等价的。</h2><p>由于Python的字符串类型是 <code>str</code> ，在内存中以Unicode表示，一个字符对应若干个字节。如果 要在网络上传输，或者保存到磁盘上，就需要把 <code>str</code> 变为以字节为单位的 <code>bytes</code> 。 </p>
+<p>Python对 <code>bytes</code> 类型的数据用带 <code>b</code> 前缀的单引号或双引号表示： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = b&#x27;ABC&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>要注意区分 <code>&#39;ABC&#39;</code> 和 <code>b&#39;ABC&#39;</code> ，前者是 <code>str</code> ，后者虽然内容显示得和前者一样，但 <code>bytes</code> 的每个字符都只占用一个字节。 </p>
+<p>以Unicode表示的 <code>str</code> 通过 <code>encode()</code> 方法可以编码为指定的 <code>bytes</code> ，例如： </p>
+<p><code>&gt;&gt;&gt; &#39;ABC&#39;.encode(&#39;ascii&#39;) b&#39;ABC&#39; &gt;&gt;&gt; &#39;</code> 中文 <code>&#39;.encode(&#39;utf-8&#39;) b&#39;\xe4\xb8\xad\xe6\x96\x87&#39; &gt;&gt;&gt; &#39;</code> 中文 <code>&#39;.encode(&#39;ascii&#39;)</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: &#x27;ascii&#x27; codec can&#x27;t encode characters in position 0-1:</span><br><span class="line">ordinal not in range(128)</span><br></pre></td></tr></table></figure>
+
+<p>纯英文的 <code>str</code> 可以用 <code>ASCII</code> 编码为 <code>bytes</code> ，内容是一样的，含有中文的 <code>str</code> 可以用 <code>UTF8</code> 编码为 <code>bytes</code> 。含有中文的 <code>str</code> 无法用 <code>ASCII</code> 编码，因为中文编码的范围超过了 </p>
+<p><code>ASCII</code> 编码的范围，Python会报错。 </p>
+<p>在 <code>bytes</code> 中，无法显示为ASCII字符的字节，用 <code>\x##</code> 显示。 </p>
+<p>反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是 <code>bytes</code> 。要把 <code>bytes</code> 变为 <code>str</code> ，就需要用 <code>decode()</code> 方法： </p>
+<p><code>&gt;&gt;&gt; b&#39;ABC&#39;.decode(&#39;ascii&#39;) &#39;ABC&#39; &gt;&gt;&gt; b&#39;\xe4\xb8\xad\xe6\x96\x87&#39;.decode(&#39;utf-8&#39;) &#39;</code> 中文 <code>&#39;</code> </p>
+<p>如果 <code>bytes</code> 中包含无法解码的字节， <code>decode()</code> 方法会报错： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; b&#x27;\xe4\xb8\xad\xff&#x27;.decode(&#x27;utf-8&#x27;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UnicodeDecodeError: &#x27;utf-8&#x27; codec can&#x27;t decode byte 0xff in position 3:</span><br><span class="line">invalid start byte</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>bytes</code> 中只有一小部分无效的字节，可以传入 <code>errors=&#39;ignore&#39;</code> 忽略错误的字节： </p>
+<p><code>&gt;&gt;&gt; b&#39;\xe4\xb8\xad\xff&#39;.decode(&#39;utf-8&#39;, errors=&#39;ignore&#39;) &#39;</code> 中 <code>&#39;</code> </p>
+<p>要计算 <code>str</code> 包含多少个字符，可以用 <code>len()</code> 函数： </p>
+<p><code>&gt;&gt;&gt; len(&#39;ABC&#39;) 3 &gt;&gt;&gt; len(&#39;</code> 中文 <code>&#39;) 2</code> </p>
+<p><code>len()</code> 函数计算的是 <code>str</code> 的字符数，如果换成 <code>bytes</code> ， <code>len()</code> 函数就计算字节数： </p>
+<p><code>&gt;&gt;&gt; len(b&#39;ABC&#39;) 3 &gt;&gt;&gt; len(b&#39;\xe4\xb8\xad\xe6\x96\x87&#39;) 6 &gt;&gt;&gt; len(&#39;</code> 中文 <code>&#39;.encode(&#39;utf-8&#39;)) 6</code> </p>
+<p>可见，1个中文字符经过UTF-8编码后通常会占用3个字节，而1个英文字符只占用1个字节。 </p>
+<p>在操作字符串时，我们经常遇到 <code>str</code> 和 <code>bytes</code> 的互相转换。为了避免乱码问题，应当始终坚 持使用UTF-8编码对 <code>str</code> 和 <code>bytes</code> 进行转换。 </p>
+<p>由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码 时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码 读取，我们通常在文件开头写上这两行： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding: utf-8 -*-</span><br></pre></td></tr></table></figure>
+
+<p>第一行注释是为了告诉Linux&#x2F;OS X系统，这是一个Python可执行程序，Windows系统会忽略这 个注释； </p>
+<p>第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中 文输出可能会有乱码。 </p>
+<p>申明了UTF-8编码并不意味着你的 <code>.py</code> 文件就是UTF-8编码的，必须并且要确保文本编辑器正 在使用UTF-8编码。 </p>
+<p>如果 <code>.py</code> 文件本身使用UTF-8编码，并且也申明了 <code># -*- coding: utf-8 -*-</code> ，打开命令提示 符测试就可以正常显示中文： </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [310 x 201] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>最后一个常见的问题是如何输出格式化的字符串。我们经常会输出类似 <code>&#39;</code> 亲爱的 <code>xxx</code> 你好！你 <code>xx</code> 月的 话费是 <code>xx</code> ，余额是 <code>xx&#39;</code> 之类的字符串，而xxx的内容都是根据变量变化的，所以，需要一种简便的 格式化字符串的方式。 </p>
+<p><strong>&#x3D;&#x3D;&gt; picture [326 x 174] intentionally omitted &lt;&#x3D;&#x3D;</strong></p>
+<p>在Python中，采用的格式化方式和C语言是一致的，用 <code>%</code> 实现，举例如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &#x27;Hello, %s&#x27; % &#x27;world&#x27;</span><br><span class="line">&#x27;Hello, world&#x27;</span><br><span class="line">&gt;&gt;&gt; &#x27;Hi, %s, you have $%d.&#x27; % (&#x27;Michael&#x27;, 1000000)</span><br><span class="line">&#x27;Hi, Michael, you have $1000000.&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>你可能猜到了， <code>%</code> 运算符就是用来格式化字符串的。在字符串内部， <code>%s</code> 表示用字符串替换， <code>%d</code> 表示用整数替换，有几个 <code>%?</code> 占位符，后面就跟几个变量或者值，顺序要对应好。如果只 有一个 <code>%?</code> ，括号可以省略。 </p>
+<h2 id="常见的占位符有："><a href="#常见的占位符有：" class="headerlink" title="常见的占位符有："></a>常见的占位符有：</h2><table>
+<thead>
+<tr>
+<th>常见的占位符有：</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>占位符</strong></td>
+<td><strong>替换内容</strong></td>
+</tr>
+<tr>
+<td>%d</td>
+<td>整数</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数</td>
+</tr>
+</tbody></table>
+<h2 id="其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数："><a href="#其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数：" class="headerlink" title="其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数："></a>其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;%2d-%02d&#x27; % (3, 1))</span><br><span class="line">print(&#x27;%.2f&#x27; % 3.1415926)</span><br></pre></td></tr></table></figure>
+
+<p>如果你不太确定应该用什么， <code>%s</code> 永远起作用，它会把任何数据类型转换为字符串： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &#x27;Age: %s. Gender: %s&#x27; % (25, True)</span><br><span class="line">&#x27;Age: 25. Gender: True&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>有些时候，字符串里面的 <code>%</code> 是一个普通字符怎么办？这个时候就需要转义，用 <code>%%</code> 来表示一 个 <code>%</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &#x27;growth rate: %d %%&#x27; % 7</span><br><span class="line">&#x27;growth rate: 7 %&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="format"><a href="#format" class="headerlink" title="format()"></a>format()</h2><p>另一种格式化字符串的方法是使用字符串的 <code>format()</code> 方法，它会用传入的参数依次替换字符串 内的占位符 <code>{0}</code> 、 <code>{1}</code> ……，不过这种方式写起来比%要麻烦得多： </p>
+<p><code>&gt;&gt;&gt; &#39;Hello, {0},</code> 成绩提升了 <code>{1:.1f}%&#39;.format(&#39;</code> 小明 <code>&#39;, 17.125) &#39;Hello,</code> 小明 <code>,</code> 成绩提升了 <code>17.1%&#39;</code> </p>
+<h2 id="f-string"><a href="#f-string" class="headerlink" title="f-string"></a>f-string</h2><p>最后一种格式化字符串的方法是使用以 <code>f</code> 开头的字符串，称之为 <code>f-string</code> ，它和普通字符串 不同之处在于，字符串如果包含 <code>{xxx}</code> ，就会以对应的变量替换： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; r = 2.5</span><br><span class="line">&gt;&gt;&gt; s = 3.14 * r ** 2</span><br><span class="line">&gt;&gt;&gt; print(f&#x27;The area of a circle with radius &#123;r&#125; is &#123;s:.2f&#125;&#x27;)</span><br><span class="line">The area of a circle with radius 2.5 is 19.62</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中， <code>{r}</code> 被变量 <code>r</code> 的值替换， <code>{s:.2f}</code> 被变量 <code>s</code> 的值替换，并且 <code>:</code> 后面 的 <code>.2f</code> 指定了格式化参数（即保留两位小数），因此， <code>{s:.2f}</code> 的替换结果是 <code>19.62</code> 。 </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>小明的成绩从去年的72分提升到了今年的85分，请计算小明成绩提升的百分点，并用字符串格式 化显示出 <code>&#39;xx.x%&#39;</code> ，只保留小数点后1位： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s1 = 72</span><br><span class="line">s2 = 85</span><br><span class="line">r = ???</span><br><span class="line">print(&#x27;???&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>the_string.py </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python 3的字符串使用Unicode，直接支持多语言。 </p>
+<p>当 <code>str</code> 和 <code>bytes</code> 互相转换时，需要指定编码。最常用的编码是 <code>UTF-8</code> 。Python当然也支持 其他编码方式，比如把Unicode编码成 <code>GB2312</code> ： </p>
+<p><code>&gt;&gt;&gt; &#39;</code> 中文 <code>&#39;.encode(&#39;gb2312&#39;) b&#39;\xd6\xd0\xce\xc4&#39;</code> </p>
+<p>但这种方式纯属自找麻烦，如果没有特殊业务要求，请牢记仅使用 <code>UTF-8</code> 编码。 </p>
+<p>格式化字符串的时候，可以用Python的交互式环境测试，方便快捷。 </p>
+<h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><h2 id="使用list和tuple"><a href="#使用list和tuple" class="headerlink" title="使用list和tuple"></a><strong>使用list和tuple</strong></h2><p>原文链接 </p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>Python内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元 素。 </p>
+<p>比如，列出班里所有同学的名字，就可以用一个list表示： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates = [&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>变量 <code>classmates</code> 就是一个list。用 <code>len()</code> 函数可以获得list元素的个数： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; len(classmates)</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>用索引来访问list中每一个位置的元素，记得索引是从 <code>0</code> 开始的： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates[0]</span><br><span class="line">&#x27;Michael&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[1]</span><br><span class="line">&#x27;Bob&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[2]</span><br><span class="line">&#x27;Tracy&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[3]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
+
+<p>当索引超出了范围时，Python会报一个 <code>IndexError</code> 错误，所以，要确保索引不要越界，记得 最后一个元素的索引是 <code>len(classmates) - 1</code> 。 </p>
+<p>如果要取最后一个元素，除了计算索引位置外，还可以用 <code>-1</code> 做索引，直接获取最后一个元素： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates[-1]</span><br><span class="line">&#x27;Tracy&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="以此类推，可以获取倒数第2个、倒数第3个："><a href="#以此类推，可以获取倒数第2个、倒数第3个：" class="headerlink" title="以此类推，可以获取倒数第2个、倒数第3个："></a>以此类推，可以获取倒数第2个、倒数第3个：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates[-2]</span><br><span class="line">&#x27;Bob&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[-3]</span><br><span class="line">&#x27;Michael&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[-4]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
+
+<h2 id="当然，倒数第4个就越界了。"><a href="#当然，倒数第4个就越界了。" class="headerlink" title="当然，倒数第4个就越界了。"></a>当然，倒数第4个就越界了。</h2><h2 id="list是一个可变的有序表，所以，可以往list中追加元素到末尾："><a href="#list是一个可变的有序表，所以，可以往list中追加元素到末尾：" class="headerlink" title="list是一个可变的有序表，所以，可以往list中追加元素到末尾："></a>list是一个可变的有序表，所以，可以往list中追加元素到末尾：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.append(&#x27;Adam&#x27;)</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;, &#x27;Adam&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="也可以把元素插入到指定的位置，比如索引号为-1-的位置："><a href="#也可以把元素插入到指定的位置，比如索引号为-1-的位置：" class="headerlink" title="也可以把元素插入到指定的位置，比如索引号为 1 的位置："></a>也可以把元素插入到指定的位置，比如索引号为 <code>1</code> 的位置：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.insert(1, &#x27;Jack&#x27;)</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Jack&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;, &#x27;Adam&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="要删除list末尾的元素，用-pop-方法："><a href="#要删除list末尾的元素，用-pop-方法：" class="headerlink" title="要删除list末尾的元素，用 pop() 方法："></a>要删除list末尾的元素，用 <code>pop()</code> 方法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.pop()</span><br><span class="line">&#x27;Adam&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Jack&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="要删除指定位置的元素，用-pop-i-方法，其中-i-是索引位置："><a href="#要删除指定位置的元素，用-pop-i-方法，其中-i-是索引位置：" class="headerlink" title="要删除指定位置的元素，用 pop(i) 方法，其中 i 是索引位置："></a>要删除指定位置的元素，用 <code>pop(i)</code> 方法，其中 <code>i</code> 是索引位置：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.pop(1)</span><br><span class="line">&#x27;Jack&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="要把某个元素替换成别的元素，可以直接赋值给对应的索引位置："><a href="#要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：" class="headerlink" title="要把某个元素替换成别的元素，可以直接赋值给对应的索引位置："></a>要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates[1] = &#x27;Sarah&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Sarah&#x27;, &#x27;Tracy&#x27;]</span><br></pre></td></tr></table></figure>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_006/"
+                                   title="Python基础 - 部分 6"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 6</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_004/"
+                                   title="Python基础 - 部分 4"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 4</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">Python的字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%E5%AE%8C%E5%85%A8%E6%98%AF%E7%AD%89%E4%BB%B7%E7%9A%84%E3%80%82"><span class="nav-text">两种写法完全是等价的。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%9C%89%EF%BC%9A"><span class="nav-text">常见的占位符有：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%B8%AD%EF%BC%8C%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B4%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%98%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%AE%9A%E6%98%AF%E5%90%A6%E8%A1%A50%E5%92%8C%E6%95%B4%E6%95%B0%E4%B8%8E%E5%B0%8F%E6%95%B0%E7%9A%84%E4%BD%8D%E6%95%B0%EF%BC%9A"><span class="nav-text">其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-text">format()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#f-string"><span class="nav-text">f-string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8list%E5%92%8Ctuple"><span class="nav-text">使用list和tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E6%AD%A4%E7%B1%BB%E6%8E%A8%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%80%92%E6%95%B0%E7%AC%AC2%E4%B8%AA%E3%80%81%E5%80%92%E6%95%B0%E7%AC%AC3%E4%B8%AA%EF%BC%9A"><span class="nav-text">以此类推，可以获取倒数第2个、倒数第3个：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%93%E7%84%B6%EF%BC%8C%E5%80%92%E6%95%B0%E7%AC%AC4%E4%B8%AA%E5%B0%B1%E8%B6%8A%E7%95%8C%E4%BA%86%E3%80%82"><span class="nav-text">当然，倒数第4个就越界了。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%8F%98%E7%9A%84%E6%9C%89%E5%BA%8F%E8%A1%A8%EF%BC%8C%E6%89%80%E4%BB%A5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%BE%80list%E4%B8%AD%E8%BF%BD%E5%8A%A0%E5%85%83%E7%B4%A0%E5%88%B0%E6%9C%AB%E5%B0%BE%EF%BC%9A"><span class="nav-text">list是一个可变的有序表，所以，可以往list中追加元素到末尾：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%8A%8A%E5%85%83%E7%B4%A0%E6%8F%92%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E6%AF%94%E5%A6%82%E7%B4%A2%E5%BC%95%E5%8F%B7%E4%B8%BA-1-%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">也可以把元素插入到指定的位置，比如索引号为 1 的位置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%88%A0%E9%99%A4list%E6%9C%AB%E5%B0%BE%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E7%94%A8-pop-%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">要删除list末尾的元素，用 pop() 方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E7%94%A8-pop-i-%E6%96%B9%E6%B3%95%EF%BC%8C%E5%85%B6%E4%B8%AD-i-%E6%98%AF%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">要删除指定位置的元素，用 pop(i) 方法，其中 i 是索引位置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%8A%8A%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E6%88%90%E5%88%AB%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%E7%BB%99%E5%AF%B9%E5%BA%94%E7%9A%84%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">Python的字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%E5%AE%8C%E5%85%A8%E6%98%AF%E7%AD%89%E4%BB%B7%E7%9A%84%E3%80%82"><span class="nav-text">两种写法完全是等价的。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%9C%89%EF%BC%9A"><span class="nav-text">常见的占位符有：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%B8%AD%EF%BC%8C%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B4%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%98%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%AE%9A%E6%98%AF%E5%90%A6%E8%A1%A50%E5%92%8C%E6%95%B4%E6%95%B0%E4%B8%8E%E5%B0%8F%E6%95%B0%E7%9A%84%E4%BD%8D%E6%95%B0%EF%BC%9A"><span class="nav-text">其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-text">format()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#f-string"><span class="nav-text">f-string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-text">评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8list%E5%92%8Ctuple"><span class="nav-text">使用list和tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E6%AD%A4%E7%B1%BB%E6%8E%A8%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%80%92%E6%95%B0%E7%AC%AC2%E4%B8%AA%E3%80%81%E5%80%92%E6%95%B0%E7%AC%AC3%E4%B8%AA%EF%BC%9A"><span class="nav-text">以此类推，可以获取倒数第2个、倒数第3个：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%93%E7%84%B6%EF%BC%8C%E5%80%92%E6%95%B0%E7%AC%AC4%E4%B8%AA%E5%B0%B1%E8%B6%8A%E7%95%8C%E4%BA%86%E3%80%82"><span class="nav-text">当然，倒数第4个就越界了。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%8F%98%E7%9A%84%E6%9C%89%E5%BA%8F%E8%A1%A8%EF%BC%8C%E6%89%80%E4%BB%A5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%BE%80list%E4%B8%AD%E8%BF%BD%E5%8A%A0%E5%85%83%E7%B4%A0%E5%88%B0%E6%9C%AB%E5%B0%BE%EF%BC%9A"><span class="nav-text">list是一个可变的有序表，所以，可以往list中追加元素到末尾：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%8A%8A%E5%85%83%E7%B4%A0%E6%8F%92%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E6%AF%94%E5%A6%82%E7%B4%A2%E5%BC%95%E5%8F%B7%E4%B8%BA-1-%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">也可以把元素插入到指定的位置，比如索引号为 1 的位置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%88%A0%E9%99%A4list%E6%9C%AB%E5%B0%BE%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E7%94%A8-pop-%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">要删除list末尾的元素，用 pop() 方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E7%94%A8-pop-i-%E6%96%B9%E6%B3%95%EF%BC%8C%E5%85%B6%E4%B8%AD-i-%E6%98%AF%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">要删除指定位置的元素，用 pop(i) 方法，其中 i 是索引位置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%8A%8A%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E6%88%90%E5%88%AB%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%E7%BB%99%E5%AF%B9%E5%BA%94%E7%9A%84%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

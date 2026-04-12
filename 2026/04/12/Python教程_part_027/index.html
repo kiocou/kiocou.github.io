@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 27 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 27
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:26:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="操作文件和目录"><a href="#操作文件和目录" class="headerlink" title="操作文件和目录"></a>操作文件和目录</h2><p>操作文件和目录的函数一部分放在 <code>os</code> 模块中，一部分放在 <code>os.path</code> 模块中，这一点要注意一 下。查看、创建和删除目录可以这么调用： </p>
+<h2 id="查看当前目录的绝对路径"><a href="#查看当前目录的绝对路径" class="headerlink" title="# 查看当前目录的绝对路径 :"></a><code>#</code> 查看当前目录的绝对路径 <code>:</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.abspath(&#x27;.&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;/Users/michael&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>#</code> 在某个目录下创建一个新目录，首先把新目录的完整路径表示出来 <code>:</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.join(&#x27;/Users/michael&#x27;, &#x27;testdir&#x27;)</span><br><span class="line">&#x27;/Users/michael/testdir&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><code>#</code> 然后创建一个目录 <code>:</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.mkdir(&#x27;/Users/michael/testdir&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><code>#</code> 删掉一个目录 <code>:</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.rmdir(&#x27;/Users/michael/testdir&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>把两个路径合成一个时，不要直接拼字符串，而要通过 <code>os.path.join()</code> 函数，这样可以正确处 理不同操作系统的路径分隔符。在Linux&#x2F;Unix&#x2F;Mac下， <code>os.path.join()</code> 返回这样的字符串： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">part-1/part-2</span><br></pre></td></tr></table></figure>
+
+<h2 id="而Windows下会返回这样的字符串："><a href="#而Windows下会返回这样的字符串：" class="headerlink" title="而Windows下会返回这样的字符串："></a>而Windows下会返回这样的字符串：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">part-1\part-2</span><br></pre></td></tr></table></figure>
+
+<p>同样的道理，要拆分路径时，也不要直接去拆字符串，而要通过 <code>os.path.split()</code> 函数，这样 可以把一个路径拆分为两部分，后一部分总是最后级别的目录或文件名： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.split(&#x27;/Users/michael/testdir/file.txt&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&#x27;/Users/michael/testdir&#x27;, &#x27;file.txt&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><code>os.path.splitext()</code> 可以直接让你得到文件扩展名，很多时候非常方便： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.splitext(&#x27;/path/to/file.txt&#x27;)</span><br><span class="line">(&#x27;/path/to/file&#x27;, &#x27;.txt&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>这些合并、拆分路径的函数并不要求目录和文件要真实存在，它们只对字符串进行操作。 </p>
+<p>文件操作使用下面的函数。假定当前目录下有一个 <code>test.txt</code> 文件： </p>
+<h2 id="对文件重命名"><a href="#对文件重命名" class="headerlink" title="# 对文件重命名 :"></a><code>#</code> 对文件重命名 <code>:</code></h2><p><code>&gt;&gt;&gt; os.rename(&#39;test.txt&#39;, &#39;test.py&#39;) #</code> 删掉文件 <code>:</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.remove(&#x27;test.py&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>但是复制文件的函数居然在 <code>os</code> 模块中不存在！原因是复制文件并非由操作系统提供的系统调 用。理论上讲，我们通过上一节的读写文件可以完成文件复制，只不过要多写很多代码。 </p>
+<p>幸运的是 <code>shutil</code> 模块提供了 <code>copyfile()</code> 的函数，你还可以在 <code>shutil</code> 模块中找到很多实用 函数，它们可以看做是 <code>os</code> 模块的补充。 </p>
+<p>最后看看如何利用Python的特性来过滤文件。比如我们要列出当前目录下的所有目录，只需要一 行代码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [x for x in os.listdir(&#x27;.&#x27;) if os.path.isdir(x)]</span><br><span class="line">[&#x27;.lein&#x27;, &#x27;.local&#x27;, &#x27;.m2&#x27;, &#x27;.npm&#x27;, &#x27;.ssh&#x27;, &#x27;.Trash&#x27;, &#x27;.vim&#x27;,</span><br><span class="line">&#x27;Applications&#x27;, &#x27;Desktop&#x27;, ...]</span><br></pre></td></tr></table></figure>
+
+<p>要列出所有的 <code>.py</code> 文件，也只需一行代码： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [x for x in os.listdir(&#x27;.&#x27;) if os.path.isfile(x) and</span><br><span class="line">os.path.splitext(x)[1]==&#x27;.py&#x27;]</span><br><span class="line">[&#x27;apis.py&#x27;, &#x27;config.py&#x27;, &#x27;models.py&#x27;, &#x27;pymonitor.py&#x27;, &#x27;test_db.py&#x27;,</span><br><span class="line">&#x27;urls.py&#x27;, &#x27;wsgiapp.py&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="是不是非常简洁？"><a href="#是不是非常简洁？" class="headerlink" title="是不是非常简洁？"></a>是不是非常简洁？</h2><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python的 <code>os</code> 模块封装了操作系统的目录和文件操作，要注意这些函数有的在 <code>os</code> 模块中，有 的在 <code>os.path</code> 模块中。 </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li><p>利用 <code>os</code> 模块编写一个能实现 <code>dir -l</code> 输出的程序。 </p>
+</li>
+<li><p>编写一个程序，能在当前目录以及当前目录的所有子目录下查找文件名包含指定字符串的文 件，并打印出相对路径。</p>
+</li>
+</ol>
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>do_dir </p>
+<p>评论 </p>
+<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a><strong>序列化</strong></h2><p>原文链接 </p>
+<p>在程序运行的过程中，所有的变量都是在内存中，比如，定义一个dict： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = dict(name=&#x27;Bob&#x27;, age=20, score=88)</span><br></pre></td></tr></table></figure>
+
+<p>可以随时修改变量，比如把 <code>name</code> 改成 <code>&#39;Bill&#39;</code> ，但是一旦程序结束，变量所占用的内存就被 操作系统全部回收。如果没有把修改后的 <code>&#39;Bill&#39;</code> 存储到磁盘上，下次重新运行程序，变量又被 初始化为 <code>&#39;Bob&#39;</code> 。 </p>
+<p>我们把变量从内存中变成可存储或传输的过程称之为序列化，在Python中叫pickling，在其他语 言中也被称之为serialization，marshalling，flattening等等，都是一个意思。 </p>
+<p>序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上。 </p>
+<p>反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化，即unpickling。 </p>
+<p>Python提供了 <code>pickle</code> 模块来实现序列化。 </p>
+<p>首先，我们尝试把一个对象序列化并写入文件： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import pickle</span><br><span class="line">&gt;&gt;&gt; d = dict(name=&#x27;Bob&#x27;, age=20, score=88)</span><br><span class="line">&gt;&gt;&gt; pickle.dumps(d)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b&#x27;\x80\x03&#125;q\x00(X\x03\x00\x00\x00ageq\x01K\x14X\x05\x00\x00\x00scoreq\x02K</span><br><span class="line">XX\x04\x00\x00\x00nameq\x03X\x03\x00\x00\x00Bobq\x04u.&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><code>pickle.dumps()</code> 方法把任意对象序列化成一个 <code>bytes</code> ，然后，就可以把这个 <code>bytes</code> 写入文 件。或者用另一个方法 <code>pickle.dump()</code> 直接把对象序列化后写入一个file-like Object： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = open(&#x27;dump.txt&#x27;, &#x27;wb&#x27;)</span><br><span class="line">&gt;&gt;&gt; pickle.dump(d, f)</span><br><span class="line">&gt;&gt;&gt; f.close()</span><br></pre></td></tr></table></figure>
+
+<p>看看写入的 <code>dump.txt</code> 文件，一堆乱七八糟的内容，这些都是Python保存的对象内部信息。 </p>
+<p>当我们要把对象从磁盘读到内存时，可以先把内容读到一个 <code>bytes</code> ，然后用 <code>pickle.loads()</code> 方法反序列化出对象，也可以直接用 <code>pickle.load()</code> 方法从一个 <code>file-like Object</code> 中直接反 序列化出对象。我们打开另一个Python命令行来反序列化刚才保存的对象： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = open(&#x27;dump.txt&#x27;, &#x27;rb&#x27;)</span><br><span class="line">&gt;&gt;&gt; d = pickle.load(f)</span><br><span class="line">&gt;&gt;&gt; f.close()</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&#x27;age&#x27;: 20, &#x27;score&#x27;: 88, &#x27;name&#x27;: &#x27;Bob&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>变量的内容又回来了！ </p>
+<p>当然，这个变量和原来的变量是完全不相干的对象，它们只是内容相同而已。 </p>
+<p>Pickle的问题和所有其他编程语言特有的序列化问题一样，就是它只能用于Python，并且可能不 同版本的Python彼此都不兼容，因此，只能用Pickle保存那些不重要的数据，不能成功地反序列 化也没关系。 </p>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>如果我们要在不同的编程语言之间传递对象，就必须把对象序列化为标准格式，比如XML，但更 好的方法是序列化为JSON，因为JSON表示出来就是一个字符串，可以被所有语言读取，也可以 方便地存储到磁盘或者通过网络传输。JSON不仅是标准格式，并且比XML更快，而且可以直接 在Web页面中读取，非常方便。 </p>
+<p>JSON表示的对象就是标准的JavaScript语言的对象，JSON和Python内置的数据类型对应如下： </p>
+<table>
+<thead>
+<tr>
+<th><strong>JSON类型</strong></th>
+<th><strong>Python类型</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>{}</td>
+<td>dict</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>list</td>
+</tr>
+<tr>
+<td>“string”</td>
+<td>str</td>
+</tr>
+<tr>
+<td>1234.56</td>
+<td>int或float</td>
+</tr>
+<tr>
+<td>true&#x2F;false</td>
+<td>True&#x2F;False</td>
+</tr>
+<tr>
+<td>null</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<p>Python内置的 <code>json</code> 模块提供了非常完善的Python对象到JSON格式的转换。我们先看看如何 把Python对象变成一个JSON： </p>
+<p><code>&gt;&gt;&gt; import json &gt;&gt;&gt; d = dict(name=&#39;Bob&#39;, age=20, score=88) &gt;&gt;&gt; json.dumps(d) &#39;{&quot;age&quot;: 20, &quot;score&quot;: 88, &quot;name&quot;: &quot;Bob&quot;}&#39; dumps()</code> 方法返回一个 <code>str</code> ，内容就是标准的JSON。类似的， <code>dump()</code> 方法可以直接把 JSON写入一个 <code>file-like Object</code> 。 </p>
+<p>要把JSON反序列化为Python对象，用 <code>loads()</code> 或者对应的 <code>load()</code> 方法，前者把JSON的字 符串反序列化，后者从 <code>file-like Object</code> 中读取字符串并反序列化： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; json_str = &#x27;&#123;&quot;age&quot;: 20, &quot;score&quot;: 88, &quot;name&quot;: &quot;Bob&quot;&#125;&#x27;</span><br><span class="line">&gt;&gt;&gt; json.loads(json_str)</span><br><span class="line">&#123;&#x27;age&#x27;: 20, &#x27;score&#x27;: 88, &#x27;name&#x27;: &#x27;Bob&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于JSON标准规定JSON编码是UTF-8，所以我们总是能正确地在Python的 <code>str</code> 与JSON的字 符串之间转换。 </p>
+<h2 id="JSON进阶"><a href="#JSON进阶" class="headerlink" title="JSON进阶"></a>JSON进阶</h2><p>Python的 <code>dict</code> 对象可以直接序列化为JSON的 <code>{}</code> ，不过，很多时候，我们更喜欢用 <code>class</code> 表示对象，比如定义 <code>Student</code> 类，然后序列化： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">class Student(object):</span><br><span class="line">    def __init__(self, name, age, score):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.score = score</span><br><span class="line">s = Student(&#x27;Bob&#x27;, 20, 88)</span><br><span class="line">print(json.dumps(s))</span><br></pre></td></tr></table></figure>
+
+<p>运行代码，毫不留情地得到一个 <code>TypeError</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">TypeError: &lt;__main__.Student object at 0x10603cc50&gt; is not JSON</span><br><span class="line">serializable</span><br></pre></td></tr></table></figure>
+
+<p>错误的原因是 <code>Student</code> 对象不是一个可序列化为JSON的对象。 </p>
+<p>如果连 <code>class</code> 的实例对象都无法序列化为JSON，这肯定不合理！ </p>
+<p>别急，我们仔细看看 <code>dumps()</code> 方法的参数列表，可以发现，除了第一个必须的 <code>obj</code> 参数外， <code>dumps()</code> 方法还提供了一大堆的可选参数： </p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://docs.python.org/3/library/json.html#json.dumps" >https://docs.python.org/3/library/json.html#json.dumps<i class="fas fa-external-link-alt"></i></a> </p>
+<p>这些可选参数就是让我们来定制JSON序列化。前面的代码之所以无法把 <code>Student</code> 类实例序列化 为JSON，是因为默认情况下， <code>dumps()</code> 方法不知道如何将 <code>Student</code> 实例变为一个JSON的 <code>{}</code> 对象。 </p>
+<p>可选参数 <code>default</code> 就是把任意一个对象变成一个可序列为JSON的对象，我们只需要为 <code>Student</code> 专门写一个转换函数，再把函数传进去即可： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">defstudent2dict(std):</span><br><span class="line">return &#123;</span><br><span class="line">&#x27;name&#x27;: std.name,</span><br><span class="line">&#x27;age&#x27;: std.age,</span><br><span class="line">&#x27;score&#x27;: std.score</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样， <code>Student</code> 实例首先被 <code>student2dict()</code> 函数转换成 <code>dict</code> ，然后再被顺利序列化为 JSON： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print(json.dumps(s, default=student2dict))</span><br><span class="line">&#123;&quot;age&quot;: 20, &quot;name&quot;: &quot;Bob&quot;, &quot;score&quot;: 88&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不过，下次如果遇到一个 <code>Teacher</code> 类的实例，照样无法序列化为JSON。我们可以偷个懒，把任 意 <code>class</code> 的实例变为 <code>dict</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(json.dumps(s, default=lambda obj: obj.__dict__))</span><br></pre></td></tr></table></figure>
+
+<p>因为通常 <code>class</code> 的实例都有一个 <code>__dict__</code> 属性，它就是一个 <code>dict</code> ，用来存储实例变量。 也有少数例外，比如定义了 <code>__slots__</code> 的class。 </p>
+<p>同样的道理，如果我们要把JSON反序列化为一个 <code>Student</code> 对象实例， <code>loads()</code> 方法首先转换 出一个 <code>dict</code> 对象，然后，我们传入的 <code>object_hook</code> 函数负责把 <code>dict</code> 转换为 <code>Student</code> 实 例： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defdict2student(d):</span><br><span class="line">return Student(d[&#x27;name&#x27;], d[&#x27;age&#x27;], d[&#x27;score&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p>运行结果如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; json_str = &#x27;&#123;&quot;age&quot;: 20, &quot;score&quot;: 88, &quot;name&quot;: &quot;Bob&quot;&#125;&#x27;</span><br><span class="line">&gt;&gt;&gt; print(json.loads(json_str, object_hook=dict2student))</span><br><span class="line">&lt;__main__.Student object at 0x10cd3c190&gt;</span><br></pre></td></tr></table></figure>
+
+<p>打印出的是反序列化的 <code>Student</code> 实例对象。 </p>
+<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p>对中文进行JSON序列化时， <code>json.dumps()</code> 提供了一个 <code>ensure_ascii</code> 参数，观察该参数对结 果的影响： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br></pre></td></tr></table></figure>
+
+<p><code>obj = dict(name=&#39;</code> 小明 <code>&#39;, age=20) s = json.dumps(obj, ensure_ascii=True) print(s)</code> </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>Python语言特定的序列化模块是 <code>pickle</code> ，但如果要把序列化搞得更通用、更符合Web标准， 就可以使用 <code>json</code> 模块。 </p>
+<p><code>json</code> 模块的 <code>dumps()</code> 和 <code>loads()</code> 函数是定义得非常好的接口的典范。当我们使用时，只需 要传入一个必须的参数。但是，当默认的序列化或反序列机制不满足我们的要求时，我们又可以 传入更多的参数来定制序列化或反序列化的规则，既做到了接口简单易用，又做到了充分的扩展 性和灵活性。 </p>
+<h2 id="参考源码-1"><a href="#参考源码-1" class="headerlink" title="参考源码"></a>参考源码</h2><p>use_pickle.py use_json.py 评论 </p>
+<h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a><strong>进程和线程</strong></h2><p>原文链接 </p>
+<p>很多同学都听说过，现代操作系统比如Mac OS X，UNIX，Linux，Windows等，都是支持“多任 务”的操作系统。 </p>
+<p>什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏 览器上网，一边在听MP3，一边在用Word赶作业，这就是多任务，至少同时有3个任务正在运 行。还有很多任务悄悄地在后台同时运行着，只是桌面上没有显示而已。 </p>
+<p>现在，多核CPU已经非常普及了，但是，即使过去的单核CPU，也可以执行多任务。由于CPU执 行代码都是顺序执行的，那么，单核CPU是怎么执行多任务的呢？ </p>
+<p>答案就是操作系统轮流让各个任务交替执行，任务1执行0.01秒，切换到任务2，任务2执行0.01 秒，再切换到任务3，执行0.01秒……这样反复执行下去。表面上看，每个任务都是交替执行的， 但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。 </p>
+<p>真正的并行执行多任务只能在多核CPU上实现，但是，由于任务数量远远多于CPU的核心数量， 所以，操作系统也会自动把很多任务轮流调度到每个核心上执行。 </p>
+<p>对于操作系统来说，一个任务就是一个进程（Process），比如打开一个浏览器就是启动一个浏 览器进程，打开一个记事本就启动了一个记事本进程，打开两个记事本就启动了两个记事本进 程，打开一个Word就启动了一个Word进程。 </p>
+<p>有些进程还不止同时干一件事，比如Word，它可以同时进行打字、拼写检查、打印等事情。在 一个进程内部，要同时干多件事，就需要同时运行多个“子任务”，我们把进程内的这些“子任务”称 为线程（Thread）。 </p>
+<p>由于每个进程至少要干一件事，所以，一个进程至少有一个线程。当然，像Word这种复杂的进 程可以有多个线程，多个线程可以同时执行，多线程的执行方式和多进程是一样的，也是由操作 系统在多个线程之间快速切换，让每个线程都短暂地交替运行，看起来就像同时执行一样。当 然，真正地同时执行多线程需要多核CPU才可能实现。 </p>
+<p>我们前面编写的所有的Python程序，都是执行单任务的进程，也就是只有一个线程。如果我们要 同时执行多个任务怎么办？ </p>
+<p>有两种解决方案： </p>
+<p>一种是启动多个进程，每个进程虽然只有一个线程，但多个进程可以一块执行多个任务。 </p>
+<p>还有一种方法是启动一个进程，在一个进程内启动多个线程，这样，多个线程也可以一块执行多 个任务。 </p>
+<p>当然还有第三种方法，就是启动多个进程，每个进程再启动多个线程，这样同时执行的任务就更 多了，当然这种模型更复杂，实际很少采用。 </p>
+<p>总结一下就是，多任务的实现有3种方式： </p>
+<p>多进程模式； </p>
+<p>多线程模式； </p>
+<p>多进程+多线程模式。 </p>
+<p>同时执行多个任务通常各个任务之间并不是没有关联的，而是需要相互通信和协调，有时，任务 1必须暂停等待任务2完成后才能继续执行，有时，任务3和任务4又不能同时执行，所以，多进程 和多线程的程序的复杂度要远远高于我们前面写的单进程单线程的程序。 </p>
+<p>因为复杂度高，调试困难，所以，不是迫不得已，我们也不想编写多任务。但是，有很多时候， 没有多任务还真不行。想想在电脑上看电影，就必须由一个线程播放视频，另一个线程播放音 频，否则，单线程实现的话就只能先把视频播放完再播放音频，或者先把音频播放完再播放视 频，这显然是不行的。 </p>
+<p>Python既支持多进程，又支持多线程，我们会讨论如何编写这两种多任务程序。 </p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_028/"
+                                   title="Python基础 - 部分 28"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 28</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_026/"
+                                   title="Python基础 - 部分 26"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 26</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="nav-text">操作文件和目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-text"># 查看当前目录的绝对路径 :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8CWindows%E4%B8%8B%E4%BC%9A%E8%BF%94%E5%9B%9E%E8%BF%99%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9A"><span class="nav-text">而Windows下会返回这样的字符串：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-text"># 对文件重命名 :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%B8%8D%E6%98%AF%E9%9D%9E%E5%B8%B8%E7%AE%80%E6%B4%81%EF%BC%9F"><span class="nav-text">是不是非常简洁？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-text">序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON%E8%BF%9B%E9%98%B6"><span class="nav-text">JSON进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-1"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程和线程</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="nav-text">操作文件和目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-text"># 查看当前目录的绝对路径 :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%8CWindows%E4%B8%8B%E4%BC%9A%E8%BF%94%E5%9B%9E%E8%BF%99%E6%A0%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9A"><span class="nav-text">而Windows下会返回这样的字符串：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-text"># 对文件重命名 :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%B8%8D%E6%98%AF%E9%9D%9E%E5%B8%B8%E7%AE%80%E6%B4%81%EF%BC%9F"><span class="nav-text">是不是非常简洁？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-text">序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON%E8%BF%9B%E9%98%B6"><span class="nav-text">JSON进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-1"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81-1"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程和线程</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

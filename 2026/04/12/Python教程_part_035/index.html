@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Python基础 - 部分 35 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Python基础 - 部分 35
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-04-12 12:34:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Apr 12 2026 16:18:15 GMT+0800">2026-04-12 16:18:15</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Tutorial/">Tutorial</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Python/">Python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="上述代码执行结果为："><a href="#上述代码执行结果为：" class="headerlink" title="上述代码执行结果为："></a>上述代码执行结果为：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;</span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line">&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码的执行顺序是："><a href="#代码的执行顺序是：" class="headerlink" title="代码的执行顺序是："></a>代码的执行顺序是：</h2><ol>
+<li><p><code>with</code> 语句首先执行 <code>yield</code> 之前的语句，因此打印出 <code>&lt;h1&gt;</code> ； </p>
+</li>
+<li><p><code>yield</code> 调用会执行 <code>with</code> 语句内部的所有语句，因此打印出 <code>hello</code> 和 <code>world</code> ； </p>
+</li>
+<li><p>最后执行 <code>yield</code> 之后的语句，打印出 <code>&lt;/h1&gt;</code> 。</p>
+</li>
+</ol>
+<ul>
+<li>因此， <code>@contextmanager</code> 让我们通过编写generator来简化上下文管理。</li>
+</ul>
+<h2 id="closing"><a href="#closing" class="headerlink" title="@closing"></a>@closing</h2><p>如果一个对象没有实现上下文，我们就不能把它用于 <code>with</code> 语句。这个时候，可以用 <code>closing()</code> 来把该对象变为上下文对象。例如，用 <code>with</code> 语句使用 <code>urlopen()</code> ： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from contextlib import closing</span><br><span class="line">from urllib.request import urlopen</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with closing(urlopen(&#x27;https://www.python.org&#x27;)) as page:</span><br><span class="line">for line in page:</span><br><span class="line">print(line)</span><br></pre></td></tr></table></figure>
+
+<p><code>closing</code> 也是一个经过@contextmanager装饰的generator，这个generator编写起来其实非 常简单： </p>
+<p><code>@contextmanager def closing(thing): try: yield thing finally: thing.close()</code> 它的作用就是把任意对象变为上下文对象，并支持 <code>with</code> 语句。 <code>@contextlib</code> 还有一些其他decorator，便于我们编写更简洁的代码。 </p>
+<p>评论 </p>
+<h2 id="urllib"><a href="#urllib" class="headerlink" title="urllib"></a><strong>urllib</strong></h2><p>原文链接 </p>
+<p><code>urllib</code> 提供了一系列用于操作URL的功能。 </p>
+<h2 id="Get"><a href="#Get" class="headerlink" title="Get"></a>Get</h2><p><code>urllib</code> 的 <code>request</code> 模块可以非常方便地抓取URL内容，也就是发送一个GET请求到指定的页 面，然后返回HTTP的响应： </p>
+<p>例如，对豆瓣的一个URL <code>https://api.douban.com/v2/book/2129650</code> 进行抓取，并返回响应： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">with request.urlopen(&#x27;https://api.douban.com/v2/book/2129650&#x27;) as f:</span><br><span class="line">    data = f.read()</span><br><span class="line">print(&#x27;Status:&#x27;, f.status, f.reason)</span><br><span class="line">for k, v in f.getheaders():</span><br><span class="line">print(&#x27;%s: %s&#x27; % (k, v))</span><br><span class="line">print(&#x27;Data:&#x27;, data.decode(&#x27;utf-8&#x27;))</span><br></pre></td></tr></table></figure>
+
+<h2 id="可以看到HTTP响应的头和JSON数据："><a href="#可以看到HTTP响应的头和JSON数据：" class="headerlink" title="可以看到HTTP响应的头和JSON数据："></a>可以看到HTTP响应的头和JSON数据：</h2><p><code>Status: 200 OK Server: nginx Date: Tue, 26 May 2015 10:02:27 GMT Content-Type: application/json; charset=utf-8 Content-Length: 2049 Connection: close Expires: Sun, 1 Jan 2006 01:00:00 GMT Pragma: no-cache Cache-Control: must-revalidate, no-cache, private X-DAE-Node: pidl1 Data: {&quot;rating&quot;: {&quot;max&quot;:10,&quot;numRaters&quot;:16,&quot;average&quot;:&quot;7.4&quot;,&quot;min&quot;:0},&quot;subtitle&quot;:&quot;&quot;,&quot;author&quot;: [&quot;</code> 编著 <code>&quot;],&quot;pubdate&quot;:&quot;2007-6&quot;,...}</code> </p>
+<h2 id="如果我们要想模拟浏览器发送GET请求，就需要使用-Request-对象，通过往-Request-对象添-加HTTP头，我们就可以把请求伪装成浏览器。例如，模拟iPhone去请求豆瓣首页："><a href="#如果我们要想模拟浏览器发送GET请求，就需要使用-Request-对象，通过往-Request-对象添-加HTTP头，我们就可以把请求伪装成浏览器。例如，模拟iPhone去请求豆瓣首页：" class="headerlink" title="如果我们要想模拟浏览器发送GET请求，就需要使用 Request 对象，通过往 Request 对象添 加HTTP头，我们就可以把请求伪装成浏览器。例如，模拟iPhone去请求豆瓣首页："></a>如果我们要想模拟浏览器发送GET请求，就需要使用 <code>Request</code> 对象，通过往 <code>Request</code> 对象添 加HTTP头，我们就可以把请求伪装成浏览器。例如，模拟iPhone去请求豆瓣首页：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">req = request.Request(&#x27;http://www.douban.com/&#x27;)</span><br><span class="line">req.add_header(&#x27;User-Agent&#x27;, &#x27;Mozilla/6.0 (iPhone; CPU iPhone OS 8_0 like</span><br><span class="line">Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/8.0</span><br><span class="line">Mobile/10A5376e Safari/8536.25&#x27;)</span><br><span class="line">with request.urlopen(req) as f:</span><br><span class="line">print(&#x27;Status:&#x27;, f.status, f.reason)</span><br><span class="line">for k, v in f.getheaders():</span><br><span class="line">print(&#x27;%s: %s&#x27; % (k, v))</span><br><span class="line">print(&#x27;Data:&#x27;, f.read().decode(&#x27;utf-8&#x27;))</span><br></pre></td></tr></table></figure>
+
+<h2 id="这样豆瓣会返回适合iPhone的移动版网页："><a href="#这样豆瓣会返回适合iPhone的移动版网页：" class="headerlink" title="这样豆瓣会返回适合iPhone的移动版网页："></a>这样豆瓣会返回适合iPhone的移动版网页：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,</span><br><span class="line">initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;57x57&quot;</span><br><span class="line">href=&quot;http://img4.douban.com/pics/cardkit/launcher/57.png&quot; /&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h2><p>如果要以POST发送一个请求，只需要把参数 <code>data</code> 以bytes形式传入。 </p>
+<h2 id="我们模拟一个微博登录，先读取登录的邮箱和口令，然后按照weibo-cn的登录页的格式以"><a href="#我们模拟一个微博登录，先读取登录的邮箱和口令，然后按照weibo-cn的登录页的格式以" class="headerlink" title="我们模拟一个微博登录，先读取登录的邮箱和口令，然后按照weibo.cn的登录页的格式以"></a>我们模拟一个微博登录，先读取登录的邮箱和口令，然后按照weibo.cn的登录页的格式以</h2><p><code>username=xxx&amp;password=xxx</code> 的编码传入： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request, parse</span><br><span class="line">print(&#x27;Login to weibo.cn...&#x27;)</span><br><span class="line">email = input(&#x27;Email: &#x27;)</span><br><span class="line">passwd = input(&#x27;Password: &#x27;)</span><br><span class="line">login_data = parse.urlencode([</span><br><span class="line">    (&#x27;username&#x27;, email),</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    (&#x27;password&#x27;, passwd),</span><br><span class="line">    (&#x27;entry&#x27;, &#x27;mweibo&#x27;),</span><br><span class="line">&#x27;&#x27;</span><br><span class="line">    (&#x27;client_id&#x27;, ),</span><br><span class="line">    (&#x27;savestate&#x27;, &#x27;1&#x27;),</span><br><span class="line">    (&#x27;ec&#x27;, &#x27;&#x27;),</span><br><span class="line">    (&#x27;pagerefer&#x27;, &#x27;https://passport.weibo.cn/signin/welcome?</span><br><span class="line">entry=mweibo&amp;r=http%3A%2F%2Fm.weibo.cn%2F&#x27;)</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">req = request.Request(&#x27;https://passport.weibo.cn/sso/login&#x27;)</span><br><span class="line">req.add_header(&#x27;Origin&#x27;, &#x27;https://passport.weibo.cn&#x27;)</span><br><span class="line">req.add_header(&#x27;User-Agent&#x27;, &#x27;Mozilla/6.0 (iPhone; CPU iPhone OS 8_0 like</span><br><span class="line">Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/8.0</span><br><span class="line">Mobile/10A5376e Safari/8536.25&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">req.add_header(&#x27;Referer&#x27;, &#x27;https://passport.weibo.cn/signin/login?</span><br><span class="line">entry=mweibo&amp;res=wel&amp;wm=3349&amp;r=http%3A%2F%2Fm.weibo.cn%2F&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">with request.urlopen(req, data=login_data.encode(&#x27;utf-8&#x27;)) as f:</span><br><span class="line">print(&#x27;Status:&#x27;, f.status, f.reason)</span><br><span class="line">for k, v in f.getheaders():</span><br><span class="line">print(&#x27;%s: %s&#x27; % (k, v))</span><br><span class="line">print(&#x27;Data:&#x27;, f.read().decode(&#x27;utf-8&#x27;))</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果登录成功，我们获得的响应如下："><a href="#如果登录成功，我们获得的响应如下：" class="headerlink" title="如果登录成功，我们获得的响应如下："></a>如果登录成功，我们获得的响应如下：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Status: 200 OK</span><br><span class="line">Server: nginx/1.2.0</span><br><span class="line">...</span><br><span class="line">Set-Cookie: SSOLoginState=1432620126; path=/; domain=weibo.cn</span><br><span class="line">...</span><br><span class="line">Data: &#123;&quot;retcode&quot;:20000000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:&#123;...,&quot;uid&quot;:&quot;1658384301&quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果登录失败，我们获得的响应如下："><a href="#如果登录失败，我们获得的响应如下：" class="headerlink" title="如果登录失败，我们获得的响应如下："></a>如果登录失败，我们获得的响应如下：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">Data:</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;retcode&quot;:50011015,&quot;msg&quot;:&quot;\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef</span><br><span class="line">&quot;,&quot;data&quot;:&#123;&quot;username&quot;:&quot;example@python.org&quot;,&quot;errline&quot;:536&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>如果还需要更复杂的控制，比如通过一个Proxy去访问网站，我们需要利用 <code>ProxyHandler</code> 来处 理，示例代码如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">proxy_handler = urllib.request.ProxyHandler(&#123;&#x27;http&#x27;:</span><br><span class="line">&#x27;http://www.example.com:3128/&#x27;&#125;)</span><br><span class="line">proxy_auth_handler = urllib.request.ProxyBasicAuthHandler()</span><br><span class="line">proxy_auth_handler.add_password(&#x27;realm&#x27;, &#x27;host&#x27;, &#x27;username&#x27;, &#x27;password&#x27;)</span><br><span class="line">opener = urllib.request.build_opener(proxy_handler, proxy_auth_handler)</span><br><span class="line">with opener.open(&#x27;http://www.example.com/login.html&#x27;) as f:</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>urllib</code> 提供的功能就是利用程序去执行各种HTTP请求。如果要模拟浏览器完成特定功能，需 要把请求伪装成浏览器。伪装的方法是先监控浏览器发出的请求，再根据浏览器的请求头来伪 装， <code>User-Agent</code> 头就是用来标识浏览器的。 </p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h2 id="利用-urllib-读取JSON，然后将JSON解析为Python对象："><a href="#利用-urllib-读取JSON，然后将JSON解析为Python对象：" class="headerlink" title="利用 urllib 读取JSON，然后将JSON解析为Python对象："></a>利用 <code>urllib</code> 读取JSON，然后将JSON解析为Python对象：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br><span class="line">deffetch_data(url):</span><br><span class="line">return&#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="# 测试"></a><code>#</code> 测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">URL = &#x27;https://api.weatherapi.com/v1/current.json?</span><br><span class="line">key=b4e8f86b44654e6b86885330242207&amp;q=Beijing&amp;aqi=no&#x27;</span><br><span class="line">data = fetch_data(URL)</span><br><span class="line">print(data)</span><br><span class="line">assert data[&#x27;location&#x27;][&#x27;name&#x27;] == &#x27;Beijing&#x27;</span><br><span class="line">print(&#x27;ok&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考源码"><a href="#参考源码" class="headerlink" title="参考源码"></a>参考源码</h2><p>use_urllib.py </p>
+<p>评论 </p>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a><strong>XML</strong></h2><p>原文链接 </p>
+<p>XML虽然比JSON复杂，在Web中应用也不如以前多了，不过仍有很多地方在用，所以，有必要 了解如何操作XML。 </p>
+<h2 id="DOM-vs-SAX"><a href="#DOM-vs-SAX" class="headerlink" title="DOM vs SAX"></a>DOM vs SAX</h2><p>操作XML有两种方法：DOM和SAX。DOM会把整个XML读入内存，解析为树，因此占用内存 大，解析慢，优点是可以任意遍历树的节点。SAX是流模式，边读边解析，占用内存小，解析 快，缺点是我们需要自己处理事件。 </p>
+<p>正常情况下，优先考虑SAX，因为DOM实在太占内存。 </p>
+<p>在Python中使用SAX解析XML非常简洁，通常我们关心的事件是 <code>start_element</code> ， <code>end_element</code> 和 <code>char_data</code> ，准备好这3个函数，然后就可以解析xml了。 </p>
+<p>举个例子，当SAX解析器读到一个节点时： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ahref=&quot;/&quot;&gt;python&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="会产生3个事件："><a href="#会产生3个事件：" class="headerlink" title="会产生3个事件："></a>会产生3个事件：</h2><ol>
+<li><p><code>start_element</code> 事件，在读取 <code>&lt;a href=&quot;/&quot;&gt;</code> 时； </p>
+</li>
+<li><p><code>char_data</code> 事件，在读取 <code>python</code> 时； </p>
+</li>
+<li><p><code>end_element</code> 事件，在读取 <code>&lt;/a&gt;</code> 时。</p>
+</li>
+</ol>
+<p>用代码实验一下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from xml.parsers.expat import ParserCreate</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classDefaultSaxHandler(object):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defstart_element(self, name, attrs):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;sax:start_element: %s, attrs: %s&#x27; % (name, str(attrs)))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defend_element(self, name):</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;sax:end_element: %s&#x27; % name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">defchar_data(self, text):</span><br><span class="line">print(&#x27;sax:char_data: %s&#x27; % text)</span><br><span class="line">xml = r&#x27;&#x27;&#x27;&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;/python&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;/ruby&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">handler = DefaultSaxHandler()</span><br><span class="line">parser = ParserCreate()</span><br><span class="line">parser.StartElementHandler = handler.start_element</span><br><span class="line">parser.EndElementHandler = handler.end_element</span><br><span class="line">parser.CharacterDataHandler = handler.char_data</span><br><span class="line">parser.Parse(xml)</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是读取一大段字符串时， <code>CharacterDataHandler</code> 可能被多次调用，所以需要自己保 存起来，在 <code>EndElementHandler</code> 里面再合并。 </p>
+<p>除了解析XML外，如何生成XML呢？99%的情况下需要生成的XML结构都是非常简单的，因此， 最简单也是最有效的生成XML的方法是拼接字符串： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">L = []</span><br><span class="line">L.append(r&#x27;&lt;?xml version=&quot;1.0&quot;?&gt;&#x27;)</span><br><span class="line">L.append(r&#x27;&lt;root&gt;&#x27;)</span><br><span class="line">L.append(encode(&#x27;some &amp; data&#x27;))</span><br><span class="line">L.append(r&#x27;&lt;/root&gt;&#x27;)</span><br><span class="line">return&#x27;&#x27;.join(L)</span><br></pre></td></tr></table></figure>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Python/">Python</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_036/"
+                                   title="Python基础 - 部分 36"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 36</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/04/12/Python%E6%95%99%E7%A8%8B_part_034/"
+                                   title="Python基础 - 部分 34"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Python基础 - 部分 34</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E8%BF%B0%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA%EF%BC%9A"><span class="nav-text">上述代码执行结果为：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E6%98%AF%EF%BC%9A"><span class="nav-text">代码的执行顺序是：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#closing"><span class="nav-text">@closing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib"><span class="nav-text">urllib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get"><span class="nav-text">Get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0HTTP%E5%93%8D%E5%BA%94%E7%9A%84%E5%A4%B4%E5%92%8CJSON%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="nav-text">可以看到HTTP响应的头和JSON数据：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E4%BB%AC%E8%A6%81%E6%83%B3%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%91%E9%80%81GET%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%B0%B1%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8-Request-%E5%AF%B9%E8%B1%A1%EF%BC%8C%E9%80%9A%E8%BF%87%E5%BE%80-Request-%E5%AF%B9%E8%B1%A1%E6%B7%BB-%E5%8A%A0HTTP%E5%A4%B4%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%8A%8A%E8%AF%B7%E6%B1%82%E4%BC%AA%E8%A3%85%E6%88%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%82%E4%BE%8B%E5%A6%82%EF%BC%8C%E6%A8%A1%E6%8B%9FiPhone%E5%8E%BB%E8%AF%B7%E6%B1%82%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%EF%BC%9A"><span class="nav-text">如果我们要想模拟浏览器发送GET请求，就需要使用 Request 对象，通过往 Request 对象添 加HTTP头，我们就可以把请求伪装成浏览器。例如，模拟iPhone去请求豆瓣首页：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E6%A0%B7%E8%B1%86%E7%93%A3%E4%BC%9A%E8%BF%94%E5%9B%9E%E9%80%82%E5%90%88iPhone%E7%9A%84%E7%A7%BB%E5%8A%A8%E7%89%88%E7%BD%91%E9%A1%B5%EF%BC%9A"><span class="nav-text">这样豆瓣会返回适合iPhone的移动版网页：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post"><span class="nav-text">Post</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E6%A8%A1%E6%8B%9F%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%8D%9A%E7%99%BB%E5%BD%95%EF%BC%8C%E5%85%88%E8%AF%BB%E5%8F%96%E7%99%BB%E5%BD%95%E7%9A%84%E9%82%AE%E7%AE%B1%E5%92%8C%E5%8F%A3%E4%BB%A4%EF%BC%8C%E7%84%B6%E5%90%8E%E6%8C%89%E7%85%A7weibo-cn%E7%9A%84%E7%99%BB%E5%BD%95%E9%A1%B5%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%BB%A5"><span class="nav-text">我们模拟一个微博登录，先读取登录的邮箱和口令，然后按照weibo.cn的登录页的格式以</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E7%99%BB%E5%BD%95%E6%88%90%E5%8A%9F%EF%BC%8C%E6%88%91%E4%BB%AC%E8%8E%B7%E5%BE%97%E7%9A%84%E5%93%8D%E5%BA%94%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">如果登录成功，我们获得的响应如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%8E%B7%E5%BE%97%E7%9A%84%E5%93%8D%E5%BA%94%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">如果登录失败，我们获得的响应如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler"><span class="nav-text">Handler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-urllib-%E8%AF%BB%E5%8F%96JSON%EF%BC%8C%E7%84%B6%E5%90%8E%E5%B0%86JSON%E8%A7%A3%E6%9E%90%E4%B8%BAPython%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="nav-text">利用 urllib 读取JSON，然后将JSON解析为Python对象：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-text"># 测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML"><span class="nav-text">XML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-vs-SAX"><span class="nav-text">DOM vs SAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E4%BA%A7%E7%94%9F3%E4%B8%AA%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="nav-text">会产生3个事件：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E8%BF%B0%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA%EF%BC%9A"><span class="nav-text">上述代码执行结果为：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E6%98%AF%EF%BC%9A"><span class="nav-text">代码的执行顺序是：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#closing"><span class="nav-text">@closing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib"><span class="nav-text">urllib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get"><span class="nav-text">Get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0HTTP%E5%93%8D%E5%BA%94%E7%9A%84%E5%A4%B4%E5%92%8CJSON%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="nav-text">可以看到HTTP响应的头和JSON数据：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E4%BB%AC%E8%A6%81%E6%83%B3%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%91%E9%80%81GET%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%B0%B1%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8-Request-%E5%AF%B9%E8%B1%A1%EF%BC%8C%E9%80%9A%E8%BF%87%E5%BE%80-Request-%E5%AF%B9%E8%B1%A1%E6%B7%BB-%E5%8A%A0HTTP%E5%A4%B4%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%8A%8A%E8%AF%B7%E6%B1%82%E4%BC%AA%E8%A3%85%E6%88%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%82%E4%BE%8B%E5%A6%82%EF%BC%8C%E6%A8%A1%E6%8B%9FiPhone%E5%8E%BB%E8%AF%B7%E6%B1%82%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%EF%BC%9A"><span class="nav-text">如果我们要想模拟浏览器发送GET请求，就需要使用 Request 对象，通过往 Request 对象添 加HTTP头，我们就可以把请求伪装成浏览器。例如，模拟iPhone去请求豆瓣首页：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E6%A0%B7%E8%B1%86%E7%93%A3%E4%BC%9A%E8%BF%94%E5%9B%9E%E9%80%82%E5%90%88iPhone%E7%9A%84%E7%A7%BB%E5%8A%A8%E7%89%88%E7%BD%91%E9%A1%B5%EF%BC%9A"><span class="nav-text">这样豆瓣会返回适合iPhone的移动版网页：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post"><span class="nav-text">Post</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E6%A8%A1%E6%8B%9F%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%8D%9A%E7%99%BB%E5%BD%95%EF%BC%8C%E5%85%88%E8%AF%BB%E5%8F%96%E7%99%BB%E5%BD%95%E7%9A%84%E9%82%AE%E7%AE%B1%E5%92%8C%E5%8F%A3%E4%BB%A4%EF%BC%8C%E7%84%B6%E5%90%8E%E6%8C%89%E7%85%A7weibo-cn%E7%9A%84%E7%99%BB%E5%BD%95%E9%A1%B5%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%BB%A5"><span class="nav-text">我们模拟一个微博登录，先读取登录的邮箱和口令，然后按照weibo.cn的登录页的格式以</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E7%99%BB%E5%BD%95%E6%88%90%E5%8A%9F%EF%BC%8C%E6%88%91%E4%BB%AC%E8%8E%B7%E5%BE%97%E7%9A%84%E5%93%8D%E5%BA%94%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">如果登录成功，我们获得的响应如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%8E%B7%E5%BE%97%E7%9A%84%E5%93%8D%E5%BA%94%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-text">如果登录失败，我们获得的响应如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler"><span class="nav-text">Handler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-urllib-%E8%AF%BB%E5%8F%96JSON%EF%BC%8C%E7%84%B6%E5%90%8E%E5%B0%86JSON%E8%A7%A3%E6%9E%90%E4%B8%BAPython%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="nav-text">利用 urllib 读取JSON，然后将JSON解析为Python对象：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-text"># 测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%BA%90%E7%A0%81"><span class="nav-text">参考源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML"><span class="nav-text">XML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-vs-SAX"><span class="nav-text">DOM vs SAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E4%BA%A7%E7%94%9F3%E4%B8%AA%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="nav-text">会产生3个事件：</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
