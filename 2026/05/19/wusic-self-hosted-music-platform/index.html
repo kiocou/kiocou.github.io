@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Wusic 是开源托管于 GitHub 的自托管音乐服务项目，整合后端 Go 服务、前端管理界面和未来播放器模块，提供模块化全栈音乐解决方案。">
+    <meta name="author" content="kiocou">
+    
+    <title>
+        
+            Wusic：自托管开源音乐平台 |
+        
+        KIOCO
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/glassmorphism.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/lanyard-first-screen.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/prism-background.css">
+
+            
+        
+        
+            <script src="/js/libs/three.min.js" defer></script>
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    window.KEEP = KEEP
+    KEEP.hexo_config = {"hostname":"kiocou.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"KIOCO","author":"kiocou","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/glassmorphism.css","/css/lanyard-first-screen.css","/css/prism-background.css"],"js":[null,"/js/libs/lanyard-first-screen.js","/js/prism-background.js","/js/glass-surface.js"],"head":["<script src=\"/js/libs/three.min.js\" defer><\/script>"]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               KIOCO
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Wusic：自托管开源音乐平台
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">kiocou</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-05-19 15:54:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Tue May 19 2026 15:49:08 GMT+0800">2026-05-19 15:49:08</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></li>
+                        
+                    
+                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/">项目分析</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1/">音乐服务</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%87%AA%E6%89%98%E7%AE%A1/">自托管</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Go/">Go</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Wusic/">Wusic</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="📌-项目概述"><a href="#📌-项目概述" class="headerlink" title="📌 项目概述"></a>📌 项目概述</h2><p><strong>Wusic</strong> 是开源托管于 GitHub 的一个音乐服务相关项目，其目标是构建一个<strong>自托管的音乐服务器系统</strong>，包括后台服务、管理界面和播放器等组件。虽然目前该项目处于初期阶段且完善度不高，但它的架构设计和代码结构仍具有一定的参考价值。</p>
+<blockquote>
+<p>📎 项目仓库：<a class="link"   target="_blank" rel="noopener" href="https://github.com/wilgaboury/wusic" >github.com&#x2F;wilgaboury&#x2F;wusic<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<hr>
+<h2 id="🧠-一、项目定位与整体目标"><a href="#🧠-一、项目定位与整体目标" class="headerlink" title="🧠 一、项目定位与整体目标"></a>🧠 一、项目定位与整体目标</h2><p>Wusic 的愿景是创建一个完整的音乐平台框架，包括以下主要部分：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🎧 <strong>后端服务（REST API）</strong></td>
+<td>管理音乐库、播放队列、用户信息等业务逻辑</td>
+</tr>
+<tr>
+<td>🛠 <strong>Web 管理界面</strong></td>
+<td>用于管理音乐内容、播放列表和设置</td>
+</tr>
+<tr>
+<td>📱 <strong>播放器（客户端）</strong></td>
+<td>支持用户播放音乐、浏览列表、交互操作</td>
+</tr>
+</tbody></table>
+<p>项目采用<strong>模块化设计</strong>，将不同功能拆分为独立子项目，使得各个部分能在未来灵活组合。</p>
+<h3 id="仓库目录结构"><a href="#仓库目录结构" class="headerlink" title="仓库目录结构"></a>仓库目录结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">back/          # 后端 Go 服务</span><br><span class="line">dev/           # 开发工具与脚本</span><br><span class="line">front/web/     # 前端 Web 管理界面</span><br><span class="line">protos/        # Protobuf 协议定义</span><br><span class="line">static/        # 静态资源文件</span><br><span class="line">.gitignore</span><br><span class="line">LICENSE</span><br><span class="line">Makefile</span><br><span class="line">README.md</span><br></pre></td></tr></table></figure>
+
+<p>该项目既包含后端 Go 服务代码，也包括前端（TypeScript&#x2F;CSS&#x2F;HTML）和资源文件。</p>
+<hr>
+<h2 id="📦-二、核心组成与技术栈"><a href="#📦-二、核心组成与技术栈" class="headerlink" title="📦 二、核心组成与技术栈"></a>📦 二、核心组成与技术栈</h2><h3 id="1-后端服务（Go-语言）"><a href="#1-后端服务（Go-语言）" class="headerlink" title="1. 后端服务（Go 语言）"></a>1. 后端服务（Go 语言）</h3><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Go</strong></td>
+<td>编写 REST API，承担服务器逻辑</td>
+</tr>
+<tr>
+<td><strong>chi &#x2F; 类似框架</strong></td>
+<td>路由处理 HTTP 请求</td>
+</tr>
+<tr>
+<td><strong>SQLite</strong></td>
+<td>轻量级数据库存储音乐元数据、用户信息</td>
+</tr>
+<tr>
+<td><strong>Protobuf</strong></td>
+<td>定义服务交互数据结构</td>
+</tr>
+</tbody></table>
+<p>后端核心职责：</p>
+<ul>
+<li>处理音乐文件元数据解析</li>
+<li>播放列表 CRUD 逻辑</li>
+<li>用户认证与权限管理</li>
+<li>音乐流媒体传输</li>
+</ul>
+<h3 id="2-前端-Web-管理界面"><a href="#2-前端-Web-管理界面" class="headerlink" title="2. 前端 Web 管理界面"></a>2. 前端 Web 管理界面</h3><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>SolidJS &#x2F; React</strong></td>
+<td>现代响应式前端框架</td>
+</tr>
+<tr>
+<td><strong>TypeScript</strong></td>
+<td>类型安全的业务逻辑</td>
+</tr>
+<tr>
+<td><strong>CSS &#x2F; Tailwind</strong></td>
+<td>样式与布局</td>
+</tr>
+</tbody></table>
+<p>前端核心功能：</p>
+<ul>
+<li>音乐库浏览与搜索</li>
+<li>播放列表管理</li>
+<li>系统设置配置</li>
+<li>调用后端 API 显示动态内容</li>
+</ul>
+<h3 id="3-播放客户端（规划中）"><a href="#3-播放客户端（规划中）" class="headerlink" title="3. 播放客户端（规划中）"></a>3. 播放客户端（规划中）</h3><p>README 中提到 <strong>Jetpack Compose Android 播放器</strong> 的计划，未来可实现：</p>
+<ul>
+<li>跨平台播放（Android &#x2F; iOS &#x2F; Desktop）</li>
+<li>通过 REST 接口获取播放列表和音乐流</li>
+<li>离线缓存与同步</li>
+</ul>
+<hr>
+<h2 id="📖-三、源代码原理与实现思想"><a href="#📖-三、源代码原理与实现思想" class="headerlink" title="📖 三、源代码原理与实现思想"></a>📖 三、源代码原理与实现思想</h2><p>项目设计遵循<strong>模块化分层原则</strong>：</p>
+<h3 id="1-协议定义层（protos-）"><a href="#1-协议定义层（protos-）" class="headerlink" title="1. 协议定义层（protos&#x2F;）"></a>1. 协议定义层（protos&#x2F;）</h3><p>使用 <strong>Protobuf</strong> 定义 API 请求与响应格式，使服务逻辑与数据结构明确且可扩展：</p>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例：歌曲数据结构</span></span><br><span class="line"><span class="keyword">message </span><span class="title class_">Song</span> &#123;</span><br><span class="line">  <span class="type">string</span> id = <span class="number">1</span>;</span><br><span class="line">  <span class="type">string</span> title = <span class="number">2</span>;</span><br><span class="line">  <span class="type">string</span> artist = <span class="number">3</span>;</span><br><span class="line">  <span class="type">string</span> album = <span class="number">4</span>;</span><br><span class="line">  <span class="type">int64</span> duration = <span class="number">5</span>;</span><br><span class="line">  <span class="type">string</span> file_path = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-REST-后端架构"><a href="#2-REST-后端架构" class="headerlink" title="2. REST 后端架构"></a>2. REST 后端架构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────┐     ┌──────────────┐     ┌─────────────┐</span><br><span class="line">│  HTTP 请求   │ ──▶ │  路由层 (chi)  │ ──▶ │  服务层     │</span><br><span class="line">└─────────────┘     └──────────────┘     └─────────────┘</span><br><span class="line">                                                  │</span><br><span class="line">                                                  ▼</span><br><span class="line">┌─────────────┐     ┌──────────────┐     ┌─────────────┐</span><br><span class="line">│  返回 JSON   │ ◀── │  数据封装    │ ◀── │  SQLite 存储 │</span><br><span class="line">└─────────────┘     └──────────────┘     └─────────────┘</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>路由层</strong>：定义各 HTTP 路径（如 <code>/songs</code>, <code>/playlists</code>, <code>/stream</code> 等）</li>
+<li><strong>服务层</strong>：封装音乐数据查询、修改、验证逻辑</li>
+<li><strong>存储层</strong>：通过 SQLite 管理音乐元数据、用户信息、状态等</li>
+</ul>
+<h3 id="3-前端界面逻辑"><a href="#3-前端界面逻辑" class="headerlink" title="3. 前端界面逻辑"></a>3. 前端界面逻辑</h3><ul>
+<li>发起对后端 API 的请求</li>
+<li>使用响应式界面组件更新播放状态、列表信息</li>
+<li>实现状态管理（当前播放、下一首、搜索等）</li>
+</ul>
+<p>整体遵循<strong>前后端分离架构</strong>，后端专注数据与业务逻辑，前端负责展示与用户交互。</p>
+<hr>
+<h2 id="🧩-四、使用说明与开发流程"><a href="#🧩-四、使用说明与开发流程" class="headerlink" title="🧩 四、使用说明与开发流程"></a>🧩 四、使用说明与开发流程</h2><h3 id="✅-1-克隆仓库"><a href="#✅-1-克隆仓库" class="headerlink" title="✅ 1. 克隆仓库"></a>✅ 1. 克隆仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wilgaboury/wusic.git</span><br><span class="line"><span class="built_in">cd</span> wusic</span><br></pre></td></tr></table></figure>
+
+<h3 id="✅-2-本地编译与依赖安装"><a href="#✅-2-本地编译与依赖安装" class="headerlink" title="✅ 2. 本地编译与依赖安装"></a>✅ 2. 本地编译与依赖安装</h3><p><strong>后端 Go 服务：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> back</span><br><span class="line">go mod download</span><br><span class="line">go build -o wusic-server</span><br><span class="line">./wusic-server</span><br></pre></td></tr></table></figure>
+
+<p><strong>前端 Web 管理界面：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> front/web</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="⚙️-3-本地运行测试"><a href="#⚙️-3-本地运行测试" class="headerlink" title="⚙️ 3. 本地运行测试"></a>⚙️ 3. 本地运行测试</h3><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>①</td>
+<td>启动 API 服务器（默认端口 <code>:8080</code>）</td>
+</tr>
+<tr>
+<td>②</td>
+<td>访问本地 Web 管理界面（<code>http://localhost:3000</code>）</td>
+</tr>
+<tr>
+<td>③</td>
+<td>验证数据交互和播放逻辑</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ 具体命令需依据 <code>README.md</code> 和代码实现而定，以上为通用流程参考。</p>
+</blockquote>
+<hr>
+<h2 id="🧾-五、项目现状与建议"><a href="#🧾-五、项目现状与建议" class="headerlink" title="🧾 五、项目现状与建议"></a>🧾 五、项目现状与建议</h2><p>🟡 仓库尚处于 <strong>“未完成状态”</strong>，尚不稳定可用，建议：</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔴 高</td>
+<td>完善后端接口和前端 UI 基础功能</td>
+</tr>
+<tr>
+<td>🔴 高</td>
+<td>补充音乐流处理逻辑与静态文件服务</td>
+</tr>
+<tr>
+<td>🟡 中</td>
+<td>编写单元测试和自动化 CI 流程</td>
+</tr>
+<tr>
+<td>🟢 低</td>
+<td>添加 Docker 容器化部署支持</td>
+</tr>
+</tbody></table>
+<p>即使作为学习项目，它仍提供以下<strong>参考价值</strong>：</p>
+<ul>
+<li>✅ 后端 API 设计规范</li>
+<li>✅ Protobuf 协议定义实践</li>
+<li>✅ 前后端分离架构模式</li>
+<li>✅ Go + Web 全栈项目组织方式</li>
+</ul>
+<hr>
+<h2 id="🧪-总结"><a href="#🧪-总结" class="headerlink" title="🧪 总结"></a>🧪 总结</h2><p>Wusic 是一个<strong>自托管音乐平台开源项目</strong>，通过模块化设计整合后端服务、前端管理和未来播放器模块。</p>
+<p>尽管尚未完工，但它展示了：</p>
+<ul>
+<li>📁 <strong>清晰的代码组织方式</strong> — <code>back/</code>、<code>front/</code>、<code>protos/</code> 分离</li>
+<li>🔌 <strong>协议定义 + REST API + 前端 UI 的分层开发逻辑</strong></li>
+<li>🏗 <strong>如何利用现有工具构建全栈音乐系统的思路</strong></li>
+</ul>
+<p>对于想要学习 <strong>Go 后端 + 前端全栈开发</strong> 的开发者，这是一个不错的参考项目。</p>
+<hr>
+<blockquote>
+<p>📎 <strong>相关链接</strong></p>
+<ul>
+<li>项目仓库：<a class="link"   target="_blank" rel="noopener" href="https://github.com/wilgaboury/wusic" >github.com&#x2F;wilgaboury&#x2F;wusic<i class="fas fa-external-link-alt"></i></a></li>
+<li>Makefile 构建脚本：仓库根目录 <code>Makefile</code></li>
+<li>Protobuf 定义：<code>protos/</code> 目录</li>
+</ul>
+</blockquote>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1/">音乐服务</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%87%AA%E6%89%98%E7%AE%A1/">自托管</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Go/">Go</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Wusic/">Wusic</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/05/19/xalgorix-ai-security-testing-platform/"
+                                   title="Xalgorix：开源自托管 AI 安全测试平台"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Xalgorix：开源自托管 AI 安全测试平台</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="nav-text">📌 项目概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%A0-%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%95%B4%E4%BD%93%E7%9B%AE%E6%A0%87"><span class="nav-text">🧠 一、项目定位与整体目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text">仓库目录结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%A6-%E4%BA%8C%E3%80%81%E6%A0%B8%E5%BF%83%E7%BB%84%E6%88%90%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="nav-text">📦 二、核心组成与技术栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1%EF%BC%88Go-%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="nav-text">1. 后端服务（Go 语言）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%89%8D%E7%AB%AF-Web-%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2"><span class="nav-text">2. 前端 Web 管理界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%92%AD%E6%94%BE%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%88%E8%A7%84%E5%88%92%E4%B8%AD%EF%BC%89"><span class="nav-text">3. 播放客户端（规划中）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%96-%E4%B8%89%E3%80%81%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0%E6%80%9D%E6%83%B3"><span class="nav-text">📖 三、源代码原理与实现思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8D%8F%E8%AE%AE%E5%AE%9A%E4%B9%89%E5%B1%82%EF%BC%88protos-%EF%BC%89"><span class="nav-text">1. 协议定义层（protos&#x2F;）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-REST-%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84"><span class="nav-text">2. REST 后端架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%89%8D%E7%AB%AF%E7%95%8C%E9%9D%A2%E9%80%BB%E8%BE%91"><span class="nav-text">3. 前端界面逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%A9-%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B8%8E%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-text">🧩 四、使用说明与开发流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-1-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="nav-text">✅ 1. 克隆仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-2-%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BE%9D%E8%B5%96%E5%AE%89%E8%A3%85"><span class="nav-text">✅ 2. 本地编译与依赖安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9A%99%EF%B8%8F-3-%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="nav-text">⚙️ 3. 本地运行测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%BE-%E4%BA%94%E3%80%81%E9%A1%B9%E7%9B%AE%E7%8E%B0%E7%8A%B6%E4%B8%8E%E5%BB%BA%E8%AE%AE"><span class="nav-text">🧾 五、项目现状与建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%AA-%E6%80%BB%E7%BB%93"><span class="nav-text">🧪 总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">kiocou</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="nav-text">📌 项目概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%A0-%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%95%B4%E4%BD%93%E7%9B%AE%E6%A0%87"><span class="nav-text">🧠 一、项目定位与整体目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text">仓库目录结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%A6-%E4%BA%8C%E3%80%81%E6%A0%B8%E5%BF%83%E7%BB%84%E6%88%90%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="nav-text">📦 二、核心组成与技术栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1%EF%BC%88Go-%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="nav-text">1. 后端服务（Go 语言）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%89%8D%E7%AB%AF-Web-%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2"><span class="nav-text">2. 前端 Web 管理界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%92%AD%E6%94%BE%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%88%E8%A7%84%E5%88%92%E4%B8%AD%EF%BC%89"><span class="nav-text">3. 播放客户端（规划中）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%96-%E4%B8%89%E3%80%81%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0%E6%80%9D%E6%83%B3"><span class="nav-text">📖 三、源代码原理与实现思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8D%8F%E8%AE%AE%E5%AE%9A%E4%B9%89%E5%B1%82%EF%BC%88protos-%EF%BC%89"><span class="nav-text">1. 协议定义层（protos&#x2F;）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-REST-%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84"><span class="nav-text">2. REST 后端架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%89%8D%E7%AB%AF%E7%95%8C%E9%9D%A2%E9%80%BB%E8%BE%91"><span class="nav-text">3. 前端界面逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%A9-%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B8%8E%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-text">🧩 四、使用说明与开发流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-1-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="nav-text">✅ 1. 克隆仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-2-%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BE%9D%E8%B5%96%E5%AE%89%E8%A3%85"><span class="nav-text">✅ 2. 本地编译与依赖安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9A%99%EF%B8%8F-3-%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="nav-text">⚙️ 3. 本地运行测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%BE-%E4%BA%94%E3%80%81%E9%A1%B9%E7%9B%AE%E7%8E%B0%E7%8A%B6%E4%B8%8E%E5%BB%BA%E8%AE%AE"><span class="nav-text">🧾 五、项目现状与建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%AA-%E6%80%BB%E7%BB%93"><span class="nav-text">🧪 总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/libs/lanyard-first-screen.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/prism-background.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/glass-surface.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

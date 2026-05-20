@@ -1,0 +1,1027 @@
+/* ===================================================================
+ * glassmorphism.css — 浅色模式默认值（:root 级别，最低优先级）
+ * 当系统偏好为亮色且无手动切换类时生效
+ * =================================================================== */
+:root {
+  color-scheme: light dark;
+  --header-height: 86px;
+  --header-shrink-height: 64px;
+  --component-gap: 42px;
+  --box-border-radius: 24px;
+  --glass-radius: 20px;
+  --glass-radius-lg: 26px;
+  --glass-radius-sm: 14px;
+  --glass-pill-radius: 999px;
+
+  /* iOS 26 Native Liquid Glass - Light Mode */
+  --glass-blur: 24px;
+  --glass-saturate: 210%;
+  --glass-brightness: 1.02;
+  --glass-page-bg: #ffffff;
+  --glass-surface: rgba(255, 255, 255, 0.48);
+  --glass-surface-strong: rgba(255, 255, 255, 0.52);
+  --glass-surface-soft: rgba(255, 255, 255, 0.26);
+  --glass-border: rgba(255, 255, 255, 0.32);
+  --glass-border-muted: rgba(255, 255, 255, 0.18);
+
+  --glass-shadow:
+    inset 2px -2px 1px -1px rgba(255, 255, 255, 0.96),
+    inset -2px 2px 1px -1px rgba(255, 255, 255, 0.96),
+    inset 7px -7px 1px -7px rgba(255, 255, 255, 0.62),
+    inset -7px 7px 1px -7px rgba(255, 255, 255, 0.62),
+    inset 0 0 2px rgba(0, 0, 0, 0.22),
+    0 24px 58px rgba(38, 58, 91, 0.12),
+    0 6px 12px rgba(0, 0, 0, 0.06);
+
+  --glass-shadow-hover:
+    inset 2px -2px 1px -1px rgba(255, 255, 255, 0.98),
+    inset -2px 2px 1px -1px rgba(255, 255, 255, 0.98),
+    inset 8px -8px 1px -8px rgba(255, 255, 255, 0.68),
+    inset -8px 8px 1px -8px rgba(255, 255, 255, 0.68),
+    inset 0 0 2px rgba(0, 0, 0, 0.25),
+    0 32px 68px rgba(38, 58, 91, 0.16),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+
+  --glass-control-shadow:
+    inset 0 0 2px rgba(0, 0, 0, 0.12),
+    0 10px 26px rgba(38, 58, 91, 0.06);
+
+  --glass-text-soft: rgba(72, 74, 88, 0.82);
+  --content-background-color: var(--glass-surface);
+  --background-color-1-transparent: rgba(255, 255, 255, 0.16);
+  --background-color-2: rgba(255, 255, 255, 0.12);
+  --background-color-3: rgba(255, 255, 255, 0.12);
+  --border-color: var(--glass-border-muted);
+  --shadow-color: rgba(38, 58, 91, 0.06);
+  --shadow-hover-color: rgba(38, 58, 91, 0.1);
+  --header-transparent-background-1: rgba(255, 255, 255, 0.16);
+  --header-transparent-background-2: rgba(255, 255, 255, 0.18);
+  --glass-scene: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) {
+    --glass-page-bg: #000000;
+    --glass-surface: rgba(24, 30, 48, 0.45);
+    --glass-surface-strong: rgba(24, 30, 48, 0.54);
+    --glass-surface-soft: rgba(12, 16, 26, 0.28);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --glass-border-muted: rgba(255, 255, 255, 0.12);
+
+    /* iOS 26 Chamfered Glass - Dark Mode */
+    --glass-shadow:
+      inset 2px 2px 6px rgba(255, 255, 255, 0.14),
+      inset -2px -2px 6px rgba(0, 0, 0, 0.32),
+      inset 0 0 25px rgba(255, 255, 255, 0.04),
+      0 28px 70px rgba(0, 0, 0, 0.35),
+      0 6px 12px rgba(0, 0, 0, 0.24);
+
+    --glass-shadow-hover:
+      inset 2px 2px 6px rgba(255, 255, 255, 0.16),
+      inset -2px -2px 6px rgba(0, 0, 0, 0.35),
+      inset 0 0 30px rgba(255, 255, 255, 0.06),
+      0 34px 80px rgba(0, 0, 0, 0.42),
+      0 8px 18px rgba(0, 0, 0, 0.3);
+
+    --glass-control-shadow:
+      inset 2px 2px 4px rgba(255, 255, 255, 0.06),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+      inset 0 0 15px rgba(255, 255, 255, 0.02),
+      0 12px 30px rgba(0, 0, 0, 0.24);
+
+    --glass-text-soft: rgba(186, 199, 218, 0.82);
+    --content-background-color: var(--glass-surface);
+    --background-color-1-transparent: rgba(255, 255, 255, 0.08);
+    --background-color-2: rgba(255, 255, 255, 0.06);
+    --background-color-3: rgba(255, 255, 255, 0.06);
+    --border-color: var(--glass-border-muted);
+    --shadow-color: rgba(0, 0, 0, 0.35);
+    --shadow-hover-color: rgba(0, 0, 0, 0.45);
+    --header-transparent-background-1: rgba(255, 255, 255, 0.08);
+    --header-transparent-background-2: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ===================================================================
+ * html.light-mode — 手动切换到亮色时强制覆盖所有变量
+ * 必须覆盖 Keep 主题 keep-style.styl 里的 .light-mode 选择器
+ * （两者特异性相同，glassmorphism.css 后加载故此处定义会胜出）
+ * =================================================================== */
+html.light-mode {
+  --glass-page-bg: #ffffff;
+  --glass-surface: rgba(255, 255, 255, 0.48);
+  --glass-surface-strong: rgba(255, 255, 255, 0.52);
+  --glass-surface-soft: rgba(255, 255, 255, 0.26);
+  --glass-border: rgba(255, 255, 255, 0.32);
+  --glass-border-muted: rgba(255, 255, 255, 0.18);
+  --glass-shadow:
+    inset 2px -2px 1px -1px rgba(255, 255, 255, 0.96),
+    inset -2px 2px 1px -1px rgba(255, 255, 255, 0.96),
+    inset 7px -7px 1px -7px rgba(255, 255, 255, 0.62),
+    inset -7px 7px 1px -7px rgba(255, 255, 255, 0.62),
+    inset 0 0 2px rgba(0, 0, 0, 0.22),
+    0 24px 58px rgba(38, 58, 91, 0.12),
+    0 6px 12px rgba(0, 0, 0, 0.06);
+  --glass-shadow-hover:
+    inset 2px -2px 1px -1px rgba(255, 255, 255, 0.98),
+    inset -2px 2px 1px -1px rgba(255, 255, 255, 0.98),
+    inset 8px -8px 1px -8px rgba(255, 255, 255, 0.68),
+    inset -8px 8px 1px -8px rgba(255, 255, 255, 0.68),
+    inset 0 0 2px rgba(0, 0, 0, 0.25),
+    0 32px 68px rgba(38, 58, 91, 0.16),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+  --glass-control-shadow:
+    inset 0 0 2px rgba(0, 0, 0, 0.12),
+    0 10px 26px rgba(38, 58, 91, 0.06);
+  --glass-text-soft: rgba(72, 74, 88, 0.82);
+  /* 覆盖 Keep 主题变量，防止模式切换时回退到白色背景 */
+  --content-background-color: rgba(255, 255, 255, 0.48);
+  --background-color-1-transparent: rgba(255, 255, 255, 0.16);
+  --background-color-2: rgba(255, 255, 255, 0.12);
+  --background-color-3: rgba(255, 255, 255, 0.12);
+  --border-color: rgba(255, 255, 255, 0.18);
+  --shadow-color: rgba(38, 58, 91, 0.06);
+  --shadow-hover-color: rgba(38, 58, 91, 0.1);
+  --header-transparent-background-1: rgba(255, 255, 255, 0.16);
+  --header-transparent-background-2: rgba(255, 255, 255, 0.18);
+}
+
+/* ===================================================================
+ * html.dark-mode — 手动切换到暗色时强制覆盖所有变量
+ * 必须覆盖 Keep 主题 keep-style.styl 里的 .dark-mode 选择器
+ * =================================================================== */
+html.dark-mode {
+  --glass-page-bg: #000000;
+  --glass-surface: rgba(24, 30, 48, 0.45);
+  --glass-surface-strong: rgba(24, 30, 48, 0.54);
+  --glass-surface-soft: rgba(12, 16, 26, 0.28);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-border-muted: rgba(255, 255, 255, 0.12);
+  --glass-shadow:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.14),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.32),
+    inset 0 0 25px rgba(255, 255, 255, 0.04),
+    0 28px 70px rgba(0, 0, 0, 0.35),
+    0 6px 12px rgba(0, 0, 0, 0.24);
+  --glass-shadow-hover:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.16),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.35),
+    inset 0 0 30px rgba(255, 255, 255, 0.06),
+    0 34px 80px rgba(0, 0, 0, 0.42),
+    0 8px 18px rgba(0, 0, 0, 0.3);
+  --glass-control-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.06),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.02),
+    0 12px 30px rgba(0, 0, 0, 0.24);
+  --glass-text-soft: rgba(186, 199, 218, 0.82);
+  /* 覆盖 Keep 主题变量，防止模式切换时回退到深色默认背景 */
+  --content-background-color: rgba(24, 30, 48, 0.45);
+  --background-color-1-transparent: rgba(255, 255, 255, 0.08);
+  --background-color-2: rgba(255, 255, 255, 0.06);
+  --background-color-3: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --shadow-hover-color: rgba(0, 0, 0, 0.45);
+  --header-transparent-background-1: rgba(255, 255, 255, 0.08);
+  --header-transparent-background-2: rgba(255, 255, 255, 0.1);
+}
+
+/* ========== Base resets & Scrollbars ========== */
+html {
+  min-height: 100vh;
+  /* 锁定 html 背景为实色，防止任何时候出现浏览器默认白色/灰色背景泄露 */
+  background: var(--glass-page-bg) !important;
+}
+
+body {
+  min-height: 100vh;
+  /* 保持与 html 一致的实色背景，确保 WebGL 初始化期间不会短暂暴露浏览器底色 */
+  background: var(--glass-page-bg) !important;
+  overflow-x: hidden;
+}
+
+/* 模式切换时强制同步 body 背景色 —— 防止 CSS 变量继承延迟导致的闪烁 */
+html.light-mode,
+html.light-mode body {
+  background: #fff !important;
+}
+
+html.dark-mode,
+html.dark-mode body {
+  background: #000 !important;
+}
+
+/* 系统深色偏好（无手动类时）*/
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode),
+  html:not(.light-mode) body {
+    background: #000 !important;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--glass-border);
+}
+
+/* ========== GPU-Accelerated Dynamic Liquid Orbs ========== */
+.ios26-fluid-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.85;
+  transition: opacity 0.5s ease;
+}
+
+html.dark-mode .ios26-fluid-background {
+  opacity: 0.55; /* Dim slightly in dark mode for better text contrast */
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) .ios26-fluid-background {
+    opacity: 0.55;
+  }
+}
+
+.ios26-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+.ios26-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.32) 0%, rgba(255, 105, 180, 0) 70%);
+  top: -150px;
+  left: -150px;
+  animation: orb-drift-1 26s ease-in-out infinite alternate;
+}
+
+.ios26-orb-2 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(58, 123, 213, 0.32) 0%, rgba(58, 123, 213, 0) 70%);
+  bottom: -200px;
+  right: -200px;
+  animation: orb-drift-2 32s ease-in-out infinite alternate;
+}
+
+.ios26-orb-3 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.24) 0%, rgba(0, 210, 255, 0) 70%);
+  top: 15%;
+  right: -100px;
+  animation: orb-drift-3 24s ease-in-out infinite alternate;
+}
+
+.ios26-orb-4 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(155, 89, 182, 0.22) 0%, rgba(155, 89, 182, 0) 70%);
+  bottom: 10%;
+  left: -200px;
+  animation: orb-drift-4 29s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+  50% {
+    transform: translate3d(240px, 120px, 0) scale(1.18) rotate(180deg);
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+  }
+  100% {
+    transform: translate3d(-50px, 280px, 0) scale(0.9) rotate(360deg);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+}
+
+@keyframes orb-drift-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.1) rotate(0deg);
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  }
+  50% {
+    transform: translate3d(-280px, -180px, 0) scale(0.85) rotate(-180deg);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  }
+  100% {
+    transform: translate3d(120px, -80px, 0) scale(1.25) rotate(-360deg);
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  }
+}
+
+@keyframes orb-drift-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.9) rotate(0deg);
+    border-radius: 35% 65% 55% 45% / 48% 32% 68% 52%;
+  }
+  50% {
+    transform: translate3d(-220px, 150px, 0) scale(1.12) rotate(180deg);
+    border-radius: 68% 32% 42% 58% / 55% 65% 35% 45%;
+  }
+  100% {
+    transform: translate3d(-30px, -120px, 0) scale(0.95) rotate(360deg);
+    border-radius: 35% 65% 55% 45% / 48% 32% 68% 52%;
+  }
+}
+
+@keyframes orb-drift-4 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  50% {
+    transform: translate3d(150px, -200px, 0) scale(1.22) rotate(-180deg);
+    border-radius: 45% 55% 35% 65% / 30% 70% 30% 70%;
+  }
+  100% {
+    transform: translate3d(250px, 80px, 0) scale(0.85) rotate(-360deg);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}
+
+/* ========== Page Layout structures ========== */
+.page-container {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.page-container::before {
+  display: none !important;
+}
+
+.page-container::after {
+  display: none !important;
+}
+
+.page-main-content,
+.page-main-content-middle,
+.home-content-container,
+.main-content {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+.page-main-content-top {
+  z-index: 20 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.page-main-content-middle {
+  transition: transform 260ms ease;
+}
+
+.header-wrapper {
+  position: relative;
+  padding: 14px 0 10px;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header-wrapper:hover {
+  box-shadow: none !important;
+}
+
+/* ========== Core iOS 26 Glass Container Styles ========== */
+.header-wrapper .header-content,
+.header-wrapper .sub-menu-list,
+.header-wrapper .header-drawer,
+.glass-box,
+.home-post-item,
+.post-content-container,
+.archives-container,
+.category-page-container,
+.category-archive-container,
+.tag-page-container,
+.tag-archive-container,
+.page-template-container,
+.friends-link-container,
+.tools-nav-container,
+.photos-page-container,
+.website-announcement,
+.search-popup,
+.pc-post-toc,
+.tablet-post-toc,
+.post-copyright-info,
+.reward-author-container,
+.comment-container {
+  position: relative;
+  overflow: hidden;
+  /* Premium physical diagonal glass light gradient overlay */
+  background: linear-gradient(135deg, var(--glass-surface-strong), var(--glass-surface-soft)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.32) !important; /* Thick glass bevel edge highlight */
+  border-radius: var(--glass-radius) !important;
+  box-shadow: 
+    inset 1px 1px 0px rgba(255, 0, 128, 0.09),  /* Constant high-fidelity Magenta chromatic split */
+    inset -1px -1px 0px rgba(0, 255, 255, 0.14), /* Constant high-fidelity Cyan chromatic split */
+    var(--glass-shadow) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, opacity 0.4s ease;
+  isolation: isolate;
+  will-change: transform, box-shadow;
+  transform: translate3d(0, 0, 0);
+}
+
+.header-wrapper .header-content::before,
+.header-wrapper .sub-menu-list::before,
+.header-wrapper .header-drawer::before,
+.glass-box::before,
+.home-post-item::before,
+.post-content-container::before,
+.archives-container::before,
+.category-page-container::before,
+.category-archive-container::before,
+.tag-page-container::before,
+.tag-archive-container::before,
+.page-template-container::before,
+.friends-link-container::before,
+.tools-nav-container::before,
+.photos-page-container::before,
+.website-announcement::before,
+.search-popup::before,
+.pc-post-toc::before,
+.tablet-post-toc::before,
+.post-copyright-info::before,
+.reward-author-container::before,
+.comment-container::before,
+.header-wrapper .header-content::after,
+.header-wrapper .sub-menu-list::after,
+.header-wrapper .header-drawer::after,
+.glass-box::after,
+.home-post-item::after,
+.post-content-container::after,
+.archives-container::after,
+.category-page-container::after,
+.category-archive-container::after,
+.tag-page-container::after,
+.tag-archive-container::after,
+.page-template-container::after,
+.friends-link-container::after,
+.tools-nav-container::after,
+.photos-page-container::after,
+.website-announcement::after,
+.search-popup::after,
+.pc-post-toc::after,
+.tablet-post-toc::after,
+.post-copyright-info::after,
+.reward-author-container::after,
+.comment-container::after {
+  display: none !important;
+}
+
+.header-wrapper .header-content > *,
+.header-wrapper .sub-menu-list > *,
+.header-wrapper .header-drawer > *,
+.glass-box > *,
+.home-post-item > *,
+.post-content-container > *,
+.archives-container > *,
+.category-page-container > *,
+.category-archive-container > *,
+.tag-page-container > *,
+.tag-archive-container > *,
+.page-template-container > *,
+.friends-link-container > *,
+.tools-nav-container > *,
+.photos-page-container > *,
+.website-announcement > *,
+.search-popup > *,
+.pc-post-toc > *,
+.tablet-post-toc > *,
+.post-copyright-info > *,
+.reward-author-container > *,
+.comment-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== Navigation Pill Refactoring ========== */
+.header-wrapper .header-content {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  justify-content: stretch !important;
+  width: min(94vw, 1180px) !important;
+  max-width: 1180px !important;
+  height: 58px;
+  padding: 0 clamp(1.2rem, 4vw, 3.2rem);
+  border-radius: var(--glass-pill-radius) !important;
+  transition: none !important; /* 禁用宽度与最大宽度的加载/切换过渡，消除导航文字闪烁与错位问题 */
+}
+
+.header-wrapper .header-content .left {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.header-wrapper .header-content .right {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.header-shrink .header-wrapper .header-content {
+  height: 50px;
+}
+
+.header-wrapper .site-name {
+  letter-spacing: 0 !important;
+}
+
+.header-wrapper .logo-image img {
+  border-radius: 0.5rem !important;
+}
+
+.header-wrapper .menu-list .menu-item::before {
+  bottom: -12px !important;
+  height: 3px !important;
+  box-shadow: none !important;
+}
+
+.header-wrapper .menu-list .menu-item .menu-text-color {
+  color: var(--text-color-2) !important;
+  font-weight: 600;
+}
+
+.header-wrapper .sub-menu-list,
+.header-wrapper .header-drawer {
+  background: linear-gradient(135deg, var(--glass-surface-strong), var(--glass-surface-soft)) !important;
+  border-radius: var(--glass-radius) !important;
+}
+
+.header-wrapper .header-drawer {
+  top: calc(100% + 10px);
+  left: 50%;
+  width: min(92vw, 1180px);
+  padding: 1.2rem 1.4rem;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  will-change: transform;
+}
+
+.show-header-drawer .header-wrapper .header-drawer {
+  transform: translateX(-50%) scaleY(1);
+}
+
+.header-wrapper .drawer-menu-item {
+  border-bottom-color: var(--glass-border-muted) !important;
+}
+
+.header-wrapper .window-mask {
+  background: rgba(8, 13, 22, 0.16) !important;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* ========== Dynamic Elastic Hover Animations ========== */
+.home-post-item:hover,
+.post-content-container:hover,
+.archives-container:hover,
+.category-page-container:hover,
+.category-archive-container:hover,
+.tag-page-container:hover,
+.tag-archive-container:hover,
+.page-template-container:hover,
+.friends-link-container:hover,
+.tools-nav-container:hover,
+.photos-page-container:hover,
+.website-announcement:hover {
+  transform: translate3d(0, -4px, 0);
+  box-shadow: var(--glass-shadow-hover) !important;
+}
+
+/* ========== Small Widgets/Controls Glass Surface ========== */
+.home-post-item-top,
+.post-content-top,
+.search-header,
+.tag-list-link,
+.tag-list-count,
+.post-sticky-box,
+.author-badge,
+.keep-note,
+.keep-tabs .tabs-nav,
+.keep-button {
+  background: var(--glass-surface-soft) !important;
+  border: 1px solid var(--glass-border-muted) !important;
+  border-radius: var(--glass-radius-sm) !important;
+  box-shadow: var(--glass-control-shadow) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.home-post-title a,
+.post-title,
+.archive-year,
+.category-name {
+  color: var(--text-color-1) !important;
+}
+
+.home-post-content,
+.post-meta-info-container,
+.footer,
+.footer a {
+  color: var(--glass-text-soft) !important;
+}
+
+.post-meta-info-container a:hover,
+.footer a:hover {
+  color: var(--primary-color) !important;
+}
+
+.home-read-more {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: var(--glass-pill-radius);
+  transition: all 0.2s ease;
+}
+
+.home-read-more:hover {
+  background: var(--glass-surface-soft);
+  border-color: var(--glass-border-muted);
+  box-shadow: var(--glass-control-shadow);
+}
+
+/* ========== Pager & Side Tools capsule designs ========== */
+.side-tools-container .tools-item,
+.post-tools-list li.tools-item,
+.paginator .page-number-input,
+.paginator .paginator-btn a,
+.prev-post,
+.next-post {
+  position: relative;
+  overflow: hidden;
+  background: var(--glass-surface-soft) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 0.8rem !important;
+  box-shadow: var(--glass-control-shadow) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, box-shadow 0.2s;
+}
+
+.post-tools-list li.tools-item {
+  border-radius: 50% !important;
+}
+
+.side-tools-container .tools-item:hover,
+.post-tools-list li.tools-item:hover,
+.paginator .paginator-btn.allowed a:hover,
+.prev-post:hover,
+.next-post:hover {
+  color: #fff !important;
+  background: var(--primary-color) !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+  box-shadow: 0 12px 30px rgba(91, 140, 255, 0.3) !important;
+  transform: translate3d(0, -2px, 0);
+}
+
+.side-tools-container .tools-item:hover i,
+.post-tools-list li.tools-item:hover i {
+  color: #fff !important;
+}
+
+.side-tools-container .tools-item:active,
+.post-tools-list li.tools-item:active,
+.keep-button:active {
+  transform: scale(0.96) translate3d(0, 0, 0);
+}
+
+/* ========== Markdown elements & Code Highlight boxes ========== */
+.keep-markdown-body blockquote,
+.keep-markdown-body figure.highlight,
+.keep-markdown-body table,
+.keep-markdown-body .table-container,
+.post-aging-tips {
+  overflow: hidden;
+  background: var(--glass-surface-soft) !important;
+  border: 1px solid var(--glass-border-muted) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--glass-control-shadow) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+}
+
+.keep-markdown-body figure.highlight table,
+.keep-markdown-body figure.highlight td,
+.keep-markdown-body figure.highlight pre {
+  background: transparent !important;
+}
+
+.keep-markdown-body table,
+.keep-markdown-body .table-container,
+.keep-markdown-body figure.highlight {
+  background: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 8px 24px rgba(38, 58, 91, 0.04) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html.dark-mode .keep-markdown-body table,
+html.dark-mode .keep-markdown-body .table-container,
+html.dark-mode .keep-markdown-body figure.highlight {
+  background: rgba(18, 22, 33, 0.65) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) .keep-markdown-body table,
+  html:not(.light-mode) .keep-markdown-body .table-container,
+  html:not(.light-mode) .keep-markdown-body figure.highlight {
+    background: rgba(18, 22, 33, 0.65) !important;
+  }
+}
+
+.keep-markdown-body figure.highlight,
+.keep-markdown-body figure.highlight * {
+  color: #2d2d2d !important;
+}
+
+.keep-markdown-body figure.highlight .gutter,
+.keep-markdown-body figure.highlight .gutter * {
+  color: #888 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) .keep-markdown-body figure.highlight,
+  html:not(.light-mode) .keep-markdown-body figure.highlight * {
+    color: #e2e8f0 !important;
+  }
+
+  html:not(.light-mode) .keep-markdown-body figure.highlight .gutter,
+  html:not(.light-mode) .keep-markdown-body figure.highlight .gutter * {
+    color: #94a3b8 !important;
+  }
+}
+
+html.dark-mode .keep-markdown-body figure.highlight,
+html.dark-mode .keep-markdown-body figure.highlight * {
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode .keep-markdown-body figure.highlight .gutter,
+html.dark-mode .keep-markdown-body figure.highlight .gutter * {
+  color: #94a3b8 !important;
+}
+
+/* Code block highlight tweak */
+.keep-markdown-body figure.highlight .shrink-line {
+  display: none !important;
+}
+
+.keep-markdown-body h1,
+.keep-markdown-body h2,
+.keep-markdown-body h3,
+.keep-markdown-body h4,
+.keep-markdown-body h5,
+.keep-markdown-body h6 {
+  border-bottom-color: var(--glass-border-muted) !important;
+}
+
+.tag-list-content .tag-list-item {
+  background: var(--glass-surface-soft) !important;
+  border: 1px solid var(--glass-border-muted);
+  border-radius: 0.7rem !important;
+  box-shadow: var(--glass-control-shadow);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness)) !important;
+}
+
+.archive-list-container .archive-item-body .post-item {
+  border-radius: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.archive-list-container .archive-item-body .post-item:hover {
+  background: var(--glass-surface-soft);
+  box-shadow: var(--glass-control-shadow);
+  transform: translate3d(2px, 0, 0);
+}
+
+.search-pop-overlay.active {
+  background: rgba(8, 13, 22, 0.24) !important;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.search-popup {
+  border-radius: var(--glass-radius-lg) !important;
+}
+
+.search-header {
+  border-top-left-radius: var(--glass-radius-lg) !important;
+  border-top-right-radius: var(--glass-radius-lg) !important;
+}
+
+.search-input,
+.password-input,
+input,
+textarea {
+  color: var(--text-color-2) !important;
+}
+
+.first-screen-container {
+  background-color: transparent !important;
+}
+
+/* ========== Responsive Adapters ========== */
+@media (max-width: 800px) {
+  :root {
+    --header-height: 78px;
+    --header-shrink-height: 58px;
+    --component-gap: 34px;
+  }
+
+  .header-wrapper {
+    padding-top: 11px;
+  }
+
+  .show-header-drawer .page-main-content-middle {
+    transform: translateY(10rem);
+  }
+
+  .header-wrapper .header-content {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    width: 92vw !important;
+    height: 52px;
+    padding: 0 1.2rem;
+  }
+
+  .header-wrapper .header-content .right {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .header-shrink .header-wrapper .header-content {
+    height: 46px;
+  }
+
+  .home-post-item,
+  .post-content-container,
+  .archives-container,
+  .category-page-container,
+  .category-archive-container,
+  .tag-page-container,
+  .tag-archive-container,
+  .page-template-container {
+    border-radius: 16px !important;
+  }
+
+  .post-content-container {
+    padding: 0 !important;
+  }
+
+  .header-wrapper .header-drawer {
+    z-index: 1004;
+    width: 92vw;
+    max-height: calc(100vh - var(--header-height) - 2rem);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --header-height: 72px;
+    --header-shrink-height: 54px;
+    --component-gap: 28px;
+    --glass-radius: 14px;
+  }
+
+  .header-wrapper .header-content {
+    width: 94vw !important;
+    height: 48px;
+    padding: 0 1rem;
+  }
+
+  .header-wrapper .left {
+    min-width: 0;
+  }
+
+  .header-wrapper .site-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .home-post-item .home-post-item-bottom,
+  .post-content-container .post-content-bottom {
+    padding: 1.35rem !important;
+  }
+
+  .post-content-container .post-content-bottom.has-cover {
+    padding-top: 1rem !important;
+  }
+
+  .show-header-drawer .page-main-content-middle {
+    transform: translateY(8.8rem);
+  }
+
+  .header-wrapper .header-drawer {
+    width: 94vw;
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* ========== React Bits-Inspired Premium Interactive Glass Surface ========== */
+.home-post-item,
+.post-content-container,
+.archives-container,
+.category-page-container,
+.category-archive-container,
+.tag-page-container,
+.tag-archive-container,
+.page-template-container,
+.pc-post-toc,
+.comment-container,
+.header-wrapper .header-content {
+  transform: perspective(1000px) rotateX(var(--tilt-rx, 0deg)) rotateY(var(--tilt-ry, 0deg)) translate3d(0, 0, 0);
+  transition: transform 0.28s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.28s ease, border-color 0.28s ease !important;
+  transform-style: preserve-3d;
+}
+
+/* Dynamic Spotlight Reflection Overlay */
+/* 初始状态完全不可见 - 避免插入时幼灵方块闪烁 */
+.glass-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  /* 默认完全透明 - 只有 JS 设置 --glass-shine-opacity 后才可见
+     这样当 span 刚被插入 DOM 时不会渲染任何可见的内容 */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  background: radial-gradient(
+    circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    transparent 80%
+  );
+  mix-blend-mode: overlay;
+  border-radius: inherit;
+}
+
+/* 鼠标悬停时才显示光晎动效果 */
+.glass-shine[style*="--glass-shine-opacity"] {
+  opacity: var(--glass-shine-opacity, 0);
+  visibility: visible;
+}
+
+/* Chromatic Aberration Inset Highlights on hover */
+.home-post-item:hover,
+.post-content-container:hover,
+.archives-container:hover,
+.category-page-container:hover,
+.category-archive-container:hover,
+.tag-page-container:hover,
+.tag-archive-container:hover,
+.page-template-container:hover,
+.friends-link-container:hover,
+.tools-nav-container:hover,
+.photos-page-container:hover,
+.website-announcement:hover,
+.search-popup:hover,
+.pc-post-toc:hover,
+.tablet-post-toc:hover,
+.post-copyright-info:hover,
+.reward-author-container:hover,
+.comment-container:hover,
+.header-wrapper .header-content:hover {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 
+    inset 1px 1px 0px rgba(255, 0, 128, 0.09),  /* Brighter Magenta chromatic split */
+    inset -1px -1px 0px rgba(0, 255, 255, 0.14), /* Brighter Cyan chromatic split */
+    var(--glass-shadow-hover) !important;
+}
+
+/* Active touch/squash integration with 3D perspective */
+.side-tools-container .tools-item:active,
+.post-tools-list li.tools-item:active,
+.keep-button:active {
+  transform: scale(0.95) translate3d(0, 0, 0) !important;
+}
